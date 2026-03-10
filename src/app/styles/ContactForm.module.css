@@ -1,0 +1,49 @@
+.contactFormContainer {
+
+    .contactForm {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-evenly;
+        padding: var(--space-1);
+        background: transparent;
+        color: inherit;
+        font-family: inherit;
+        max-width: 600px;
+
+        label {
+            margin-top: 0.5rem;
+        }
+
+        input,
+        textarea {
+            padding: var(--space-1);
+            border: 1.5px solid rgb(from var(--main-text) r g b / 20%);
+            background: var(--main-background);
+            color: var(--main-text);
+            font-family: inherit;
+            transition: all 0.2s ease;
+
+            &:focus {
+                outline: none;
+                border-color: var(--main-text);
+            }
+
+            &::placeholder {
+                opacity: 0.4;
+                font-style: italic;
+            }
+
+            textarea {
+                min-height: 30%;
+                resize: vertical;
+            }
+
+        }
+
+        button {
+            margin-top: 2%;
+        }
+
+    }
+}

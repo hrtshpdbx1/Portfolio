@@ -1,0 +1,22 @@
+TO DO 
+
+☐ Ajouter les pages projets
+☐ Faire une page "A propos de ce site" 
+
+Dans ton project-detail.css, tu avais :
+CSS
+body { background-color: var(--main-background); }
+
+Problème : En React, changer le style du body dans un fichier CSS importé par une page peut affecter tout ton site.
+Entoure tout le contenu de ta page projet dans une div className="project-page-wrapper"> et remplace body par .project-page-wrapper dans ton CSS. Cela "isole" tes styles.
+
+✔ probleme taille sous titre h2 dans page acceuil et page project @done(26-02-23 13:17)
+☐ style du formulaire
+✔  faire les liens vers page project depuis page acceuil @done(26-02-23 11:49)
+✔ importer les images des pages project @done(26-02-23 11:49)
+☐ ajuster padding
+✔ text tintro de PaygapQuest pas dfna sla bonne font @done(26-02-23 13:19)
+☐ refaire les screens? en gif ??
+✔ Mise ne forme des bloc de code (pb CSS a régler) @done(26-02-23 15:14)
+☐ retirer effet ombre btn 
+
