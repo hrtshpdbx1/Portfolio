@@ -61,13 +61,12 @@ export default function Home() {
                 riches, et quelques semaines plus tard, j&apos;avais refait le layout des profil de tout mon entourage.</p>
               <p>
                 <em>Fast forwards de quelques années </em> : après mes études d&apos;Arts Numériques aux Beaux-Arts, je passe 4
-                ans dans l&apos;associatif à lutter contre les violences
-                sexistes et sexuelles en
-                milieux festifs. L&apos;envie de créer est restée ainsi que le besoin de <em>mettre mon énergie au service de
+                ans dans l&apos;associatif à gérer un projet de lutte contre les violences
+                sexistes et sexuelles. L&apos;envie de créer est restée ainsi que le besoin de <em>mettre mon énergie au service de
                   causes qui comptent.</em>
               </p>
               <p>
-                Quand j&apos;ai intégré la formation Full Stack JavaScript Developer chez Interface3 en septembre dernier, la
+                Quand j&apos;ai intégré la formation Full Stack JavaScript Developer chez Interface3, la
                 boucle s&apos;est
                 bouclée. Retrouver HTML, CSS et JavaScript avec une vision plus large a été une révélation. Ayant moi-même
                 un
@@ -76,11 +75,11 @@ export default function Home() {
                 fun et
                 attrayant, mais surtout à la portée de tout le monde.
               </p>
-              <p>
+              {/* <p>
                 Je <em>recherche actuellement un stage</em> où je pourrai allier créativité, éthique et impact, pour
                 contribuer à un web plus
                 inclusif et respectueux.
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
@@ -222,8 +221,10 @@ export default function Home() {
         <section id="section5" className="page-section section5">
           <div className="section-intro">
             <h2>Grandissons ensemble</h2>
-            <p>Je suis à la recherche d&apos;une opportunité de stage (8 à 12 semaines) en tant que Développeuse JavaScript Full
-              Stack, suite à ma formation chez Interface3. N&apos;hésitez pas à me contacter si vous cherchez une stagiaire,
+            <p>
+                Je <em>recherche actuellement un stage</em> où je pourrai allier créativité, éthique et impact, pour
+                contribuer à un web plus
+                inclusif et respectueux. N&apos;hésitez pas à me contacter si vous cherchez une stagiaire,
               si vous avez une question ou simplement pour
               faire connaissance.</p>
 

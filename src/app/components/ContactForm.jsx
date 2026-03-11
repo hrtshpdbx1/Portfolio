@@ -21,57 +21,71 @@ function ContactForm() {
 
     return (
         <div>
-          <div className={style.contactFormContainer}>
-                <form action={handleAction} 
-                className={style.contactForm}>
-                    <label htmlFor="forname">Prénom : </label>
-                    <input 
-                    
-                        type="text"
-                        id="forname"
-                        name="forname"
-                        placeholder="Ada"
-                        required />
+            <div className={style.contactFormContainer}>
+                <form action={handleAction}
+                    className={style.contactForm}>
+                    {/* --- LIGNE PRÉNOM & NOM --- */}
+                    <div className={style.nameRow}>
+                        <div className={style.inputGroup}>
+                            <label htmlFor="forname">Prénom : </label>
+                            <input
+                                type="text"
+                                id="forname"
+                                name="forname"
+                                placeholder="Ada"
+                                required
+                            />
+                        </div>
 
-                    <label htmlFor="lastname">Nom : </label>
-                    <input 
-                        type="text"
-                        id="lastname"
-                        name="lastname"
-                        placeholder="Lovelace"
-                        required />
+                        <div className={style.inputGroup}>
+                            <label htmlFor="lastname">Nom : </label>
+                            <input
+                                type="text"
+                                id="lastname"
+                                name="lastname"
+                                placeholder="Lovelace"
+                                required
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="email">E-mail : </label>
-                    <input 
-                        type="email"
-                        id="from"
-                        name="from"
-                        placeholder="ada.byron@analytica.com"
-                        required />
+                    {/* --- EMAIL --- */}
+                    <div className={style.inputGroup}>
+                        <label htmlFor="email">E-mail : </label>
+                        <input
+                            type="email"
+                            id="from"
+                            name="from"
+                            placeholder="ada.byron@analytica.com"
+                            required
+                        />
+                    </div>
 
-                    <label htmlFor="message">Message </label>
-                    <textarea 
-                        id="message"
-                        name="message"
-                        rows="4"
-                        cols="50"
-                        required />
+                    {/* --- MESSAGE --- */}
+                    <div className={style.inputGroup}>
+                        <label htmlFor="message">Message : </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            cols="50"
+                            required
+                        />
+                    </div>
 
                     <button
                         type="submit"
                         id="submitBtn"
                         className="btn btn-small">
-                        Envoyer </button>
+                        Envoyer
+                    </button>
                 </form>
-                {/* Affichage conditionnel du message de statut */}
-                {status && <p 
-                className={style.sendStatus}>{status}</p>}
-                <div>
-                </div>
+
+                {status && <p className={style.sendStatus}>{status}</p>}
             </div>
         </div>
-        // </div>
     )
 }
+
 
 export default ContactForm

@@ -7,28 +7,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faRocket, faCheckDouble, faCompassDrafting, faPeopleGroup, faBullhorn, faChartLine, faPenNib, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import '../styles/project-detail.css';
+import Footer from '@/app/components/Footer';
 
 export default function SocialScript() {
 
-  // État pour stocker l'image à agrandir (null par défaut)
+    // État pour stocker l'image à agrandir (null par défaut)
     const [zoomedImage, setZoomedImage] = useState(null);
 
     return (
         <div className="projectPageWrapper bbbreadme">
             <nav className="projectNav">
                 {/* Overlay */}
-            {zoomedImage && (
-                <div className="imageOverlay" onClick={() => setZoomedImage(null)}>
-                    <Image
-                        src={zoomedImage.src}
-                        alt={zoomedImage.alt}
-                        width={1200}
-                        height={800}
-                        className="enlarged-img"
-                    />
-                    <span className="closeOverlay">&times;</span>
-                </div>
-            )}
+                {zoomedImage && (
+                    <div className="imageOverlay" onClick={() => setZoomedImage(null)}>
+                        <Image
+                            src={zoomedImage.src}
+                            alt={zoomedImage.alt}
+                            width={1200}
+                            height={800}
+                            className="enlarged-img"
+                        />
+                        <span className="closeOverlay">&times;</span>
+                    </div>
+                )}
 
                 <Link href="/" className="back-link">
                     <button className="btn">
@@ -81,7 +82,13 @@ export default function SocialScript() {
                     </div>
                 </header>
                 <section className="projectSection">
-                    <figure className="imagePlaceholder">
+                      <p className="projectTagline">
+                        SocialScript est un simulateur interactif d&apos;entraînement aux situations sociales,
+                        développé dans le cadre d&apos;un workshop HTML/CSS/JavaScript de ma formation Developper Javascript
+                        Fullstack à Interface3. Le projet répond à un besoin d&apos;apprentissage explicite des codes sociaux dans un
+                        environnement sécurisé, particulièrement utile pour les personnes neurodivergentes.
+                    </p>
+                    <figure className="imagePlaceholder no-decor">
                         <Image
                             src="/img/MockupSS.png"
                             alt="Mock-up"
@@ -89,13 +96,6 @@ export default function SocialScript() {
                             height={450}
                         />
                     </figure>
-
-                    <p className="projectTagline">
-                        SocialScript est un simulateur interactif d&apos;entraînement aux situations sociales,
-                        développé dans le cadre d&apos;un workshop HTML/CSS/JavaScript de ma formation Developper Javascript
-                        Fullstack à Interface3. Le projet répond à un besoin d&apos;apprentissage explicite des codes sociaux dans un
-                        environnement sécurisé, particulièrement utile pour les personnes neurodivergentes.
-                    </p>
                 </section>
 
                 {/* <figure className="imagePlaceholder">
@@ -111,7 +111,7 @@ export default function SocialScript() {
 
                 {/* --- OBJECTIFS PROJET --- */}
                 <section className="projectSection">
-                    <div className="highlight">
+                    <div className="objectif-section">
                         <h2>Objectif du projet</h2>
                         <p>
                             Ce projet vient d&apos;un besoin que j&apos;ai rencontré personnellement. Étant autiste et TDAH, c&apos;est par la
@@ -143,7 +143,7 @@ export default function SocialScript() {
                             </p>
                         </div>
 
-                        <div className='containerHorizontal'> 
+                        <div className='containerHorizontal'>
                             {/* <figure className="imagePlaceholder_Small">
                             <Image
                                 src="/img/croquislogo2.png" alt="Croquis et recherches graphiques"
@@ -163,34 +163,34 @@ export default function SocialScript() {
                             <figcaption>Différentes versions du logo réalisées sur Illustrator</figcaption>
                         </figure> */}
 
-                     
-                          <figure 
-        className="imagePlaceholder_Small clickable" 
-        onClick={() => setZoomedImage({src: "/img/croquislogo2.png", alt: "Croquis"})}
-    >
-        <Image
-            src="/img/croquislogo2.png" 
-            alt="Croquis graphiques"
-            width={800}
-            height={450}
-        />
-        <figcaption>Croquis (cliquer pour agrandir)</figcaption> 
-    </figure>
 
-    <figure 
-        className="imagePlaceholder_Small clickable"
-        onClick={() => setZoomedImage({src: "/img/recherchesgraphiques.png", alt: "Logos"})}
-    >
-        <Image
-            src="/img/recherchesgraphiques.png"
-            alt="Différentes versions du logo"
-            width={800}
-            height={450}
-        />
-        <figcaption>Versions Illustrator (cliquer pour agrandir)</figcaption>
-    </figure>
+                            <figure
+                                className="imagePlaceholder_Small clickable"
+                                onClick={() => setZoomedImage({ src: "/img/croquislogo2.png", alt: "Croquis" })}
+                            >
+                                <Image
+                                    src="/img/croquislogo2.png"
+                                    alt="Croquis graphiques"
+                                    width={800}
+                                    height={450}
+                                />
+                                <figcaption>Croquis (cliquer pour agrandir)</figcaption>
+                            </figure>
+
+                            <figure
+                                className="imagePlaceholder_Small clickable"
+                                onClick={() => setZoomedImage({ src: "/img/recherchesgraphiques.png", alt: "Logos" })}
+                            >
+                                <Image
+                                    src="/img/recherchesgraphiques.png"
+                                    alt="Différentes versions du logo"
+                                    width={800}
+                                    height={450}
+                                />
+                                <figcaption>Versions Illustrator (cliquer pour agrandir)</figcaption>
+                            </figure>
                         </div>
-                        
+
                     </div>
                 </section>
 
@@ -237,7 +237,13 @@ export default function SocialScript() {
                                 </div>
                             </div>
                             <figure className="imagePlaceholder">
-                                <video loop muted playsInline controls>
+                                <video
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    controls
+                                >
                                     <source src="/img/screenshots/testnavclavier.mp4" type="video/mp4" />
                                 </video>
                                 <figcaption>Navigation clavier de la FAQ</figcaption>
@@ -302,7 +308,7 @@ export default function SocialScript() {
 
                 {/* --- LEÇONS APPRISES --- */}
                 <section className="projectSection">
-                    <div className="highlight">
+                    <div className="objectif-section">
                         <h3>Ce que ce projet m&apos;a appris</h3>
                         <p>
                             Ce projet m&apos;a permis de transformer mes engagements en faveur de l&apos;inclusion en compétences techniques.
@@ -333,7 +339,7 @@ export default function SocialScript() {
                 </section>
             </main>
 
-            <div className="projectFooter">
+            {/* <div className="projectFooter">
                 <p>Prêt·e à discuter d&apos;accessibilité et de neuro-inclusion ?</p>
                 <Link href="/#contact" className="btn">Me contacter</Link>
             </div>
@@ -352,7 +358,8 @@ export default function SocialScript() {
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> */}
+            <Footer />
         </div>
     );
 }

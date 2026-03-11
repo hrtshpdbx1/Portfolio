@@ -1,49 +1,90 @@
 .contactFormContainer {
+    width: 100%;
 
     .contactForm {
         display: flex;
         flex-direction: column;
-        align-items: start;
-        justify-content: space-evenly;
-        padding: var(--space-1);
-        background: transparent;
-        color: inherit;
-        font-family: inherit;
+        gap: var(--space-4);
         max-width: 600px;
 
-        label {
-            margin-top: 0.5rem;
+        .nameRow {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            /* L'espace entre Prénom et Nom */
+            width: 100%;
         }
 
+        @media (max-width: 480px) {
+            .nameRow {
+                flex-direction: column;
+                  gap: var(--space-2);
+            }
+        }
+
+        .inputGroup {
+            display: flex;
+            flex-direction: column;
+               gap: var(--space-1);/* Espace entre le label et l'input */
+            flex: 1;/* les colonnes Prénom et Nom font 50% chacune */
+        }
+
+        label {
+            font-size: calc(var(--user-size) - 1.5);
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Les champs de saisie */
         input,
         textarea {
-            padding: var(--space-1);
-            border: 1.5px solid rgb(from var(--main-text) r g b / 20%);
-            background: var(--main-background);
+            padding: 7px 8px;
+            border: 1.5px solid rgba(0, 0, 0, 0.15);
+            background-color: rgba(255, 255, 255, 0.3);
             color: var(--main-text);
             font-family: inherit;
-            transition: all 0.2s ease;
-
-            &:focus {
-                outline: none;
-                border-color: var(--main-text);
-            }
-
-            &::placeholder {
-                opacity: 0.4;
-                font-style: italic;
-            }
-
-            textarea {
-                min-height: 30%;
-                resize: vertical;
-            }
-
+            font-size: calc(var(--user-size) - 1.5);
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
+
+        /* Effet au clic (focus) sur un champ */
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--main-text);
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 0.5;
+            font-style: italic;
+        }
+
+        textarea {
+            resize: horizontal;
+            min-height: 120px;
+        }
+
 
         button {
-            margin-top: 2%;
+            align-self: flex-start;
+            background: var(--main-text);
+            color: var(--main-background);
+            cursor: pointer;
+
         }
 
+    }
+
+    /* Le message de succès/erreur */
+    .sendStatus {
+        margin-top: 15px;
+        font-weight: 600;
+        font-style: italic;
     }
 }

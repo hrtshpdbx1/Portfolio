@@ -26,7 +26,7 @@
     padding: var(--space-8) var(--space-4);
     display: flex;
     flex-direction: column;
-    gap: var(--space-12);
+    gap: 5rem;
 }
 
 
@@ -34,7 +34,7 @@
 .projectHero {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-8);
 }
 
 .projectTagline {
@@ -89,7 +89,7 @@
 .projectSection {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-6);
 
     h2 {
         /* font-size: 1.8rem; */
@@ -116,32 +116,42 @@
     }
 }
 
-/* Ajoute de l'espace au-dessus de chaque bloc de point technique */
+
 .article-point {
-    margin-top: var(--space-8);
-    /* Utilise un espace plus grand que le gap */
+  margin-top: 4rem;
 }
 
 /* Force l'application de la marge sur le contenu textuel interne */
 .point-content {
     margin-top: var(--space-8) !important;
     display: block;
-    /* S'assure qu'il se comporte comme un bloc */
+   
 }
 
-/* .projectSection h2 {
-    font-size: 1.8rem;
-    margin-bottom: var(--space-4);
-    border-bottom: 2px solid var(--main-text);
-    display: inline-block;
-    width: fit-content;
-} */
 
 .highlight {
     background: rgb(from var(--main-text) r g b / 3%);
-    padding: var(--space-6);
+    padding: var(--space-8); /* Plus d'air à l'intérieur de la boîte */
     border-left: 5px solid var(--main-text);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-lg);
+}
+
+/* --- test Style Éditorial --- */
+.objectif-section {
+    padding: var(--space-8) 0; /* Espace en haut et en bas, mais 0 sur les côtés pour s'aligner au reste du texte */
+    margin: var(--space-4) 0; 
+    border-top: 1px solid rgb(from var(--main-text) r g b / 15%);
+    border-bottom: 1px solid rgb(from var(--main-text) r g b / 15%);
+}
+
+.objectif-section p {
+    font-size: calc(var(--user-size) * 1.05); /* Le texte d'intro est très légèrement plus grand */
+    line-height: calc(var(--dynamic-line-height) + 0.1) !important;
+}
+
+/* On enlève la marge haute du titre pour qu'il s'intègre bien sous la ligne */
+.objectif-section h2 {
+    margin-top: 0;
 }
 
 /* Images et Vidéos */
@@ -176,14 +186,22 @@
     width: 100% !important;
     height: auto;
     border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md); 
+    border: 1px solid rgb(from var(--main-text) r g b / 5%);
+}
+
+/* Annuler l'ombre et la bordure pour les mockups et diagrammes */
+.no-decor img {
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .imagePlaceholder figcaption,
 .imagePlaceholder_Small figcaption {
     margin-top: var(--space-3);
-
     font-weight: var(--weight-light);
-    opacity: 0.6;
+  font-size: calc(var(--user-size) * 0.8);
+    opacity: 0.8;
     text-align: center;
     width: 100%;
 }
@@ -401,34 +419,28 @@
     color: #2596be !important;
 }
 
-.projectFooter {
-    text-align: center;
-    padding: var(--space-12) var(--space-4);
-    margin-top: var(--space-12);
-}
 
 
 .projectList {
     list-style: none;
     padding-left: 0;
-    margin: var(--space-4) 0;
-    /* Ajoute de l'espace avant et après la liste */
+  margin: var(--space-6) 0;
 }
 
 .projectList li {
-    position: relative;
-    padding-left: var(--space-6);
-    /* espace puce */
-    margin-bottom: var(--space-4);
-    line-height: calc(var(--dynamic-line-height) - 0.3) !important;
+   position: relative;
+    padding-left: var(--space-8); 
+    margin-bottom: var(--space-6); 
+    line-height: calc(var(--dynamic-line-height) + 0.1) !important; 
 
 }
 
 
 .projectList li::before {
-    content: "●";
+   content: "●";
     position: absolute;
     left: 0;
+    top: 2px;
     color: var(--main-text);
     opacity: 0.6;
     font-weight: bold;
@@ -458,5 +470,134 @@
     h3 {
         text-align: center;
         margin-bottom: 0 !important;
+    }
+}
+
+
+/* =========================================
+   FOOTER GLOBAL
+   ========================================= */
+
+.main-footer-inverted {
+    background-color: var(--main-text); 
+    color: var(--main-background);     
+    padding: var(--space-12) var(--space-4) var(--space-4);
+    margin-top: auto; 
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-8);
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid rgb(from var(--main-background) r g b / 15%);
+}
+
+/* --- Colonne 1 : Brand --- */
+.footer-brand {
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.footer-logo {
+   font-size: calc(var(--user-size) * 1.2);
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--main-background);
+}
+
+.footer-tagline {
+    /* font-size: 0.7rem; */
+      font-size: calc(var(--user-size) * 0.9);
+    opacity: 0.7;
+}
+
+/* --- Colonne 2 : Navigation --- */
+.footer-nav {
+    flex: 2 1 400px;
+    display: flex;
+    gap: var(--space-12);
+    flex-wrap: wrap;
+}
+
+.footer-nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.footer-title {
+    font-weight: bold;
+      font-size: calc(var(--user-size) * 0.85);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-2);
+    opacity: 0.5; 
+}
+
+.footer-nav-col a {
+    text-decoration: none;
+    color: var(--main-background);
+    opacity: 0.8;
+      font-size: calc(var(--user-size) * 0.95);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-nav-col a:hover {
+    opacity: 1;
+    transform: translateX(4px); 
+}
+
+/* --- Colonne 3 : Réseaux Sociaux --- */
+.footer-socials {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.social-icons a {
+    color: var(--main-background);
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+    transform: scale(1.1); 
+}
+
+/* --- Copyright --- */
+.footer-bottom {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: var(--space-6);
+    text-align: center;
+    /* font-size: 0.8rem; */
+      font-size: calc(var(--user-size) * 0.8);
+    opacity: 0.5;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: var(--space-10);
+    }
+    
+    .footer-nav {
+        gap: var(--space-8);
+        flex-direction: column; 
     }
 }

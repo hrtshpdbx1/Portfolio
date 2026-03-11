@@ -122,7 +122,6 @@ export default function RootLayout({ children }) {
           <BackToTop />
           {children}
         </main>
-
       </body>
     </html>
   );

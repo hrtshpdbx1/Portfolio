@@ -7,9 +7,10 @@ import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-
 import '../styles/project-detail.css';
 import Image from 'next/image';
 import { useState } from 'react';
+import Footer from '@/app/components/Footer';
 
 
-const CounterSrc = '/img/screenshots/CompteRebourok4.mp4';
+const CounterSrc = '/img/screenshots/CompteRebourok3.mp4';
 const CalculatorScreen = '/img/screenshots/Calculateurv2.mp4';
 
 
@@ -88,16 +89,7 @@ export default function PayGapQuest() {
                 </header>
 
                 <section className="projectSection">
-                    <figure className="imagePlaceholder">
-                        <Image
-                            src="/img/MockupPG.png"
-                            alt="Mock-up"
-                            width={800}
-                            height={450}
-                        />
-                    </figure>
-
-                    <p className="projectTagline">
+                      <p className="projectTagline">
                         PayGap Quest est un simulateur interactif conçu pour lever le voile sur les
                         inégalités de rémunération et transformer la
                         négociation de carrière en un exercice accessible à toutes. En traduisant des données macro-économiques
@@ -107,6 +99,15 @@ export default function PayGapQuest() {
                         leur manque à gagner et de structurer leur discours pour exiger une rémunération à la hauteur de leur
                         talent.
                     </p>
+
+                    <figure className="imagePlaceholder no-decor">
+                        <Image
+                            src="/img/MockupPG.png"
+                            alt="Mock-up"
+                            width={800}
+                            height={450}
+                        />
+                    </figure>
                 </section>
 
 
@@ -115,15 +116,23 @@ export default function PayGapQuest() {
 
                 <section className="projectSection">
                     <div className="projet_purpose">
-                        <div className='highlight'>
+                        <div className='objectif-section'>
                             <h2>Objectif du projet</h2>
 
-                            <p>En Belgique, l&rsquo;égalité salariale est un enjeu de justice sociale : les femmes gagnent encore en
+                            <p>
+                                Le Problème : En Belgique, les femmes travaillent  &quot;gratuitement&quot; dès le 20 octobre (écart de 20%). L&rsquo;absence de négociation peut coûter 1M€ sur une carrière. </p>
+                            <p>
+                                La Solution : Un simulateur pédagogique pour transformer des données froides en outils de négociation concrets. </p>
+
+                            {/* En Belgique, l&rsquo;égalité salariale est un enjeu de justice sociale : les femmes gagnent encore en
                                 moyenne 20 % de moins que les hommes, travaillant symboliquement &quot;gratuitement&quot; à partir du 20 octobre. L&apos;absence de
                                 négociation peut coûter jusqu&apos;à 1 million d&apos;euros sur une carrière.</p>
                             <p>J&apos;ai proposé ce projet pour répondre au thème <em>« @Finances, 3 jours pour prouver que la finance
                                 peut être créative, accessible et engagée»</em> au Hackathon d&rsquo;Interface3 &#40;novembre 2025&#41;, et fut rapidement
-                                rejointe par une équipe super motivée issues des différentes formations.</p>
+                                rejointe par une équipe super motivée issues des différentes formations.</p> */}
+
+
+
 
                             <h4> ✅ Fonctionnalités clés :</h4>
                             <ul className="projectList">
@@ -219,6 +228,10 @@ export default function PayGapQuest() {
                                 <div className="project-homepage_screen">
                                     <figure className="imagePlaceholder">
                                         <video
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
                                             controls
                                             width="100%"
                                             style={{
@@ -229,7 +242,8 @@ export default function PayGapQuest() {
                                             <source src={CounterSrc} type="video/mp4" />
                                             Votre navigateur ne supporte pas la lecture de vidéos.
                                         </video>
-                                        <figcaption>Capture vidéo de la page d&rsquo;acceuil</figcaption>
+                                        <figcaption>Animation du compte à rebours hybride sur la page d&rsquo;accueil.
+                                        </figcaption>
                                     </figure>
                                 </div>
                             </div>
@@ -246,7 +260,7 @@ export default function PayGapQuest() {
                                 {/* Diagramme et JSON */}
                                 <div className='containerHorizontal'>
                                     <figure
-                                        className={`imagePlaceholder_Small clickable ${zoomedImage ? 'zoomed' : ''}`}
+                                        className={`imagePlaceholder_Small no-decor clickable ${zoomedImage ? 'zoomed' : ''}`}
                                         onClick={() => setZoomedImage({ src: "/img/PayGapdrawio.png", alt: "Architecture" })}
                                     >
                                         <Image
@@ -256,7 +270,9 @@ export default function PayGapQuest() {
                                             height={450}
                                             className="diagram-img"
                                         />
-                                        <figcaption>Architecture logicielle (cliquer pour agrandir)</figcaption>
+                                        <figcaption>
+                                            Schéma de l&rsquo;architecture logicielle (cliquer pour agrandir).
+                                        </figcaption>
                                     </figure>
 
                                     {/* Demo JSON*/}
@@ -350,10 +366,14 @@ export default function PayGapQuest() {
                                     <li><strong>Traitement et Formatage :</strong> Le serveur calcule l&rsquo;&eacute;cart personnel et l&rsquo;&eacute;cart de genre du secteur, puis renvoie une r&eacute;ponse structur&eacute;e en JSON. Le Front-end r&eacute;cup&egrave;re ces objets pour mettre &agrave; jour dynamiquement l&rsquo;interface utilisateur.</li>
                                 </ul>
                             </div>
-{/* Screen Homepage */}
+                            {/* Screen Homepage */}
                             <div className="project-homepage_screen">
                                 <figure className="imagePlaceholder">
                                     <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
                                         controls
                                         width="100%"
                                         style={{
@@ -364,7 +384,8 @@ export default function PayGapQuest() {
                                         <source src={CalculatorScreen} type="video/mp4" />
                                         Votre navigateur ne supporte pas la lecture de vidéos.
                                     </video>
-                                    <figcaption>Demonstration du calculateur d&rsquo;&eacute;cart salariale</figcaption>
+                                    <figcaption>
+                                        Démonstration du simulateur : saisie des donn&eacute;es et affichage dynamique de l&rsquo;&eacute;cart salarial.</figcaption>
                                 </figure>
                             </div>
 
@@ -377,7 +398,7 @@ export default function PayGapQuest() {
 
                 {/* --- LEÇONS --- */}
                 <section className="projectSection">
-                    <div className="highlight">
+                    <div className='objectif-section'>
                         <h3>Ce que ce projet m&apos;a appris</h3>
                         {/* <ul className="projectList">
                             <li><strong>Collaboration intensive :</strong> Intégration Front/Back en équipe.</li>
@@ -426,7 +447,7 @@ export default function PayGapQuest() {
                 </section>
             </main>
 
-            <div className="projectFooter">
+            {/* <div className="projectFooter">
                 <p>Vous cherchez une stagiaire soucieuse de l&apos;accessibilité ?</p>
                 <Link href="/#contact" className="btn">Me contacter</Link>
             </div>
@@ -445,7 +466,8 @@ export default function PayGapQuest() {
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> */}
+             <Footer />
         </div>
     );
 }
