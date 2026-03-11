@@ -4,6 +4,7 @@
 
 ## Cmd et shortuts
 
+- Installer le dossier node_modules (première fois) `npm install`
 - Lancer le projet sur  [http://localhost:3000](http://localhost:3000)  `npm run dev` 
 - `rfc / rafc` : Créer rapidement la structure d'un composant.
 - `Shift + Ctrl + F5 / Ctrl + Shift + R) :` Forcer le rafraîchissement (vide le cache).
