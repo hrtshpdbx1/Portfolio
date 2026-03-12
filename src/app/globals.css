@@ -278,7 +278,8 @@ em {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    border: 1px pink solid;
 
     &.sticky {
         right: 0;

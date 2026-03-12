@@ -227,6 +227,7 @@ function Sidebar(props) {
                         </div>
                        
                     </div> {/* Fin de la section Couleurs */}
+                    </div>
  {/* --- RESET---  */}
                         <div className="sidebar__control-row">
                             <button
@@ -238,7 +239,7 @@ function Sidebar(props) {
                                 <span>Réinitialiser</span>
                             </button>
                         </div>
-                </div>
+                
             </aside >
 
         </>
