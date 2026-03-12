@@ -79,15 +79,15 @@ function Sidebar(props) {
     /* --- 2. LES FONCTIONS --- */
     function handleSizeClick(newSize) {
         const currentSize = Number(fontSize);
-        // Math.min(15, ...) empêche de dépasser 15
-        // Math.max(8, ...) empêche de descendre sous 9
+        // Math.min(15, ...) empêche de dépasser x
+        // Math.max(8, ...) empêche de descendre sous x
         const nextSize = Math.min(18, Math.max(9, currentSize + newSize));
         onChangeSize(nextSize);// On "appelle" le parent pour lui donner la nouvelle valeur
     }
 
     function handleHeightClick(newHeight) {
         const currentHeight = Number(lineHeight);
-        const nextHeight = Math.min(2.2, Math.max(1, currentHeight + newHeight));
+        const nextHeight = Math.min(3, Math.max(1, currentHeight + newHeight));
         onChangeLineHeight(nextHeight.toFixed(1));
     }
 
@@ -137,80 +137,85 @@ function Sidebar(props) {
                 </div>
 
                 <div className="sidebar__content">
-                    {/* --- FONT SELECT DROPDOWN ---  */}
-                    <div className="sidebar__group">
-                        <h3 className="sidebar__label">Police</h3>
-                        <select
-                            // onChange = {(event) => fonctionMAJ (event.target.value) }
-                            onChange={(event) => handleFontSelect(event.target.value)}
-                            value={settings.fontFamily}
-                            id="font-select"
-                            className="sidebar_dropdown">
-                            <option value="--font-bbb-readme" className="opt-bbbreadme">BBB ReadMe</option>
-                            <option value="--font-eido"
-                                className="opt-eido">Eido</option>
-                            <option value="--font-accessibledfa" className="opt-accessibledfa">Accessible DFA</option>
-                            <option value="--font-open-dyslexic" className="opt-opendyslexic">OpenDyslexic</option>
-                            <option value="Arial, sans-serif" className="opt-arial">Arial</option>
-                            <option value="Times New Roman, serif" className="opt-times">Times</option>
-                        </select>
-                    </div>
 
-                    {/* --- FONT SIZE BTN ---  */}
-                    <div className="sidebar__group">
-                        {/*  On affiche la valeur qui vient du parent */}
-                        <h3 className="sidebar__label">Taille : {fontSize}px</h3>
-                        <div className="sidebar__pill-group">
-                            {/* Au clic, on appelle la fonction locale qui communique avec layout */}
-                            <button className="pill-btn" onClick={() => handleSizeClick(-1)}>-</button>
-                            <Image
-                                src={fontSizeIcon}
-                                alt="Icône taille de police"
-                                width={20}
-                                height={20}
-                            />
-                            <button className="pill-btn" onClick={() => handleSizeClick(1)}>+</button>
+                    {/* ---  TYPOGRAPHIE --- */}
+                    <div className="sidebar__section">
+                        <h3 className="sidebar__section-title">Typographie</h3>
+
+                        {/* --- FONT SELECT DROPDOWN ---  */}
+                        <div className="sidebar__control-row">
+                            <h3 className="sidebar__label">Police</h3>
+                            <select
+                                // onChange = {(event) => fonctionMAJ (event.target.value) }
+                                onChange={(event) => handleFontSelect(event.target.value)}
+                                value={settings.fontFamily}
+                                id="font-select"
+                                className="sidebar_dropdown">
+                                <option value="--font-bbb-readme" className="opt-bbbreadme">BBB ReadMe</option>
+                                <option value="--font-eido"
+                                    className="opt-eido">Eido</option>
+                                <option value="--font-accessibledfa" className="opt-accessibledfa">Accessible DFA</option>
+                                <option value="--font-open-dyslexic" className="opt-opendyslexic">OpenDyslexic</option>
+                                <option value="Arial, sans-serif" className="opt-arial">Arial</option>
+                                <option value="Times New Roman, serif" className="opt-times">Times</option>
+                            </select>
                         </div>
-                    </div>
 
-                    {/* --- LINE HEIGHT BTN ---  */}
-                    <div className="sidebar__group">
-                        <h3 className="sidebar__label">Interligne: {lineHeight}px</h3>
-                        <div className="sidebar__pill-group">
-                            {/* Au clic, on appelle la fonction locale qui communique avec layout */}
-                            <button className="pill-btn" onClick={() => handleHeightClick(-0.1)}>-</button>
-                            <Image
-                                src={lineHeightIcon}
-                                alt="Icône interligne"
-                                width={20}
-                                height={20}
-                            />
-                            <button className="pill-btn" onClick={() => handleHeightClick(0.1)}>+</button>
+                        {/* --- FONT SIZE BTN ---  */}
+                        <div className="sidebar__control-row">
+                            {/* avec valeur :  <h3 className="sidebar__label">Taille : {fontSize}px</h3> */}
+                            <h3 className="sidebar__label">Taille</h3>
+                            <div className="sidebar__pill-group">
+                                {/* Au clic, on appelle la fonction locale qui communique avec layout */}
+                                <button className="pill-btn" onClick={() => handleSizeClick(-1)}>-</button>
+                                <Image
+                                    src={fontSizeIcon}
+                                    alt="Icône taille de police"
+                                    width={20}
+                                    height={20}
+                                />
+                                <button className="pill-btn" onClick={() => handleSizeClick(1)}>+</button>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* --- THEME CHOICE ---  */}
-                    <div className="sidebar__group">
-                        <p>Thèmes :</p>
-                        <div className="contrast-group">
-
-                            {colors.map(color => (
-                                <button
-                                    key={color.id}
-                                    className="contrast-circle"
-                                    style={{
-                                        "--btn-bg": color.bgColor,
-                                        "--btn-text": color.textColor,
-                                    }}
-                                    onClick={() => handleColorSelect(color.bgColor, color.textColor)}
-                                    title={color.name} />
-                            ))}
+                        {/* --- LINE HEIGHT BTN ---  */}
+                        <div className="sidebar__control-row">
+                            {/* <h3 className="sidebar__label">Interligne: {lineHeight}px</h3> */}
+                            <h3 className="sidebar__label">Interligne</h3>
+                            <div className="sidebar__pill-group">
+                                {/* Au clic, on appelle la fonction locale qui communique avec layout */}
+                                <button className="pill-btn" onClick={() => handleHeightClick(-0.1)}>-</button>
+                                <Image
+                                    src={lineHeightIcon}
+                                    alt="Icône interligne"
+                                    width={20}
+                                    height={20}
+                                />
+                                <button className="pill-btn" onClick={() => handleHeightClick(0.1)}>+</button>
+                            </div>
                         </div>
-                    </div>
-                    {/* --- REVERSE---  */}
-                    <div className="sidebar__group">
-                        <div className="sidebar__toggle-wrapper">
 
+                        {/* --- THEME CHOICE ---  */}
+                        <div className="sidebar__section">
+                            <h3 className="sidebar__section-title">Thèmes :</h3>
+                            <span className="sidebar__label">Thèmes prédéfinis</span>
+                            <div className="contrast-group">
+                                {colors.map(color => (
+                                    <button
+                                        key={color.id}
+                                        className="contrast-circle"
+                                        style={{
+                                            "--btn-bg": color.bgColor,
+                                            "--btn-text": color.textColor,
+                                        }}
+                                        onClick={() => handleColorSelect(color.bgColor, color.textColor)}
+                                        title={color.name} />
+                                ))}
+                            </div>
+                        </div>
+                        {/* --- REVERSE---  */}
+                        <div className="sidebar__control-row sidebar__control-row--spaced">
+                            <span className="sidebar__label">Inverser le thème</span>
                             <div className="switch">
                                 <input
                                     onClick={() => handleReverseColors(bgColor, textColor)}
@@ -218,9 +223,9 @@ function Sidebar(props) {
                                     id="invert-toggle" />
                                 <span className="slider round"></span>
                             </div>
-                            <div className="sidebar__label">Inverser</div>
+                            {/* <div className="sidebar__label">Inverser</div> */}
                         </div>
-                    </div>
+                    </div> {/* Fin de la section Couleurs */}
                     {/* --- RESET---  */}
                     <div className="sidebar__group">
                         <button
@@ -230,11 +235,10 @@ function Sidebar(props) {
                             title="Réinitialiser le thème">
                             <i className="fa-solid fa-rotate-left"></i>
                             <span>Réinitialiser</span>
-
                         </button>
                     </div>
                 </div>
-            </aside>
+            </aside >
 
         </>
     )

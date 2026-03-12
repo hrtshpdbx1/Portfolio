@@ -172,9 +172,6 @@ body {
 }
 
 
-#main-content {
-    /* ne pas mettre de line-height ici ! */
-}
 
 #main-content p {
     font-size: inherit;
@@ -315,34 +312,71 @@ em {
     .sidebar__content {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-evenly;
-        gap: var(--space-2);
-
-        height: calc(100% - 80px);
-        /* 100% de la sidebar moins la taille du header */
+        gap: var(--space-6);
         min-height: 0;
+        width: 100%;
 
-        .sidebar__group {
-            border: #2C3E50 1x solid;
+        .sidebar__section {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            /* margin-bottom: 1.5em;
-        padding-bottom: 1em; */
+            gap: var(--space-4);
+            padding-bottom: var(--space-4);
+        }
 
-            /* p {
-            font-size: 0.9em;
-            font-weight: bold;
-            margin-bottom: 0.8em;
-        } */
-            .sidebar__label {
-                font-size: 0.9em;
-                font-weight: bold;
-                /* margin-bottom: 0.8em; */
+        .sidebar__section:last-of-type {
+            border-bottom: none;
+        }
+
+        .sidebar__section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            margin-bottom: var(--space-2);
+        }
+
+        .sidebar__control-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: var(--space-4);
+        }
+
+        /* Variante pour les éléments qui s'empilent */
+        .sidebar__control-column {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            width: 100%;
+        }
+
+        .sidebar__label {
+            font-size: 0.9rem;
+            font-weight: var(--weight-medium);
+            flex-shrink: 0;
+        }
+
+        /* Dropdown Polices */
+        .sidebar_dropdown {
+            width: 100%;
+            max-width: 140px; /* Limite la largeur sur grand écran */
+            padding: 6px 8px;
+            border-radius: var(--radius-sm);
+            background: var(--main-background);
+            color: var(--main-text);
+            border: 1px solid rgb(from var(--main-text) r g b / 30%);
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+
+            &:focus {
+                outline: 2px solid var(--main-text);
+                outline-offset: 2px;
             }
 
-            /* Dropdown Polices (Style spécifique aux options) */
+            /* Dropdown Polices (Style spécifique aux options)
             .sidebar_dropdown {
                 width: 100%;
                 padding: 8px;
@@ -350,217 +384,191 @@ em {
                 background: var(--main-background);
                 color: var(--main-text);
                 border: 1px solid var(--main-text);
-                font-family: inherit;
-
-                .opt-bbbreadme {
-                    font-family: 'BBB ReadMe';
-                }
-
-                .opt-eido {
-                    font-family: 'Eido';
-                }
-
-                .opt-accessibledfa {
-                    font-family: 'Accessible DFA';
-                }
-
-                .opt-opendyslexic {
-                    font-family: 'OpenDyslexic';
-                }
-
-                .opt-arial {
-                    font-family: Arial;
-                }
-
-                .opt-times {
-                    font-family: 'Times New Roman';
-                }
+                font-family: inherit; */
+            .opt-bbbreadme {
+                font-family: 'BBB ReadMe';
             }
 
-            /* Pill Buttons Group (+ / -) */
-            .sidebar__pill-group {
-                display: flex;
-                align-items: center;
-                border-radius: var(--radius-lg);
-                background: var(--main-background);
+            .opt-eido {
+                font-family: 'Eido';
+            }
+
+            .opt-accessibledfa {
+                font-family: 'Accessible DFA';
+            }
+
+            .opt-opendyslexic {
+                font-family: 'OpenDyslexic';
+            }
+
+            .opt-arial {
+                font-family: Arial;
+            }
+
+            .opt-times {
+                font-family: 'Times New Roman';
+            }
+        }
+
+        /* Pill Buttons Group (+ / -) */
+        .sidebar__pill-group {
+            display: flex;
+            align-items: center;
+            border-radius: var(--radius-lg);
+            background: var(--main-background);
+            color: var(--main-text);
+            border: 1px solid var(--main-text);
+            padding: 2px;
+            width: fit-content;
+
+            .pill-btn {
+                background: none;
+                border: none;
                 color: var(--main-text);
-                border: 1px solid var(--main-text);
-                padding: 2px;
-                width: fit-content;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 1.2em;
 
-                .pill-btn {
-                    background: none;
-                    border: none;
-                    color: var(--main-text);
-                    width: 30px;
-                    height: 30px;
-                    cursor: pointer;
-                    font-weight: bold;
-                    font-size: 1.2em;
-
-                    &:hover {
-                        opacity: 0.7;
-                    }
-                }
-
-                .pill-value {
-                    padding: 0 10px;
-                    max-width: 45px;
-                    color: var(--main-text);
-                    background-color: var(--main-text);
-                    -webkit-mask-repeat: no-repeat;
-                    mask-repeat: no-repeat;
-                    -webkit-mask-size: contain;
-                    mask-size: contain;
-                }
-
-            }
-
-            /* Grille des cercles de contraste */
-            .contrast-group {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: var(--space-4);
-                /* display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px; */
-
-                .contrast-circle {
-                    width: 35px;
-                    height: 35px;
-                    border-radius: 50%;
-                    border: 2px solid var(--main-background);
-                    box-shadow: var(--shadow-md);
-                    cursor: pointer;
-                    /* Diagonale dynamique via variables JS */
-                    background: linear-gradient(135deg, var(--btn-bg, #fff) 50%, var(--btn-text, #000) 50%);
+                &:hover {
+                    opacity: 0.7;
                 }
             }
 
-            /* Toggle Inversion Thème */
-            .sidebar__toggle-wrapper {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
+            .pill-value {
+                padding: 0 10px;
+                max-width: 45px;
+                color: var(--main-text);
+                background-color: var(--main-text);
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-size: contain;
+                mask-size: contain;
+            }
+        }
+
+        /* Grille des cercles de contraste  */
+        .contrast-group {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: var(--space-3);
+            margin-top: var(--space-2);
+
+            .contrast-circle {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 2px solid var(--main-background);
+                box-shadow: var(--shadow-sm);
+                cursor: pointer;
+                background: linear-gradient(135deg, var(--btn-bg, #fff) 50%, var(--btn-text, #000) 50%);
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 22px;
+
+            input {
+                opacity: 0; /* input invisible */
                 width: 100%;
-                gap: var(--space-2);
-                padding: 5px 0;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                cursor: pointer;
+                margin: 0;
+            }
 
-                .sidebar__label {
-                    font-weight: var(--weight-regular);
-                    margin-bottom: 0 !important;
-                    /* Force la suppression de la marge qui décale */
-                    cursor: pointer;
-                }
+            .slider {
+                /* dessin du switch */
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--main-text);
+                transition: .4s;
+                border-radius: 34px;
+                z-index: 1;
 
-                .switch {
-                    position: relative;
-                    display: inline-block;
-                    width: 40px;
-                    /* La largeur est ici */
-                    height: 22px;
-                    /* La hauteur est ici */
-
-                    /* L'INPUT (invisible mais capte le clic) */
-                    input {
-                        opacity: 0;
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        z-index: 2;
-                        cursor: pointer;
-                        margin: 0;
-                    }
-
-                    /* LE SLIDER (le dessin du switch) */
-                    .slider {
-                        position: absolute;
-                        cursor: pointer;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background-color: var(--main-text);
-                        /* Couleur de fond */
-                        transition: .4s;
-                        border-radius: 34px;
-                        z-index: 1;
-
-                        &:before {
-                            position: absolute;
-                            content: "";
-                            height: 16px;
-                            width: 16px;
-                            left: 3px;
-                            bottom: 3px;
-                            background-color: var(--main-background);
-                            /* La bille */
-                            transition: .4s;
-                            border-radius: 50%;
-                        }
-                    }
-
-                    /* ÉTAT COCHÉ */
-                    input:checked+.slider {
-                        background-color: var(--main-text);
-
-                        &:before {
-                            transform: translateX(18px);
-                        }
-                    }
+                &:before {
+                    position: absolute;
+                    content: "";
+                    height: 16px;
+                    width: 16px;
+                    left: 3px;
+                    bottom: 3px;
+                    background-color: var(--main-background);
+                    /* La bille */
+                    transition: .4s;
+                    border-radius: 50%;
                 }
             }
-        }
 
-    }
+            /* ÉTAT COCHÉ */
+            input:checked+.slider {
+                background-color: var(--main-text);
 
-    .sidebar__reset-button {
-        /* Mise en forme "Pill" */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-2);
-
-        width: 100%;
-        /* Prend toute la largeur du groupe */
-        padding: 10px 15px;
-        background: var(--main-background);
-        color: var(--main-text);
-        border: 1px solid var(--main-text);
-        border-radius: var(--radius-lg);
-
-        /* Typographie */
-        font-family: inherit;
-        font-size: 0.9em;
-        cursor: pointer;
-        transition: all 0.2s ease;
-
-        span {
-            /* Aligne le texte avec l'icône */
-            line-height: 1;
-        }
-
-        i {
-            font-size: 1.1em;
-        }
-
-        /* Interactions */
-        &:hover {
-            opacity: 0.8;
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        &:active {
-            transform: translateY(0);
-            opacity: 1;
+                &:before {
+                    transform: translateX(18px);
+                }
+            }
         }
     }
 }
+
+.sidebar__reset-button { /* Mise en forme "Pill" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;  /* Prend toute la largeur du groupe */
+    padding: 10px 15px;
+    background: var(--main-background);
+    color: var(--main-text);
+    border: 1px solid var(--main-text);
+    border-radius: var(--radius-lg);
+
+    /* Typographie */
+    font-family: inherit;
+    font-size: var(--user-size);
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    span {
+        /* Aligne le texte avec l'icône */
+        line-height: 1;
+    }
+
+    i {
+        font-size: var(--user-size)
+    }
+
+    /* Interactions */
+    &:hover {
+        opacity: 0.8;
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
+    }
+
+    &:active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 /* Cibler les icônes SVG dans la sidebar */
 .sidebar__pill-group .pill-value {
