@@ -27,6 +27,7 @@
     transform: scale(1.1);
 }
 
+
 .sidebar {
     position: fixed;
     left: -300px;
@@ -55,6 +56,13 @@
     padding-bottom: var(--space-4);
 }
 
+.title {
+    margin: 0 !important;
+     font-size: calc(var(--user-size) * 1.5);
+    letter-spacing: 2px;
+    line-height: 1; /* C'est ça qui centre optiquement le texte ! */
+}
+
 
 .closeBtn {
     background: none;
@@ -63,7 +71,15 @@
     color: var(--main-text);
     cursor: pointer;
     transition: transform 0.2s ease;
+    
+    /* Centrage de l'icône */
+    padding: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .closeBtn:hover {
     transform: rotate(90deg);

@@ -308,24 +308,37 @@ em {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        margin-bottom: 15%;
 
+        .sidebar__title {
+            margin: 0 !important;
+            font-size: calc(var(--user-size) * 1.5);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
 
     }
 
     #closeCustomBlock {
-        font-size: 2em;
+        font-size: 1.8rem;
         background: none;
         color: var(--main-text);
         border: none;
         cursor: pointer;
-        text-align: right;
-        width: 100%;
-        margin-bottom: 0.5em;
+       
 
-        /* &:hover{
-            rotate: 90deg;
-        } */
+        /* Centrage de l'icône */
+        padding: 0;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease;
+
+        &:hover{
+           transform: rotate(90deg);
+        }
 
     }
 
@@ -351,6 +364,7 @@ em {
         .sidebar__section:last-of-type {
             border-bottom: none;
         }
+
 
         .sidebar__section-title {
             font-size: 0.75rem;
@@ -609,7 +623,7 @@ em {
     cursor: pointer;
     z-index: 999;
     font-size: 2em;
-    
+
 
     &:hover {
         rotate: z 90deg;
@@ -623,18 +637,16 @@ em {
     left: 20px;
     width: 40px;
     height: 40px;
-    background-color: var(--main-text);
-    color: var(--main-background);
+    background-color: var(--main-background);
+    color:  var(--main-text);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 998;
-    box-shadow: var(--shadow-md);
-
-
-    /* On le cache par défaut */
+    
+    /* caché par défaut */
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
