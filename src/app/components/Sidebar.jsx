@@ -51,18 +51,19 @@ const colors = [
         name: "Bleu & jaune (vif)",
         bgColor: "rgb(51.37% 99.562% 59.165%)",
         textColor: "rgb(6.1489% 1.6109% 2.6324%)"
-    }
-    //  {
-    //     id: 5,
-    //     name: "Jaune & marron",
-    //     bgColor: "color(display-p3 0.302 0.023 0.149)",
-    //     textColor: "color(display-p3 0.927 0.989 0.29)"
-    //   {
-    //     id: 3,
-    //     name: "Rose pâle & noir",
-    //     bgColor: "rgb(96.702% 87.161% 90.199%)",
-    //     textColor: "rgb(0.81603% 5.1251% 0%)"
-    // },  
+    },
+     {
+        id: 7,
+        name: "Jaune & marron",
+        bgColor: "color(display-p3 0.302 0.023 0.149)",
+        textColor: "color(display-p3 0.927 0.989 0.29)"
+         },
+      {
+        id: 8,
+        name: "Rose pâle & noir",
+        bgColor: "rgb(96.702% 87.161% 90.199%)",
+        textColor: "rgb(0.81603% 5.1251% 0%)"
+     }
 
 ];
 

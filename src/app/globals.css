@@ -279,7 +279,6 @@ em {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px pink solid;
 
     &.sticky {
         right: 0;
@@ -313,17 +312,15 @@ em {
     .sidebar__content {
         display: flex;
         flex-direction: column;
-        gap: var(--space-6);
+        gap: var(--space-8);
         min-height: 0;
         width: 100%;
-        border: 2px blue solid;
 
         .sidebar__section {
             display: flex;
             flex-direction: column;
             gap: var(--space-2);
             /* padding-bottom: var(--space-4); */
-            border: 1px red solid;
 
         }
 
@@ -346,7 +343,6 @@ em {
             justify-content: space-between;
             width: 100%;
             gap: var(--space-4);
-            border: 1px green solid;
         }
 
         /* Variante pour les éléments qui s'empilent */
