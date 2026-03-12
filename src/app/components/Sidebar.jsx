@@ -144,7 +144,7 @@ function Sidebar(props) {
 
                         {/* --- FONT SELECT DROPDOWN ---  */}
                         <div className="sidebar__control-row">
-                            <h3 className="sidebar__label">Police</h3>
+                            <label htmlFor="font-select" className="sidebar__label">Police</label>
                             <select
                                 // onChange = {(event) => fonctionMAJ (event.target.value) }
                                 onChange={(event) => handleFontSelect(event.target.value)}
@@ -164,7 +164,7 @@ function Sidebar(props) {
                         {/* --- FONT SIZE BTN ---  */}
                         <div className="sidebar__control-row">
                             {/* avec valeur :  <h3 className="sidebar__label">Taille : {fontSize}px</h3> */}
-                            <h3 className="sidebar__label">Taille</h3>
+                           <span className="sidebar__label">Taille</span>
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleSizeClick(-1)}>-</button>
@@ -181,7 +181,7 @@ function Sidebar(props) {
                         {/* --- LINE HEIGHT BTN ---  */}
                         <div className="sidebar__control-row">
                             {/* <h3 className="sidebar__label">Interligne: {lineHeight}px</h3> */}
-                            <h3 className="sidebar__label">Interligne</h3>
+                            <span className="sidebar__label">Interligne</span>
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleHeightClick(-0.1)}>-</button>
@@ -194,28 +194,28 @@ function Sidebar(props) {
                                 <button className="pill-btn" onClick={() => handleHeightClick(0.1)}>+</button>
                             </div>
                         </div>
+                    </div>
 
-                        {/* --- THEME CHOICE ---  */}
-                        <div className="sidebar__section">
-                            <h3 className="sidebar__section-title">Thèmes :</h3>
-                            <span className="sidebar__label">Thèmes prédéfinis</span>
-                            <div className="contrast-group">
-                                {colors.map(color => (
-                                    <button
-                                        key={color.id}
-                                        className="contrast-circle"
-                                        style={{
-                                            "--btn-bg": color.bgColor,
-                                            "--btn-text": color.textColor,
-                                        }}
-                                        onClick={() => handleColorSelect(color.bgColor, color.textColor)}
-                                        title={color.name} />
-                                ))}
-                            </div>
+                    {/* --- THEME CHOICE ---  */}
+                    <div className="sidebar__section">
+                        <h3 className="sidebar__section-title">Contraste </h3>
+                        <span className="sidebar__label">Thèmes </span>
+                        <div className="contrast-group">
+                            {colors.map(color => (
+                                <button
+                                    key={color.id}
+                                    className="contrast-circle"
+                                    style={{
+                                        "--btn-bg": color.bgColor,
+                                        "--btn-text": color.textColor,
+                                    }}
+                                    onClick={() => handleColorSelect(color.bgColor, color.textColor)}
+                                    title={color.name} />
+                            ))}
                         </div>
                         {/* --- REVERSE---  */}
                         <div className="sidebar__control-row sidebar__control-row--spaced">
-                            <span className="sidebar__label">Inverser le thème</span>
+                            <span className="sidebar__label">Inverser </span>
                             <div className="switch">
                                 <input
                                     onClick={() => handleReverseColors(bgColor, textColor)}
@@ -225,18 +225,19 @@ function Sidebar(props) {
                             </div>
                             {/* <div className="sidebar__label">Inverser</div> */}
                         </div>
+                       
                     </div> {/* Fin de la section Couleurs */}
-                    {/* --- RESET---  */}
-                    <div className="sidebar__group">
-                        <button
-                            onClick={handleResetSettings}
-                            id="reset-theme"
-                            className="sidebar__reset-button"
-                            title="Réinitialiser le thème">
-                            <i className="fa-solid fa-rotate-left"></i>
-                            <span>Réinitialiser</span>
-                        </button>
-                    </div>
+ {/* --- RESET---  */}
+                        <div className="sidebar__control-row">
+                            <button
+                                onClick={handleResetSettings}
+                                id="reset-theme"
+                                className="sidebar__reset-button"
+                                title="Réinitialiser le thème">
+                                <i className="fa-solid fa-rotate-left"></i>
+                                <span>Réinitialiser</span>
+                            </button>
+                        </div>
                 </div>
             </aside >
 
