@@ -605,8 +605,8 @@ em {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: var(--main-background);
     color: var(--main-text);
     border: none;
@@ -627,12 +627,11 @@ em {
 .back-to-top {
     position: fixed;
     bottom: 10px;
-    right: 20px;
+    left: 20px;
     width: 40px;
     height: 40px;
     background-color: var(--main-text);
     color: var(--main-background);
-
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1090,7 +1089,7 @@ em {
                 opacity: 0;
                 /* Petit effet de retard  */
                 transform: translateX(-20px);
-                transition: all 0.4s ease 0.4s;
+                transition: all 0.3s ease 0.3s;
 
             }
 

@@ -1,0 +1,135 @@
+/* =========================================
+   NAVIGATION LATERALE GAUCHE (MODULE)
+   ========================================= */
+
+/* Le bouton d'ouverture (Hamburger) */
+.triggerBtn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-background);
+    color: var(--main-text);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    font-size: 1.5em;
+    transition: transform 0.2s ease;
+}
+
+.triggerBtn:hover {
+    transform: scale(1.1);
+}
+
+/* Le panneau de la sidebar gauche */
+.sidebar {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: var(--main-background);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2em 1.5em;
+    transition: left 0.3s ease;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+/* Classe active quand on ouvre le menu */
+.sidebar.open {
+    left: 0; 
+}
+
+/* En-tête du menu */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(from var(--main-text) r g b / 15%);
+    padding-bottom: var(--space-4);
+}
+
+/* .title {
+    margin: 0 !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 2px;
+} */
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--main-text);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.closeBtn:hover {
+    transform: rotate(90deg);
+}
+
+/* Les liens de navigation */
+.links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding: 0;
+    margin: 0;
+}
+
+.links a {
+    color: var(--main-text);
+    font-size: 1.2rem;
+    font-weight: var(--weight-medium);
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: block;
+}
+
+.links a:hover {
+    opacity: 0.7;
+    transform: translateX(10px);
+}
+
+/* Bas de la sidebar (Réseaux et CV) */
+.footerIcons {
+    margin-top: auto; 
+    padding-top: var(--space-6);
+    display: flex;
+    justify-content: center; /* Centre les icônes */
+    gap: var(--space-8); /* Espace entre chaque icône */
+    border-top: 1px solid rgb(from var(--main-text) r g b / 10%); /* Petite ligne discrète au-dessus */
+}
+
+.footerIcons a {
+    color: var(--main-text);
+    font-size: 1.5rem;
+    opacity: 0.6; /* Un peu transparent pour la discrétion */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footerIcons a:hover {
+    opacity: 1; /* S'allume au survol */
+    transform: scale(1.15) translateY(-2px); /* Petit bond en avant */
+}
+
+/* On garde l'overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    cursor: pointer;
+}

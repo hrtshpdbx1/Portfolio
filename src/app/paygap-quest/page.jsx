@@ -32,14 +32,6 @@ export default function PayGapQuest() {
                 </div>
             )}
 
-            <nav className="projectNav">
-                <Link href="/" className="back-link">
-                    <button className="btn">
-                        <FontAwesomeIcon icon={faArrowLeft} style={{ marginRight: '10px' }} />
-                        Retour au portfolio
-                    </button>
-                </Link>
-            </nav>
 
             <main id="main-content" className="projectPage">
                 <header className="projectHero">

@@ -220,7 +220,7 @@ export default function Home() {
         {/* --- CONTACT FORM --- */}
         <section id="section5" className="page-section section5">
           <div className="section-intro">
-            <h2>Grandissons ensemble</h2>
+            <h2>Contactez-moi</h2>
             <p>
                 Je <em>recherche actuellement un stage</em> où je pourrai allier créativité, éthique et impact, pour
                 contribuer à un web plus

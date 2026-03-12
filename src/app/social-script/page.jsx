@@ -16,28 +16,6 @@ export default function SocialScript() {
 
     return (
         <div className="projectPageWrapper bbbreadme">
-            <nav className="projectNav">
-                {/* Overlay */}
-                {zoomedImage && (
-                    <div className="imageOverlay" onClick={() => setZoomedImage(null)}>
-                        <Image
-                            src={zoomedImage.src}
-                            alt={zoomedImage.alt}
-                            width={1200}
-                            height={800}
-                            className="enlarged-img"
-                        />
-                        <span className="closeOverlay">&times;</span>
-                    </div>
-                )}
-
-                <Link href="/" className="back-link">
-                    <button className="btn">
-                        <FontAwesomeIcon icon={faArrowLeft} style={{ marginRight: '10px' }} />
-                        Retour au portfolio
-                    </button>
-                </Link>
-            </nav>
 
             <main id="main-content" className="projectPage">
                 <header className="projectHero">

@@ -12,13 +12,6 @@
 }
 
 
-/* Navigation de retour */
-.projectNav {
-    margin: var(--space-4);
-    display: flex;
-    align-items: center;
-}
-
 /* Conteneur principal */
 .projectPage {
     max-width: 800px;
