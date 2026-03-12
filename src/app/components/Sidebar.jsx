@@ -199,8 +199,7 @@ function Sidebar(props) {
 
                     {/* --- THEME CHOICE ---  */}
                     <div className="sidebar__section">
-                        <h3 className="sidebar__section-title">Contraste </h3>
-                        <span className="sidebar__label">Thèmes </span>
+                        <h3 className="sidebar__section-title">Thèmes</h3>
                         <div className="contrast-group">
                             {colors.map(color => (
                                 <button
