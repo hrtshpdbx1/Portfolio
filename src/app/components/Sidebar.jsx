@@ -8,7 +8,9 @@ import lineHeightIcon from '../../../public/img/icon/line-height.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faGear,
-    faXmark
+    faXmark,
+    faBars,
+    faTextHeight, 
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -169,12 +171,13 @@ function Sidebar(props) {
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleSizeClick(-1)}>-</button>
-                                <Image
+                                <FontAwesomeIcon icon={faTextHeight} />
+                                {/* <Image
                                     src={fontSizeIcon}
                                     alt="Icône taille de police"
                                     width={20}
                                     height={20}
-                                />
+                                /> */}
                                 <button className="pill-btn" onClick={() => handleSizeClick(1)}>+</button>
                             </div>
                         </div>
@@ -186,12 +189,15 @@ function Sidebar(props) {
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleHeightClick(-0.1)}>-</button>
-                                <Image
+
+                                {/* <FontAwesomeIcon icon={faGripLines} /> */}
+                                <FontAwesomeIcon icon={faBars} />
+                                {/* <Image
                                     src={lineHeightIcon}
                                     alt="Icône interligne"
                                     width={20}
                                     height={20}
-                                />
+                                /> */}
                                 <button className="pill-btn" onClick={() => handleHeightClick(0.1)}>+</button>
                             </div>
                         </div>
