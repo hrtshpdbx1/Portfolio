@@ -172,6 +172,9 @@ body {
 }
 
 
+/* =========================================
+   MAIN
+   ========================================= */
 
 #main-content p {
     font-size: inherit;
@@ -320,13 +323,14 @@ em {
 
     }
 
+
     #closeCustomBlock {
         font-size: 1.8rem;
         background: none;
         color: var(--main-text);
         border: none;
         cursor: pointer;
-       
+
 
         /* Centrage de l'icône */
         padding: 0;
@@ -336,8 +340,8 @@ em {
         justify-content: center;
         transition: transform 0.2s ease;
 
-        &:hover{
-           transform: rotate(90deg);
+        &:hover {
+            transform: rotate(90deg);
         }
 
     }
@@ -606,109 +610,77 @@ em {
    4. INTERFACE UI (TRIGGERS)
    ========================================= */
 
-#logo_trigger_menu {
-    /* wheel icon */
+/* =========================================
+   BOUTONS FLOTTANTS (Ronds)
+   ========================================= */
+/* Icone cliquable */
+.icon-btn-floating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1.5px solid var(--main-text);
+    background-color: var(--main-background);
+    color: var(--main-text);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    z-index: 999;
+}
+
+   /* Inversion des couleurs au survol */
+.icon-btn-floating:hover {
+    /* transform: scale(1.1); */
+    background-color: var(--main-text);
+    color: var(--main-background);
+}
+
+
+/* Bouton Menu gauche */
+#nav-trigger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+/* Bouton Réglages droite */
+#sidebar-trigger {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--main-background);
-    color: var(--main-text);
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 999;
-    font-size: 2em;
-
 
     &:hover {
-        rotate: z 90deg;
-    }
+    transform: rotate(90deg);
+}
+
 }
 
 
+/* Bouton Retour en haut */
 .back-to-top {
     position: fixed;
-    bottom: 10px;
+    bottom: 20px;
     left: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--main-background);
-    color:  var(--main-text);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 998;
-    
-    /* caché par défaut */
+    /* Gestion de l'apparition au scroll */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px);
-
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-
-    &:hover {
-        transform: translateY(-5px);
-        background-color: var(--main-background);
-        color: var(--main-text);
-        border: 1px solid var(--main-text);
-    }
-
-    /* Version active/visible */
-    &.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
+    /* transform: translateY(20px); */
 }
 
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #000;
-    color: #fff;
-    padding: 8px;
-    z-index: 10000;
-
-    &:focus {
-        top: 0;
-    }
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    /* transform: translateY(0); */
 }
 
-.lang-btn {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 1.5rem;
-    padding: 5px;
-    transition: transform 0.2s;
-
-    &:hover {
-        transform: scale(1.2);
-    }
+/* Style global des icônes Lucide */
+.lucide {
+    stroke-width: 1.5px; 
+    width: 22px; 
+    height: 22px;
+    transition: color 0.3s ease; 
 }
-
-.reset-btn {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-size: 1.5rem;
-    padding: 5px;
-    transition: transform 0.2s;
-
-    &:hover {
-        transform: scale(1.2);
-    }
-}
-
 /* =========================================
    5. SECTIONS & MAIN CONTENT
    ========================================= */

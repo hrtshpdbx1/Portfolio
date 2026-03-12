@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { ArrowUp} from 'lucide-react';
 
 function BackToTop() {
     // State
@@ -9,13 +10,13 @@ function BackToTop() {
 
     //  useEffect au montage du composant.
     useEffect(() => {
-        
+
         // vérifie la position du scroll
         const handleScroll = () => {
             if (window.scrollY > 300) { // si descendu de 300px
-                setIsVisible(true); 
+                setIsVisible(true);
             } else {
-                setIsVisible(false); 
+                setIsVisible(false);
             }
         };
 
@@ -33,7 +34,7 @@ function BackToTop() {
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' 
+            behavior: 'smooth'
         });
     };
 
@@ -42,12 +43,13 @@ function BackToTop() {
         <>
             {/*  si isVisible est vrai, on affiche le bouton */}
             {isVisible && (
-                <button 
+                <button
                     onClick={scrollToTop}
-                    className="back-to-top visible" 
-                    aria-label="Remonter en haut de page"
-                >
-                    <FontAwesomeIcon icon={faArrowUp} />
+                    // On combine notre classe globale avec la classe qui gère la visibilité
+                    className={`icon-btn-floating back-to-top ${isVisible ? 'visible' : ''}`}
+                    aria-label="Remonter en haut de page">
+
+                    <ArrowUp />
                 </button>
             )}
         </>

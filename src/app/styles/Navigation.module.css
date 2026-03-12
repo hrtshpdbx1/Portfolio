@@ -2,31 +2,6 @@
    NAVIGATION 
    ========================================= */
 
-/* Hamburger */
-.triggerBtn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--main-background);
-    color: var(--main-text);
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 999;
-    font-size: 1.5em;
-    transition: transform 0.2s ease;
-
-}
-
-.triggerBtn:hover {
-    transform: scale(1.1);
-}
-
 
 .sidebar {
     position: fixed;

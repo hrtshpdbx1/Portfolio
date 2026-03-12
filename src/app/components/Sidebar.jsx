@@ -1,19 +1,7 @@
 "use client" // Indique à Next.js que c'est un composant client 
 import React, { useState } from 'react'
-// IMG
-import Image from 'next/image' // obligatoire pour pour utiliser <Image />
-import fontSizeIcon from '../../../public/img/icon/font-size.svg'
-import lineHeightIcon from '../../../public/img/icon/line-height.svg'
-// FA 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faGear,
-    faXmark,
-    faBars,
-    faTextHeight, 
-    faRotateLeft
-} from '@fortawesome/free-solid-svg-icons';
-
+// LUCIDE
+import { Settings, X, Type, ListChevronsUpDown, RotateCcw  } from 'lucide-react';
 
 //Theme
 const colors = [
@@ -117,10 +105,13 @@ function Sidebar(props) {
         <>
             {/* Le bouton ⚙️ */}
             <button
-                id="logo_trigger_menu"
+                // id="logo_trigger_menu"
+                id="sidebar-trigger"
+                className="icon-btn-floating"
                 onClick={() => setIsOpen(true)} // Au clic, on change le state isOpen à true
                 aria-label="Ouvrir le menu">
-                <FontAwesomeIcon icon={faGear} />
+                {/* <FontAwesomeIcon icon={faGear} /> */}
+                <Settings/>
             </button>
             {/* Sidebar  */}
             {/*  si isOpen est vrai, on ajoute la classe 'sticky' 
@@ -136,7 +127,7 @@ function Sidebar(props) {
                         id="closeCustomBlock"
                         onClick={() => setIsOpen(false)}// Au clic, on change le state isOpen à false
                         aria-label="Fermer le menu">
-                        <FontAwesomeIcon icon={faXmark} />
+                       <X />
                     </button>
                 </div>
 
@@ -172,13 +163,8 @@ function Sidebar(props) {
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleSizeClick(-1)}>-</button>
-                                <FontAwesomeIcon icon={faTextHeight} />
-                                {/* <Image
-                                    src={fontSizeIcon}
-                                    alt="Icône taille de police"
-                                    width={20}
-                                    height={20}
-                                /> */}
+                               <Type />
+                               
                                 <button className="pill-btn" onClick={() => handleSizeClick(1)}>+</button>
                             </div>
                         </div>
@@ -191,14 +177,7 @@ function Sidebar(props) {
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleHeightClick(-0.1)}>-</button>
 
-                                {/* <FontAwesomeIcon icon={faGripLines} /> */}
-                                <FontAwesomeIcon icon={faBars} />
-                                {/* <Image
-                                    src={lineHeightIcon}
-                                    alt="Icône interligne"
-                                    width={20}
-                                    height={20}
-                                /> */}
+                               <ListChevronsUpDown/>
                                 <button className="pill-btn" onClick={() => handleHeightClick(0.1)}>+</button>
                             </div>
                         </div>
@@ -242,7 +221,7 @@ function Sidebar(props) {
                                 id="reset-theme"
                                 className="btn btn-outline"
                                 title="Réinitialiser le thème">
-                                <FontAwesomeIcon icon={faRotateLeft} />
+                               <RotateCcw />
                                 <span>Réinitialiser</span>
                             </button>
                         </div>
