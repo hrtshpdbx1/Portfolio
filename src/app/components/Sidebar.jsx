@@ -214,7 +214,7 @@ function Sidebar(props) {
                             ))}
                         </div>
                         {/* --- REVERSE---  */}
-                        <div className="sidebar__control-row sidebar__control-row--spaced">
+                        <div className="sidebar__control-row">
                             <span className="sidebar__label">Inverser </span>
                             <div className="switch">
                                 <input
