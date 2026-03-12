@@ -81,7 +81,7 @@ function Sidebar(props) {
         const currentSize = Number(fontSize);
         // Math.min(15, ...) empêche de dépasser 15
         // Math.max(8, ...) empêche de descendre sous 9
-        const nextSize = Math.min(15, Math.max(9, currentSize + newSize));
+        const nextSize = Math.min(18, Math.max(9, currentSize + newSize));
         onChangeSize(nextSize);// On "appelle" le parent pour lui donner la nouvelle valeur
     }
 
