@@ -2,10 +2,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import style from '../styles/Navigation.module.css';
-
-// Import des icônes FontAwesome (Solid + Brands)
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark, faEnvelope, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faEnvelope, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Navigation() {
@@ -37,7 +35,6 @@ export default function Navigation() {
                 </div>
 
                 <ul className={style.links}>
-                    {/* Les liens utilisent maintenant les VRAIS IDs de ton page.js */}
                     <li><Link href="/#section1" onClick={closeMenu}>Accueil</Link></li>
                     <li><Link href="/#section2" onClick={closeMenu}>À propos</Link></li>
                     <li><Link href="/#section3" onClick={closeMenu}>Compétences</Link></li>
@@ -45,19 +42,25 @@ export default function Navigation() {
                     <li><Link href="/#section5" onClick={closeMenu}>Me contacter</Link></li>
                 </ul>
 
-                {/* NOUVEAU FOOTER AVEC ICÔNES */}
+                {/* Footer avec icones en boutons */}
                 <div className={style.footerIcons}>
-                    <a href="/cv-louise-moraldy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir mon CV" onClick={closeMenu}>
-                        <FontAwesomeIcon icon={faFilePdf} />
+                    
+                    {/* Bouton CV (Pleine largeur) */}
+                    <a href="/cv-louise-moraldy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir mon CV" className={`btn btn-small btn-outline ${style.cvBtn}`} onClick={closeMenu}>
+                        <FontAwesomeIcon icon={faDownload} style={{ marginRight: '8px' }} /> Mon CV
                     </a>
-                    <a href="https://www.linkedin.com/in/louise-moraldy/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn" onClick={closeMenu}>
+                    
+                    {/* Bouton LinkedIn (Moitié) */}
+                    <a href="https://www.linkedin.com/in/louise-moraldy/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn" className={`btn btn-small btn-outline ${style.socialBtn}`} onClick={closeMenu}>
                         <FontAwesomeIcon icon={faLinkedin} />
                     </a>
-                    {/* Le lien mail renvoie directement à ta section contact ! */}
-                    <Link href="/#section5" aria-label="Aller au formulaire de contact" onClick={closeMenu}>
+                    
+                    {/* Bouton Mail (Moitié) */}
+                    <Link href="/#section5" aria-label="Aller au formulaire de contact" className={`btn btn-small btn-outline ${style.socialBtn}`} onClick={closeMenu}>
                         <FontAwesomeIcon icon={faEnvelope} />
                     </Link>
-                </div>
+                    
+                </div>   
             </nav>
 
             {isOpen && (

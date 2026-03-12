@@ -11,6 +11,7 @@ import {
     faXmark,
     faBars,
     faTextHeight, 
+    faRotateLeft
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -239,9 +240,9 @@ function Sidebar(props) {
                             <button
                                 onClick={handleResetSettings}
                                 id="reset-theme"
-                                className="sidebar__reset-button"
+                                className="btn btn-outline"
                                 title="Réinitialiser le thème">
-                                <i className="fa-solid fa-rotate-left"></i>
+                                <FontAwesomeIcon icon={faRotateLeft} />
                                 <span>Réinitialiser</span>
                             </button>
                         </div>

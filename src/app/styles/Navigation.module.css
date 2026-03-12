@@ -1,8 +1,8 @@
 /* =========================================
-   NAVIGATION LATERALE GAUCHE (MODULE)
+   NAVIGATION 
    ========================================= */
 
-/* Le bouton d'ouverture (Hamburger) */
+/* Hamburger */
 .triggerBtn {
     position: fixed;
     top: 20px;
@@ -20,13 +20,13 @@
     z-index: 999;
     font-size: 1.5em;
     transition: transform 0.2s ease;
+
 }
 
 .triggerBtn:hover {
     transform: scale(1.1);
 }
 
-/* Le panneau de la sidebar gauche */
 .sidebar {
     position: fixed;
     left: -300px;
@@ -43,12 +43,10 @@
     gap: var(--space-8);
 }
 
-/* Classe active quand on ouvre le menu */
 .sidebar.open {
-    left: 0; 
+    left: 0;
 }
 
-/* En-tête du menu */
 .header {
     display: flex;
     justify-content: space-between;
@@ -57,11 +55,6 @@
     padding-bottom: var(--space-4);
 }
 
-/* .title {
-    margin: 0 !important;
-    font-size: 1.2rem !important;
-    letter-spacing: 2px;
-} */
 
 .closeBtn {
     background: none;
@@ -76,7 +69,6 @@
     transform: rotate(90deg);
 }
 
-/* Les liens de navigation */
 .links {
     list-style: none;
     display: flex;
@@ -88,7 +80,7 @@
 
 .links a {
     color: var(--main-text);
-    font-size: 1.2rem;
+    font-size: var(--user-size);
     font-weight: var(--weight-medium);
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -96,40 +88,25 @@
 }
 
 .links a:hover {
-    opacity: 0.7;
-    transform: translateX(10px);
+    transform: translateX(4px);
 }
-
-/* Bas de la sidebar (Réseaux et CV) */
 .footerIcons {
-    margin-top: auto; 
+    margin-top: auto;
     padding-top: var(--space-6);
     display: flex;
-    justify-content: center; /* Centre les icônes */
-    gap: var(--space-8); /* Espace entre chaque icône */
-    border-top: 1px solid rgb(from var(--main-text) r g b / 10%); /* Petite ligne discrète au-dessus */
+    flex-wrap: wrap; /* Magie : permet de passer à la ligne si ça manque de place */
+    gap: var(--space-3); /* Un espace régulier entre tous les boutons */
+    border-top: 1px solid rgb(from var(--main-text) r g b / 10%);
 }
 
-.footerIcons a {
-    color: var(--main-text);
-    font-size: 1.5rem;
-    opacity: 0.6; /* Un peu transparent pour la discrétion */
-    transition: transform 0.2s ease, opacity 0.2s ease;
+/* Le bouton CV prend toute la largeur disponible */
+.cvBtn {
+    flex: 1 1 100%;
 }
 
-.footerIcons a:hover {
-    opacity: 1; /* S'allume au survol */
-    transform: scale(1.15) translateY(-2px); /* Petit bond en avant */
-}
-
-/* On garde l'overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-    cursor: pointer;
+/* Les boutons sociaux se partagent équitablement la ligne du dessous */
+.socialBtn {
+    flex: 1;
+    /* On ajuste légèrement le padding car ce sont juste des icônes */
+    padding: 6px 0 !important; 
 }

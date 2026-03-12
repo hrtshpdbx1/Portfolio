@@ -73,9 +73,6 @@
 
         button {
             align-self: flex-start;
-            background: var(--main-text);
-            color: var(--main-background);
-            cursor: pointer;
 
         }
 

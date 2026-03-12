@@ -145,22 +145,7 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-
-            <div className="skills-links-container">
-              <a href={CV} download={CV} className="btn btn-outline btn-skill">
-                <span>Télécharger mon CV</span>
-              </a>
-
-              <a href="https://www.linkedin.com/in/louise-moraldy/" target="_blank" 
-              
-              className="btn btn-outline btn-skill">
-                <span>Retrouvez-moi sur LinkedIn</span>
-              </a>
-            </div>
           </div>
-          <p className="competences-intro">
-
-          </p>
         </section>
 
         {/* --- SECTION 4 --- */}
