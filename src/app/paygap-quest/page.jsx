@@ -49,8 +49,8 @@ export default function PayGapQuest() {
                                 <strong>Rôle</strong>
                                 <ul>
                                     <li>Porteuse de projet</li>
-                                    <li>Développement Front-End</li>
-                                    <li>Rédaction du contenu</li>
+                                    <li>Front-End</li>
+                                    <li>Rédaction</li>
                                 </ul>
                             </div>
                             <div className="metaItem">
@@ -390,8 +390,8 @@ export default function PayGapQuest() {
                         </ul>
                     </div>
                 </section>
+                 <CtaProject />
             </main>
-            <CtaProject />
             <Footer />
         </div>
     );

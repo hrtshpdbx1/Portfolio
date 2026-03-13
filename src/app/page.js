@@ -6,30 +6,23 @@ import Image from 'next/image';
 import HomepageSS from '../../public/img/screenshots/homepageSS.png';
 import HomepagePGQ from '../../public/img/screenshots/homepagePGQ.png';
 import ContactForm from '@/app/components/ContactForm.jsx';
-import Sidebar from "./components/Sidebar";
 // @ -> pointe vers le dossier src
 
+// Import des icônes Lucide
+import { 
+  CheckCircle2, 
+  BookOpenCheck, 
+  Users2, 
+  Megaphone, 
+  BarChart3, 
+  Handshake 
+} from 'lucide-react';
 
-// FA ICONE
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCheckDouble,
-  faCompassDrafting,
-  faPeopleGroup,
-  faBullhorn,
-  faChartLine,
-  faPenNib,
-  faArrowUp
-} from '@fortawesome/free-solid-svg-icons';
-// import App from "next/app";
 
-const CV = '../../public/img/CVLouiseMoraldy.pdf';
 
 export default function Home() {
   return (
     <div>
-      {/* <h1 className="text-2xl"> Homepage !</h1>
-      <Link className="underline" href="/form">Formulaire </Link> */}
 
       <main id="main-content">
 
@@ -76,14 +69,9 @@ export default function Home() {
               </p>
               <p>
                 Ayant moi-même un handicap invisible, je suis particulièrement sensible à
-                l&apos;accessibilité. Ce qui m&apos;anime aujourd&apos;hui : construire un web qui soit fun et
-                attrayant, mais surtout à la portée de tout le monde.
+                l&apos;accessibilité. 
+                Ce qui m&apos;anime aujourd&apos;hui : concevoir des interfaces audacieuses et vivantes, sans jamais sacrifier l&apos;équité numérique.
               </p>
-              {/* <p>
-                Je <em>recherche actuellement un stage</em> où je pourrai allier créativité, éthique et impact, pour
-                contribuer à un web plus
-                inclusif et respectueux.
-              </p> */}
             </div>
           </div>
         </section>
@@ -121,29 +109,28 @@ export default function Home() {
               <div className="skills-category">
 
                 <ul className="skills-list mastery">
-      
                   <li>
-                    <FontAwesomeIcon icon={faCheckDouble} />
+                    <CheckCircle2 size={18} strokeWidth={1.5} />
                     <span>Gestion et coordination de projets</span>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faCompassDrafting} />
+                    <BookOpenCheck size={18} strokeWidth={1.5} />
                     <span>Conception d’outils pédagogiques</span>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faPeopleGroup} />
+                    <Users2 size={18} strokeWidth={1.5} />
                     <span>Facilitation de groupe</span>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faBullhorn} />
+                    <Megaphone size={18} strokeWidth={1.5} />
                     <span>Missions de plaidoyer</span>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faChartLine} />
+                    <BarChart3 size={18} strokeWidth={1.5} />
                     <span>Suivi-évaluation</span>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faPenNib} />
+                    <Handshake size={18} strokeWidth={1.5} />
                     <span>Collaboration interdisciplinaire</span>
                   </li>
                 </ul>

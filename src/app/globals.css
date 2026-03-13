@@ -167,7 +167,13 @@ body {
         font-weight: var(--weight-light);
         /* font-size: var(--letter-normal); */
         /* line-height: 1.6; */
+
+        em {
+            font-weight: var(--weight-extra-bold);
+        }
     }
+
+
 
 }
 
@@ -186,8 +192,6 @@ body {
     text-align: left;
     /* Un noir pur sur fond blanc peut être agressif, 0.9 adoucit le contraste */
 }
-
-
 
 
 #main-content li {
@@ -620,20 +624,27 @@ em {
     justify-content: center;
     width: 45px;
     height: 45px;
-    border-radius: 50%;
-    border: 1.5px solid var(--main-text);
+
     background-color: var(--main-background);
     color: var(--main-text);
     cursor: pointer;
-    box-shadow: var(--shadow-md);
     z-index: 999;
+
+    /* 1. On prépare la bordure (transparente) pour éviter le saut */
+    border: 1.3px solid transparent;
+    border-radius: 0%;
+    /* Optionnel : force le point de départ */
+
+    /* 2. On anime toutes les propriétés modifiées */
+    transition: all 0.3s ease;
 }
 
-   /* Inversion des couleurs au survol */
+/* Inversion des couleurs au survol */
 .icon-btn-floating:hover {
-    /* transform: scale(1.1); */
-    background-color: var(--main-text);
-    color: var(--main-background);
+
+    border-radius: 50%;
+    border-color: var(--main-text);
+    /* On ne change que la couleur */
 }
 
 
@@ -651,8 +662,8 @@ em {
     right: 20px;
 
     &:hover {
-    transform: rotate(90deg);
-}
+        /* transform: rotate(90deg); */
+    }
 
 }
 
@@ -676,11 +687,12 @@ em {
 
 /* Style global des icônes Lucide */
 .lucide {
-    stroke-width: 1.5px; 
-    width: 22px; 
+    stroke-width: 1.5px;
+    width: 22px;
     height: 22px;
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
 }
+
 /* =========================================
    5. SECTIONS & MAIN CONTENT
    ========================================= */
@@ -902,43 +914,59 @@ em {
     }
 
 
+    /* --- Icônes de la liste Mastery --- */
+    .skills-list.mastery li {
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
     .skills-list.mastery li svg {
         margin-right: 18px;
-        margin-top: 4px;
         min-width: 20px;
         transition: all 0.3s ease;
         color: var(--main-text);
-
     }
 
-    .skills-list.mastery li svg:hover {
-        transition: all 0.3s ease;
-        transform: scale(1.2)
+    .skills-list.mastery li:hover svg {
+        transform: scale(1.2);
     }
 
-    /* Couleurs spécifiques par icône au survol */
-    .skills-list.mastery li:hover .fa-check-double {
+    /* 1. Gestion de projet (CheckCircle2) */
+    .skills-list.mastery li:nth-child(1):hover svg {
         color: #37c26c;
+       
     }
 
-    .skills-list.mastery li:hover .fa-compass-drafting {
+    /* 2. Outils pédagogiques (BookOpenCheck) */
+    .skills-list.mastery li:nth-child(2):hover svg {
         color: #0ea5e9;
+        
     }
 
-    .skills-list.mastery li:hover .fa-people-group {
+    /* 3. Facilitation de groupe (Users2) */
+    .skills-list.mastery li:nth-child(3):hover svg {
         color: #8b5cf6;
+       
     }
 
-    .skills-list.mastery li:hover .fa-bullhorn {
+    /* 4. Plaidoyer (Megaphone) */
+    .skills-list.mastery li:hover svg[data-lucide="megaphone"],
+    .skills-list.mastery li:nth-child(4):hover svg {
         color: #f59e0b;
+        
     }
 
-    .skills-list.mastery li:hover .fa-chart-line {
+    /* 5. Suivi-évaluation (BarChart3) */
+    .skills-list.mastery li:nth-child(5):hover svg {
         color: #10b981;
+       
     }
 
-    .skills-list.mastery li:hover .fa-pen-nib {
+    /* 6. Collaboration interdisciplinaire (Handshake) */
+    .skills-list.mastery li:nth-child(6):hover svg {
         color: #ec4899;
+       
     }
 
     /* Container pour btn lien*/

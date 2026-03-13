@@ -235,7 +235,7 @@ export default function SocialScript() {
                                 </div>
                                 <div className="benefit-box">
                                     <p>Pour éviter la perte de repères lors d&apos;interactions dynamiques, la méthode <code>.focus()</code>
-                                         est déclenchée à chaque validation. Elle force le passage à l&apos;élément suivant, optimisant ainsi l&apos;accessibilité et la fluidité de la navigation au clavier.
+                                           &nbsp;est déclenchée à chaque validation. Elle force le passage à l&apos;élément suivant, optimisant ainsi l&apos;accessibilité et la fluidité de la navigation au clavier.
                                         État visuel du bouton lorsqu&apos;il reçoit automatiquement le focus.
                                     </p>
 
