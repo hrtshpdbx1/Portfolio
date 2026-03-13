@@ -321,7 +321,7 @@ em {
     flex-direction: column;
     justify-content: space-between;
     /* a supprimer ? */
-    
+
 
     &.sticky {
         right: 0;
@@ -431,7 +431,7 @@ em {
             /* Limite la largeur sur grand écran */
             padding: 6px 8px;
             margin-right: 5px;
-             border-radius: var(--radius-lg);
+            border-radius: var(--radius-lg);
             background: var(--main-background);
             color: var(--main-text);
             border: 1px solid rgb(from var(--main-text) r g b / 30%);
@@ -666,14 +666,14 @@ em {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
 
     background-color: var(--main-background);
     color: var(--main-text);
     cursor: pointer;
     z-index: 999;
-    border: 1.3px solid transparent;
+    border: 1.3px solid var(--main-text);
     border-radius: 50%;
     transition: all 0.3s ease;
 }
@@ -683,7 +683,9 @@ em {
 
     border-radius: 50%;
     border-color: var(--main-text);
-    /* On ne change que la couleur */
+    background-color: var(--main-text);
+    color: var(--main-background);
+
 }
 
 
@@ -730,7 +732,10 @@ em {
     width: 22px;
     height: 22px;
     transition: color 0.3s ease;
+
+   
 }
+
 
 /* =========================================
    5. SECTIONS & MAIN CONTENT
@@ -741,7 +746,7 @@ em {
 
 .page-section {
     height: 100vh;
-    width: 80vw;
+    width: 90vw;
     display: flex;
     align-items: center;
     padding-left: 10vw;
@@ -772,8 +777,9 @@ em {
     flex-direction: column;
     justify-content: center;
 
+
     .text_intro {
-        /* border:  1px solid sandybrown; */
+        font-size: calc(var(--user-size) * 1.1);
     }
 }
 
@@ -1117,7 +1123,7 @@ em {
                 align-items: center;
                 justify-content: center;
 
-                /* ÉTAT INITIAL : Complètement à gauche, hors du cadre */
+                /* état initial à gauche */
                 transform: translateX(-100%);
                 opacity: 1;
                 /* Transition fluide pour le mouvement */
@@ -1129,12 +1135,12 @@ em {
             .overlay-text {
                 color: var(--main-background);
                 border: 1px solid var(--main-background);
+                border-radius: var(--radius-full);
                 padding: 10px 20px;
                 opacity: 0;
                 /* Petit effet de retard  */
                 transform: translateX(-20px);
                 transition: all 0.3s ease 0.3s;
-
             }
 
             /* L'overlay arrive et recouvre l'image */
