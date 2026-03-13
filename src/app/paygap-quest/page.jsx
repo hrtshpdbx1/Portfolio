@@ -1,12 +1,12 @@
 "use client"
 import React from 'react';
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faRocket, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../styles/project-detail.css';
 import Image from 'next/image';
 import { useState } from 'react';
+import CtaProject from '@/app/components/CtaProject';
 import Footer from '@/app/components/Footer';
 
 
@@ -391,6 +391,7 @@ export default function PayGapQuest() {
                     </div>
                 </section>
             </main>
+            <CtaProject />
             <Footer />
         </div>
     );

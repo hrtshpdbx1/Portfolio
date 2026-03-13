@@ -1,0 +1,63 @@
+/* =========================================
+   CTA PROJECT 
+   ========================================= */
+
+.ctaSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ctaContainer {
+    max-width: 650px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.ctaTitle {
+    font-size: calc(var(--user-size) * 2.2); 
+    font-weight: var(--weight-light);
+    letter-spacing: var(--letter-wide); 
+    color: var(--main-text);
+    margin: 0;
+}
+
+.ctaText {
+    font-size: calc(var(--user-size) * 1.1);
+    line-height: var(--dynamic-line-height);
+    color: var(--main-text);
+    opacity: 0.7;
+    font-weight: var(--weight-light);
+    margin: 0;
+
+    p {
+ text-align: center !important
+    }
+   
+}
+
+/* --- Style spécifique pour le bouton dans ce contexte --- */
+.ctaButton {
+    margin-top: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--main-text) !important;
+    color: var(--main-background) !important;
+    padding: var(--space-3) var(--space-8) !important; /* Bouton plus large */
+    letter-spacing: 2px; /* Lettres très espacées */
+    font-size: 0.8rem;
+   
+}
+
+.ctaIcon {
+    transition: transform 0.3s ease; 
+}
+
+/* Petite animation subtile au survol du bouton */
+.ctaButton:hover .ctaIcon {
+    transform: translateX(5px); /* La flèche glisse vers la droite */
+}

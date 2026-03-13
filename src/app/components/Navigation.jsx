@@ -2,11 +2,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import style from '../styles/Navigation.module.css';
+import { Menu, X, Mail, Download } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark, faEnvelope, faDownload } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
-import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +15,7 @@ export default function Navigation() {
         <>
             <button
                 id="nav-trigger"
-                className="icon-btn-floating" 
+                className="icon-btn-floating"
                 onClick={() => setIsOpen(true)}
                 aria-label="Ouvrir le menu">
 
@@ -33,7 +31,7 @@ export default function Navigation() {
                         onClick={closeMenu}
                         aria-label="Fermer le menu"
                     >
-                         <X />
+                        <X />
                     </button>
                 </div>
 
@@ -48,19 +46,26 @@ export default function Navigation() {
                 {/* Footer avec icones en boutons */}
                 <div className={style.footerIcons}>
 
-                    {/* Bouton CV (Pleine largeur) */}
-                    <a href="/cv-louise-moraldy.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir mon CV" className={`btn btn-small btn-outline ${style.cvBtn}`} onClick={closeMenu}>
-                        <FontAwesomeIcon icon={faDownload} style={{ marginRight: '8px' }} /> Mon CV
+                    {/* Bouton CV */}
+                    <a href="/CVLouiseMoraldy.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Télécharger mon CV"
+                        download="CV_Louise_Moraldy.pdf"
+                        className={`btn btn-small btn-outline ${style.cvBtn}`}
+                        onClick={closeMenu}>
+
+                        <Download style={{ marginRight: '8px' }} /> Mon CV
                     </a>
 
                     {/* Bouton LinkedIn (Moitié) */}
                     <a href="https://www.linkedin.com/in/louise-moraldy/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn" className={`btn btn-small btn-outline ${style.socialBtn}`} onClick={closeMenu}>
-                        <FontAwesomeIcon icon={faLinkedin} />
+                     <FontAwesomeIcon icon={faLinkedin} />
                     </a>
 
                     {/* Bouton Mail (Moitié) */}
                     <Link href="/#section5" aria-label="Aller au formulaire de contact" className={`btn btn-small btn-outline ${style.socialBtn}`} onClick={closeMenu}>
-                        <FontAwesomeIcon icon={faEnvelope} />
+                        <Mail />
                     </Link>
 
                 </div>

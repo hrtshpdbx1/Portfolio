@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faRocket, faCheckDouble, faCompassDrafting, faPeopleGroup, faBullhorn, faChartLine, faPenNib, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faRocket} from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../styles/project-detail.css';
 import Footer from '@/app/components/Footer';
+import CtaProject from '@/app/components/CtaProject';
 
 export default function SocialScript() {
 
@@ -234,8 +234,8 @@ export default function SocialScript() {
                                     </code>
                                 </div>
                                 <div className="benefit-box">
-                                    <p>: Pour éviter la perte de repères lors d&apos;interactions dynamiques, la méthode <code>.focus()</code>
-                                        est déclenchée à chaque validation. Elle force le passage à l&apos;élément suivant, optimisant ainsi l&apos;accessibilité et la fluidité de la navigation au clavier.
+                                    <p>Pour éviter la perte de repères lors d&apos;interactions dynamiques, la méthode <code>.focus()</code>
+                                         est déclenchée à chaque validation. Elle force le passage à l&apos;élément suivant, optimisant ainsi l&apos;accessibilité et la fluidité de la navigation au clavier.
                                         État visuel du bouton lorsqu&apos;il reçoit automatiquement le focus.
                                     </p>
 
@@ -265,7 +265,7 @@ export default function SocialScript() {
 
                         <ul className="projectList">
                             <li>
-                                <strong>L&rsquo;accessibilit&eacute; comme socle technique :</strong> Ce projet m&rsquo;a permis de passer de la th&eacute;orie aux standards du W3C. J&rsquo;ai consolid&eacute; ma pratique de l&rsquo;accessibilit&eacute; native en m&rsquo;appuyant sur les principes POUR du WCAG 2.2 : Perceivable, Operable, Understandable, Robust..
+                                <strong>L&rsquo;accessibilit&eacute; comme socle technique :</strong> Ce projet m&rsquo;a permis de passer de la th&eacute;orie aux standards du W3C. J&rsquo;ai consolid&eacute; ma pratique de l&rsquo;accessibilit&eacute; native en m&rsquo;appuyant sur les principes POUR du WCAG 2.2 : Perceivable, Operable, Understandable, Robust.
                             </li>
                             <li>
                                 <strong>Ma&icirc;trise des outils de diagnostic :</strong> L&rsquo;utilisation syst&eacute;matique des extensions <strong>Wave</strong> et <strong>axe DevTools</strong> fait d&eacute;sormais partie int&eacute;grante de mon workflow. Le test ultime via <strong>VoiceOver</strong> a &eacute;t&eacute; l&rsquo;&eacute;tape la plus formatrice, m&rsquo;obligeant &agrave; ajuster l&rsquo;annonce des feedbacks pour qu&rsquo;ils soient aussi fluides &agrave; l&rsquo;oreille qu&rsquo;&agrave; l&rsquo;&oelig;il.
@@ -296,7 +296,9 @@ export default function SocialScript() {
 
                     </div>
                 </section>
+                 <CtaProject />
             </main>
+           
             <Footer />
         </div>
     );
