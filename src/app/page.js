@@ -3,8 +3,8 @@
 
 import Link from "next/link";
 import Image from 'next/image';
-import HomepageSS from '../../public/img/screenshots/homepageSS.png';
-import HomepagePGQ from '../../public/img/screenshots/homepagePGQ.png';
+import HomepageSS from '../../public/img/screenshots/ThumbnailSS.png';
+import HomepagePGQ from '../../public/img/screenshots/ThumbnailPQ.png';
 import ContactForm from '@/app/components/ContactForm.jsx';
 // @ -> pointe vers le dossier src
 

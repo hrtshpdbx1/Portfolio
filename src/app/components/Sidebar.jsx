@@ -1,7 +1,7 @@
 "use client" // Indique à Next.js que c'est un composant client 
 import React, { useState } from 'react'
 // LUCIDE
-import { Settings, X, Type, ListChevronsUpDown, RotateCcw  } from 'lucide-react';
+import { Settings, X, Type, ListChevronsUpDown, RotateCcw } from 'lucide-react';
 
 //Theme
 const colors = [
@@ -43,18 +43,18 @@ const colors = [
         bgColor: "rgb(51.37% 99.562% 59.165%)",
         textColor: "rgb(6.1489% 1.6109% 2.6324%)"
     },
-     {
+    {
         id: 7,
         name: "Jaune & marron",
         bgColor: "color(display-p3 0.302 0.023 0.149)",
         textColor: "color(display-p3 0.927 0.989 0.29)"
-         },
-      {
+    },
+    {
         id: 8,
         name: "Rose pâle & noir",
         bgColor: "rgb(96.702% 87.161% 90.199%)",
         textColor: "rgb(0.81603% 5.1251% 0%)"
-     }
+    }
 
 ];
 
@@ -111,7 +111,7 @@ function Sidebar(props) {
                 onClick={() => setIsOpen(true)} // Au clic, on change le state isOpen à true
                 aria-label="Ouvrir le menu">
                 {/* <FontAwesomeIcon icon={faGear} /> */}
-                <Settings/>
+                <Settings />
             </button>
             {/* Sidebar  */}
             {/*  si isOpen est vrai, on ajoute la classe 'sticky' 
@@ -127,7 +127,7 @@ function Sidebar(props) {
                         id="closeCustomBlock"
                         onClick={() => setIsOpen(false)}// Au clic, on change le state isOpen à false
                         aria-label="Fermer le menu">
-                       <X />
+                        <X />
                     </button>
                 </div>
 
@@ -159,12 +159,12 @@ function Sidebar(props) {
                         {/* --- FONT SIZE BTN ---  */}
                         <div className="sidebar__control-row">
                             {/* avec valeur :  <h3 className="sidebar__label">Taille : {fontSize}px</h3> */}
-                           <span className="sidebar__label">Taille</span>
+                            <span className="sidebar__label">Taille</span>
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleSizeClick(-1)}>-</button>
-                               <Type />
-                               
+                                <Type />
+
                                 <button className="pill-btn" onClick={() => handleSizeClick(1)}>+</button>
                             </div>
                         </div>
@@ -177,7 +177,7 @@ function Sidebar(props) {
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
                                 <button className="pill-btn" onClick={() => handleHeightClick(-0.1)}>-</button>
 
-                               <ListChevronsUpDown/>
+                                <ListChevronsUpDown />
                                 <button className="pill-btn" onClick={() => handleHeightClick(0.1)}>+</button>
                             </div>
                         </div>
@@ -199,33 +199,38 @@ function Sidebar(props) {
                                     title={color.name} />
                             ))}
                         </div>
-                        {/* --- REVERSE---  */}
+
                         <div className="sidebar__control-row">
-                            <span className="sidebar__label">Inverser </span>
+                            <label htmlFor="invert-toggle" className="sidebar__label">Inverser</label>
                             <div className="switch">
                                 <input
-                                    onClick={() => handleReverseColors(bgColor, textColor)}
+                                    id="invert-toggle"
                                     type="checkbox"
-                                    id="invert-toggle" />
+                                    onChange={() => handleReverseColors(bgColor, textColor)}
+                                    // Permet d'activer avec "Entrée" en plus d'"Espace"
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') handleReverseColors(bgColor, textColor);
+                                    }}
+                                    aria-label="Inverser les couleurs"
+                                />
                                 <span className="slider round"></span>
                             </div>
-                            {/* <div className="sidebar__label">Inverser</div> */}
                         </div>
-                       
+
                     </div> {/* Fin de la section Couleurs */}
-                    </div>
- {/* --- RESET---  */}
-                        <div className="sidebar__control-row">
-                            <button
-                                onClick={handleResetSettings}
-                                id="reset-theme"
-                                className="btn btn-outline"
-                                title="Réinitialiser le thème">
-                               <RotateCcw />
-                                <span>Réinitialiser</span>
-                            </button>
-                        </div>
-                
+                </div>
+                {/* --- RESET---  */}
+                <div className="sidebar__control-row">
+                    <button
+                        onClick={handleResetSettings}
+                        id="reset-theme"
+                        className="btn btn-outline"
+                        title="Réinitialiser le thème">
+                        <RotateCcw />
+                        <span>Réinitialiser</span>
+                    </button>
+                </div>
+
             </aside >
 
         </>

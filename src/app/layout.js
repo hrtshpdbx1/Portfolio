@@ -45,7 +45,12 @@ const accessibleDFA = localFont({
   variable: '--font-accessibledfa',
 })
 
+// src/app/layout.js
+
+
+
 export default function RootLayout({ children }) {
+
 
   /* ---  STATES --- */
   const [custom, setCustom] = useState(DEFAULTS);
@@ -97,6 +102,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="fr" className={`${bbbReadMe.variable} ${openDyslexic.variable} ${eido.variable} ${accessibleDFA.variable} `}>
+
+      <title>Louise Moraldy | Développeuse Fullstack & Accessibilité</title>
+      <meta name="description" content="Portfolio de Louise Moraldy, spécialisée en JavaScript et interfaces accessibles." />
       
       {/* appliquation du style sur les variable du CSS (au lieu du body)*/}
       <body style={{ 

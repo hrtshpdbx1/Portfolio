@@ -54,7 +54,7 @@ function ContactForm() {
                         <label htmlFor="email">E-mail : </label>
                         <input
                             type="email"
-                            id="from"
+                            id="email"
                             name="from"
                             placeholder="ada.byron@analytica.com"
                             required

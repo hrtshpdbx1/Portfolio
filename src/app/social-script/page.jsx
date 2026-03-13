@@ -87,7 +87,7 @@ export default function SocialScript() {
                             peuvent expérimenter, analyser et progresser dans un cadre structuré et bienveillant.
                         </p>
 
-                        <h4>✅ Fonctionnalités clés :</h4>
+                        <h3>✅ Fonctionnalités clés :</h3>
                         <ul className="projectList">
                             <li><strong>Affichage dynamique :</strong> Gestion des scénarios via JavaScript et un JSON server.</li>
                             <li><strong>Génération d&apos;avatars :</strong> Utilisation de Dicebear API pour générer des interlocuteur..ices uniques.</li>
@@ -257,7 +257,7 @@ export default function SocialScript() {
                 {/* --- LEÇONS APPRISES --- */}
                 <section className="projectSection">
                     <div className="objectif-section">
-                        <h3>Ce que ce projet m&apos;a appris</h3>
+                        <h2>Ce que ce projet m&apos;a appris</h2>
                         <p>
                             Ce projet m&apos;a permis de transformer mes engagements en faveur de l&apos;inclusion en compétences techniques.
                             En m&apos;appuyant sur les standards du W3C, j&apos;ai consolidé ma pratique de l&apos;accessibilité native.
@@ -278,7 +278,7 @@ export default function SocialScript() {
                             </li>
                         </ul>
 
-                        <h4>Analyse critique du workflow et perspectives </h4>
+                        <h3>Analyse critique du workflow et perspectives </h3>
                         <p>
                             Le développement de ce simulateur m&apos;a forcée à structurer une logique
                             conditionnelle avancée en JavaScript. J&apos;ai appris à gérer des flux de données

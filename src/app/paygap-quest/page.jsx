@@ -120,7 +120,7 @@ export default function PayGapQuest() {
                                 le tabou de l&apos;argent en entreprise.
                             </p>
 
-                            <h4> ✅ Fonctionnalités clés :</h4>
+                            <h3> ✅ Fonctionnalités clés :</h3>
                             <ul className="projectList">
                                 <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
                                 <li><strong>Feuille de route :</strong> Guide de négociation salarial structuré et téléchargeable en PDF.</li>
@@ -344,7 +344,7 @@ export default function PayGapQuest() {
                 {/* --- LEÇONS --- */}
                 <section className="projectSection">
                     <div className='objectif-section'>
-                        <h3>Ce que ce projet m&apos;a appris</h3>
+                        <h2>Ce que ce projet m&apos;a appris</h2>
                         {/* <ul className="projectList">
                             <li><strong>Collaboration intensive :</strong> Intégration Front/Back en équipe.</li>
                             <li><strong>Git Flow sous tension :</strong> Gestion des conflits sur un sprint de 72h.</li>
@@ -365,7 +365,7 @@ export default function PayGapQuest() {
                             </li>
                         </ul>
 
-                        <h4>R&eacute;flexion sur l&rsquo;agilit&eacute;</h4>
+                        <h3>R&eacute;flexion sur l&rsquo;agilit&eacute;</h3>
                         <p>
                             L&rsquo;exp&eacute;rience du Hackathon a &eacute;t&eacute; un v&eacute;ritable catalyseur pour mon autonomie technique. J&rsquo;ai appris &agrave; prioriser les fonctionnalit&eacute;s pour livrer un <strong>MVP (Produit Minimum Viable)</strong> fonctionnel, tout en documentant pr&eacute;cis&eacute;ment l&rsquo;architecture pour permettre de futures &eacute;volutions hors mode &quot;sprint&quot;.
                         </p>
