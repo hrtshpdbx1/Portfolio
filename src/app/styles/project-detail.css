@@ -327,11 +327,43 @@
     font-size: 0.7rem !important;
     overflow-x: auto;
     border: 1px solid #44475a;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-left: auto !important;
     margin-right: auto !important;
     display: block;
     line-height: calc(var(--dynamic-line-height) - 0.4) !important;
+
+    max-height: 350px; /* Hauteur maximale avant que le scroll n'apparaisse */
+    overflow-y: auto;  /* Active le scroll vertical */
+    overflow-x: auto;  /* Active le scroll horizontal pour les longues lignes */
+}
+
+/* Barre de scroll */
+.htmlConcept::-webkit-scrollbar,
+.codeConcept::-webkit-scrollbar,
+.jsonConcept::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre verticale */
+    height: 8px; /* Hauteur de la barre horizontale */
+}
+
+.htmlConcept::-webkit-scrollbar-track,
+.codeConcept::-webkit-scrollbar-track,
+.jsonConcept::-webkit-scrollbar-track {
+    background: #282a36; /* Même couleur que le fond du code */
+    border-radius: var(--radius-md);
+}
+
+.htmlConcept::-webkit-scrollbar-thumb,
+.codeConcept::-webkit-scrollbar-thumb,
+.jsonConcept::-webkit-scrollbar-thumb {
+    background: #44475a; /* Couleur de la jauge */
+    border-radius: 4px;
+}
+
+.htmlConcept::-webkit-scrollbar-thumb:hover,
+.codeConcept::-webkit-scrollbar-thumb:hover,
+.jsonConcept::-webkit-scrollbar-thumb:hover {
+    background: #6272a4; /* Couleur de la jauge au survol */
 }
 
 .codeConcept::before,
@@ -466,6 +498,20 @@
     }
 }
 
+
+/* =========================================
+   CODE EN LIGNE (INLINE)
+   ========================================= */
+p code, .code {
+    background-color: #282a36;
+    color: #ff79c6;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85em; 
+    padding: 0.2em 0.4em;
+    border-radius: var(--radius-xs);
+    border: 1px solid #44475a;
+    white-space: nowrap;
+}
 
 /* =========================================
    FOOTER GLOBAL

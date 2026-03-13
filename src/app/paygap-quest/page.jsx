@@ -81,7 +81,7 @@ export default function PayGapQuest() {
                 </header>
 
                 <section className="projectSection">
-                      <p className="projectTagline">
+                    <p className="projectTagline">
                         PayGap Quest est un simulateur interactif conçu pour lever le voile sur les
                         inégalités de rémunération et transformer la
                         négociation de carrière en un exercice accessible à toutes. En traduisant des données macro-économiques
@@ -110,28 +110,23 @@ export default function PayGapQuest() {
                     <div className="projet_purpose">
                         <div className='objectif-section'>
                             <h2>Objectif du projet</h2>
-
                             <p>
-                                Le Problème : En Belgique, les femmes travaillent  &quot;gratuitement&quot; dès le 20 octobre (écart de 20%). L&rsquo;absence de négociation peut coûter 1M€ sur une carrière. </p>
-                            <p>
-                                La Solution : Un simulateur pédagogique pour transformer des données froides en outils de négociation concrets. </p>
-
-                            {/* En Belgique, l&rsquo;égalité salariale est un enjeu de justice sociale : les femmes gagnent encore en
-                                moyenne 20 % de moins que les hommes, travaillant symboliquement &quot;gratuitement&quot; à partir du 20 octobre. L&apos;absence de
-                                négociation peut coûter jusqu&apos;à 1 million d&apos;euros sur une carrière.</p>
-                            <p>J&apos;ai proposé ce projet pour répondre au thème <em>« @Finances, 3 jours pour prouver que la finance
-                                peut être créative, accessible et engagée»</em> au Hackathon d&rsquo;Interface3 &#40;novembre 2025&#41;, et fut rapidement
-                                rejointe par une équipe super motivée issues des différentes formations.</p> */}
-
-
-
+                                L&apos;inégalité salariale est trop souvent perçue comme une fatalité abstraite. L&apos;objectif de
+                                PayGap Quest était de dépasser la simple sensibilisation pour offrir un
+                                véritable levier d&apos;action. Sachant que l&apos;absence de négociation peut coûter
+                                jusqu&apos;à 1 million d&apos;euros à une femme sur l&apos;ensemble de sa carrière, nous
+                                voulions concevoir un &quot;coach de poche&quot; capable d&apos;armer les
+                                utilisatrices avec des arguments chiffrés, fiables et personnalisés pour briser
+                                le tabou de l&apos;argent en entreprise.
+                            </p>
 
                             <h4> ✅ Fonctionnalités clés :</h4>
                             <ul className="projectList">
                                 <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
                                 <li><strong>Feuille de route :</strong> Guide de négociation salarial structuré et téléchargeable en PDF.</li>
                                 <li><strong>Boîte à outils :</strong> Annuaire de ressources (livres, podcasts, lois) pour s&apos;informer.</li>
-                                <li><strong>API Sectorielle :</strong> Structuration des données réelles du rapport 2024 de l&apos;IEFH.</li>
+                                <li><strong>API Sectorielle :</strong> Structuration des données réelles du rapport 2024 de l&apos;l’Institut pour l&apos;égalité des femmes et des hommes  (<a href="https://igvm-iefh.belgium.be/fr" target="_blank" rel="noopener noreferrer">IEFH</a>)</li>
+                                
                             </ul>
 
                         </div>
@@ -147,7 +142,7 @@ export default function PayGapQuest() {
                             <div className="point-content">
                                 <div className="title-wrapper">
                                     <div className="section-title-line"></div>
-                                    <h3> Front : Le compte à rebour dynamique</h3>
+                                    <h3> Front : Le compte à rebours dynamique</h3>
                                 </div>
 
                                 <h4>Rendre concret l&apos;éccart salarial</h4>
@@ -164,79 +159,37 @@ export default function PayGapQuest() {
                                     (&quot;Depuis X jours...&quot;). Ainsi le message reste percutant toute l&rsquo;ann&eacute;e.
                                 </p>
                             </div>
+                            {/* Code concept */}
                             <div className="point-media">
                                 <div className="codeConcept">
-                                    <span className="codeComment">&#x2f;&#x2f; Calcul dynamique du temps </span><br />
-                                    <span className="rose">function</span> <span className="lila">updateCounter</span>
-                                    <span className="yellow">()</span>
-                                    <span className="orange"> &#123;</span><br />
-                                    &nbsp;&nbsp;<span className="rose">const</span>
-                                    <span className="lila"> today </span>
-                                    <span className="rose"> =</span>
-                                    <span className="rose">new </span>
-                                    <span className="cyan">Date</span>
-                                    <span className="rose">()</span>;<br />
-                                    &nbsp;&nbsp;
-                                    <span className="rose">let </span>
-                                    diff
-                                    <span className="rose"> = </span>
-                                    <span className="lila">today</span>
-                                    <span className="rose"> - </span>
-                                    unequalPayDay;<br />
+                                    <span className="codeComment">&#x2f;&#x2f; Date de référence : Unequal Pay Day</span><br />
+                                    <span className="rose">const </span> unequalPayDay <span className="rose">= </span><span className="rose">new </span><span className="cyan">Date</span><span className="yellow">(</span><span className="yellow">&apos;2025-10-20T00:00:00&apos;</span><span className="yellow">)</span>;<br />
+                                    <span className="rose">const </span> counterElement <span className="rose">= </span><span className="lila">document</span>.<span className="vert">getElementById</span><span className="yellow">(</span><span className="yellow">&apos;counter&apos;</span><span className="yellow">)</span>;<br /><br />
 
-                                    &nbsp;&nbsp;<span className="rose">const </span>
-                                    <span className="lila">diffDays</span>
-                                    <span className="rose"> =</span>
-                                    <span className="lila">Math</span>.
-                                    <span className="vert">floor</span>
-                                    <span className="rose"> (</span>
-                                    diff
-                                    <span className="rose"> / </span>
-                                    <span className="indigo">(</span>
-                                    <span className="lila">1000</span>
-                                    <span className="rose"> * </span>
-                                    <span className="lila">60</span>
-                                    <span className="rose"> * </span>
-                                    <span className="lila">60</span>
-                                    <span className="rose"> * </span>
-                                    <span className="lila">24</span>
-                                    <span className="indigo">)</span>
-                                    <span className="rose">)</span>
-                                    ;
-                                    <br />
-                                    &nbsp;
-                                    counterElement.innerHTML
-                                    <span className="rose"> = </span>
-                                    <span className="yellow">`Depuis </span>
-                                    <span className="rose"> $&#123;</span>
-                                    <span className="lila">diffDays</span>
-                                    <span className="rose">&#125;</span>
-                                    <span className="yellow"> jours...`</span>
-                                    ;
-                                    <br />
-                                    <span className="orange">    &#125;</span><br />
+                                    <span className="rose">function </span><span className="vert">updateCounter</span><span className="yellow">()</span> <span className="orange">&#123;</span><br />
+                                    &nbsp;&nbsp;<span className="rose">const </span> today <span className="rose">= </span><span className="rose">new </span><span className="cyan">Date</span><span className="yellow">()</span>;<br />
+                                    &nbsp;&nbsp;<span className="rose">let </span> diff <span className="rose">= </span> today <span className="rose">- </span> unequalPayDay;<br /><br />
 
-                                </div>
-                                <div className="project-homepage_screen">
-                                    <figure className="imagePlaceholder">
-                                        <video
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            controls
-                                            width="100%"
-                                            style={{
-                                                borderRadius: '8px',
-                                            }}
-                                            preload="metadata"
-                                        >
-                                            <source src={CounterSrc} type="video/mp4" />
-                                            Votre navigateur ne supporte pas la lecture de vidéos.
-                                        </video>
-                                        <figcaption>Animation du compte à rebours hybride sur la page d&rsquo;accueil.
-                                        </figcaption>
-                                    </figure>
+                                    &nbsp;&nbsp;<span className="codeComment">&#x2f;&#x2f; Utilisation de Math.abs pour garantir des valeurs positives</span><br />
+                                    &nbsp;&nbsp;<span className="rose">const </span> absoluteDiff <span className="rose">= </span><span className="lila">Math</span>.<span className="vert">abs</span><span className="yellow">(</span>diff<span className="yellow">)</span>;<br /><br />
+
+                                    &nbsp;&nbsp;<span className="rose">const </span> diffDays <span className="rose">= </span><span className="lila">Math</span>.<span className="vert">floor</span><span className="yellow">(</span>absoluteDiff <span className="rose">/</span> <span className="indigo">(</span><span className="lila">1000</span> <span className="rose">*</span> <span className="lila">60</span> <span className="rose">*</span> <span className="lila">60</span> <span className="rose">*</span> <span className="lila">24</span><span className="indigo">)</span><span className="yellow">)</span>;<br />
+                                    &nbsp;&nbsp;<span className="rose">const </span> diffHours <span className="rose">= </span><span className="lila">Math</span>.<span className="vert">floor</span><span className="yellow">(</span><span className="indigo">(</span>absoluteDiff <span className="rose">/</span> <span className="orange">(</span><span className="lila">1000</span> <span className="rose">*</span> <span className="lila">60</span> <span className="rose">*</span> <span className="lila">60</span><span className="orange">)</span><span className="indigo">)</span> <span className="rose">%</span> <span className="lila">24</span><span className="yellow">)</span>;<br />
+                                    &nbsp;&nbsp;<span className="rose">const </span> diffMinutes <span className="rose">= </span><span className="lila">Math</span>.<span className="vert">floor</span><span className="yellow">(</span><span className="indigo">(</span>absoluteDiff <span className="rose">/</span> <span className="orange">(</span><span className="lila">1000</span> <span className="rose">*</span> <span className="lila">60</span><span className="orange">)</span><span className="indigo">)</span> <span className="rose">%</span> <span className="lila">60</span><span className="yellow">)</span>;<br /><br />
+
+                                    &nbsp;&nbsp;<span className="codeComment">&#x2f;&#x2f; Logique hybride d&apos;affichage</span><br />
+                                    &nbsp;&nbsp;<span className="rose">if </span><span className="yellow">(</span>diff <span className="rose">&lt;</span> <span className="lila">0</span><span className="yellow">)</span> <span className="orange">&#123;</span><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="codeComment">&#x2f;&#x2f; AVANT le 20 octobre : Compte à rebours</span><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;counterElement.<span className="cyan">innerHTML</span> <span className="rose">= </span><span className="yellow">`Dans &lt;strong&gt;</span><span className="rose">$&#123;</span>diffDays<span className="rose">&#125;</span><span className="yellow"> jours&lt;/strong&gt;, &lt;strong&gt;</span><span className="rose">$&#123;</span>diffHours<span className="rose">&#125;</span><span className="yellow"> heures&lt;/strong&gt; et &lt;strong&gt;</span><span className="rose">$&#123;</span>diffMinutes<span className="rose">&#125;</span><span className="yellow"> minutes&lt;/strong&gt;, les femmes travailleront gratuitement.`</span>;<br />
+                                    &nbsp;&nbsp;<span className="orange">&#125;</span> <span className="rose">else</span> <span className="orange">&#123;</span><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span className="codeComment">&#x2f;&#x2f; APRÈS le 20 octobre : Temps écoulé</span><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;counterElement.<span className="cyan">innerHTML</span> <span className="rose">= </span><span className="yellow">`Depuis &lt;strong&gt;</span><span className="rose">$&#123;</span>diffDays<span className="rose">&#125;</span><span className="yellow"> jours&lt;/strong&gt;, &lt;strong&gt;</span><span className="rose">$&#123;</span>diffHours<span className="rose">&#125;</span><span className="yellow"> heures&lt;/strong&gt; et &lt;strong&gt;</span><span className="rose">$&#123;</span>diffMinutes<span className="rose">&#125;</span><span className="yellow"> minutes&lt;/strong&gt;, les femmes travaillent gratuitement.`</span>;<br />
+                                    &nbsp;&nbsp;<span className="orange">&#125;</span><br />
+                                    <span className="orange">&#125;</span><br /><br />
+
+                                    <span className="codeComment">&#x2f;&#x2f; Mise à jour de l&apos;affichage chaque minute</span><br />
+                                    <span className="vert">setInterval</span><span className="yellow">(</span>updateCounter<span className="rose">, </span><span className="lila">1000</span> <span className="rose">*</span> <span className="lila">60</span><span className="yellow">)</span>;<br />
+                                    <span className="vert">updateCounter</span><span className="yellow">()</span>;<br />
                                 </div>
                             </div>
                         </div>
@@ -354,7 +307,7 @@ export default function PayGapQuest() {
                                 <p>Le processus technique s&rsquo;articule en trois &eacute;tapes : </p>
                                 <ul className="projectList">
                                     <li><strong>Communication asynchrone (AJAX/Fetch) :</strong> Lorsqu&rsquo;une utilisatrice saisit son secteur, son m&eacute;tier et son salaire, le Front-end envoie une requ&ecirc;te GET param&eacute;tr&eacute;e au serveur sans recharger la page.</li>
-                                    <li><strong> Logique m&eacute;tier c&ocirc;t&eacute; Serveur (POO) :</strong> Le backend utilise la Programmation Orient&eacute;e Objet (via la classe SalaryCalculator) pour traiter la demande. Le script parse un fichier JSON source servant de base de donn&eacute;es, puis applique des algorithmes d&rsquo;ajustement selon le profil (ex: pond&eacute;ration de -10% pour un profil Junior ou +15% pour un profil Senior).</li>
+                                    <li><strong> Logique m&eacute;tier c&ocirc;t&eacute; Serveur :</strong> Le backend utilise la Programmation Orient&eacute;e Objet (via la classe SalaryCalculator) pour traiter la demande. Le script parse un fichier JSON source servant de base de donn&eacute;es, puis applique des algorithmes d&rsquo;ajustement selon le profil (ex: pond&eacute;ration de -10% pour un profil Junior ou +15% pour un profil Senior).</li>
                                     <li><strong>Traitement et Formatage :</strong> Le serveur calcule l&rsquo;&eacute;cart personnel et l&rsquo;&eacute;cart de genre du secteur, puis renvoie une r&eacute;ponse structur&eacute;e en JSON. Le Front-end r&eacute;cup&egrave;re ces objets pour mettre &agrave; jour dynamiquement l&rsquo;interface utilisateur.</li>
                                 </ul>
                             </div>
@@ -399,7 +352,7 @@ export default function PayGapQuest() {
                         </ul> */}
                         <ul className="projectList">
                             <li>
-                                <strong>Coordination Front/Back sous pression :</strong> Participer &agrave; un Hackathon de 72h m&rsquo;a appris &agrave; g&eacute;rer l&rsquo;int&eacute;gration de mes composants React avec une logique backend complexe en PHP. J&rsquo;ai d&ucirc; assurer la fluidit&eacute; du flux de donn&eacute;es (JSON) et r&eacute;soudre les probl&eacute;matiques de <strong>CORS</strong> pour permettre une communication s&eacute;curis&eacute;e entre les environnements.
+                                <strong>Coordination Front/Back sous pression :</strong> Participer &agrave; un Hackathon de 72h m&rsquo;a appris &agrave; g&eacute;rer l&rsquo;int&eacute;gration du Front avec une logique backend complexe en PHP. J&rsquo;ai d&ucirc; assurer la fluidit&eacute; du flux de donn&eacute;es (JSON) et r&eacute;soudre les probl&eacute;matiques de <strong>CORS</strong> pour permettre une communication s&eacute;curis&eacute;e entre les environnements.
                             </li>
                             <li>
                                 <strong>Git Flow et collaboration intensive :</strong> Travailler en &eacute;quipe multidisciplinaire sur un sprint aussi court a n&eacute;cessit&eacute; une gestion rigoureuse des branches. J&rsquo;ai consolid&eacute; ma ma&icirc;trise de Git pour &eacute;viter les conflits de fusion et maintenir une base de code stable malgr&eacute; l&rsquo;urgence.
@@ -426,40 +379,19 @@ export default function PayGapQuest() {
                         <p>Ce projet est le fruit d&apos;une collaboration avec  :</p>
                         <ul className="projectList">
                             <li><strong>Développement Frontend :</strong>
-                                <a href="https://github.com/Sara-pe" target="_blank" className="credit-link"> Sara</a>,
-                                <a href="https://github.com/Vic50595" target="_blank" className="credit-link"> Victoria </a>
+                                <a href="https://github.com/Sara-pe" target="_blank" className="credit-link">  Sara Pena Zamorano</a>,
+                                <a href="https://github.com/Vic50595" target="_blank" className="credit-link"> Victoria Peretz </a>
                                 et Moi.
                             </li>
                             <li><strong>Développement Backend :</strong> <a href="https://github.com/sahardel92" target="_blank"
-                                className="credit-link">Sahar D.</a></li>
-                            <li><strong>Design : </strong><a href="https://deepthroadocus.itch.io/" target="_blank" className="credit-link">Romane</a> </li>
+                                className="credit-link">Sahar Dellouz</a></li>
+                            <li><strong>Illustrations : </strong><a href="https://deepthroadocus.itch.io/" target="_blank" className="credit-link">: Romane Froment</a> </li>
 
                         </ul>
                     </div>
                 </section>
             </main>
-
-            {/* <div className="projectFooter">
-                <p>Vous cherchez une stagiaire soucieuse de l&apos;accessibilité ?</p>
-                <Link href="/#contact" className="btn">Me contacter</Link>
-            </div>
-
-            <footer className="main-footer-inverted">
-                <div className="footer-container">
-                    <div className="footer-left">
-                        <Link href="/" className="footer-logo">Louise Moraldy</Link>
-                    </div>
-                    <div className="footer-right">
-                        <div className="social-icons">
-                            <a href="https://github.com/ton-profil" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
-                            <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a>
-                            <a href="https://instagram.com/ton-profil" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
-                            <a href="mailto:ton-email@exemple.com"><FontAwesomeIcon icon={faEnvelope} /></a>
-                        </div>
-                    </div>
-                </div>
-            </footer> */}
-             <Footer />
+            <Footer />
         </div>
     );
 }

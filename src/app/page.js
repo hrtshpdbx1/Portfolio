@@ -54,25 +54,29 @@ export default function Home() {
           <div className="content-container">
             <div className="text_intro">
               <h2>À propos</h2>
-              <p>Dans le courant des années 2000, j&apos;ai découvert que je pouvais personnaliser le layout de mon Myspace et
-                j&apos;ai passé des
-                heures à bidouiller du CSS sur le PC fixe familial. C&apos;était ma première expérience de code et c&apos;était aussi
-                déroutant que grisant. J&apos;étais fascinée par ces caractères obscurs capable de créer des univers aussi
-                riches, et quelques semaines plus tard, j&apos;avais refait le layout des profil de tout mon entourage.</p>
+             <p>
+                Dans le courant des années 2000, j&apos;ai découvert que je pouvais personnaliser le layout
+                de mon Myspace et j&apos;ai passé des heures à bidouiller du CSS sur le PC fixe
+                familial. C&apos;était ma première expérience de code, aussi déroutante que
+                grisante. J&apos;étais fascinée par ces caractères obscurs capables de créer
+                des univers aussi riches. Quelques semaines plus tard, j&apos;avais refait le layout
+                des profils de tout mon entourage.
+              </p>
               <p>
-                <em>Fast forwards de quelques années </em> : après mes études d&apos;Arts Numériques aux Beaux-Arts, je passe 4
-                ans dans l&apos;associatif à gérer un projet de lutte contre les violences
-                sexistes et sexuelles. L&apos;envie de créer est restée ainsi que le besoin de <em>mettre mon énergie au service de
-                  causes qui comptent.</em>
+                <em>Fast forward de quelques années </em> : après mes études d&apos;Arts Numériques aux Beaux-Arts,
+                je passe 4 ans dans l&apos;associatif à gérer un projet de lutte contre les
+                violences sexistes et sexuelles. L&apos;envie de créer est restée ainsi que le
+                besoin de <em>mettre mon énergie au service de causes qui comptent.</em>
               </p>
               <p>
                 Quand j&apos;ai intégré la formation Full Stack JavaScript Developer chez Interface3, la
-                boucle s&apos;est
-                bouclée. Retrouver HTML, CSS et JavaScript avec une vision plus large a été une révélation. Ayant moi-même
-                un
-                handicap invisible,
-                je suis particulièrement sensible à l&apos;accessibilité. Ce qui m&apos;anime aujourd&apos;hui : construire un web qui soit
-                fun et
+                boucle s&apos;est bouclée. Renouer avec ces langages de programmation sous le prisme
+                de l&apos;architecture logicielle m&apos;a permis de transformer ma curiosité d&apos;antan en
+                une véritable expertise technique.
+              </p>
+              <p>
+                Ayant moi-même un handicap invisible, je suis particulièrement sensible à
+                l&apos;accessibilité. Ce qui m&apos;anime aujourd&apos;hui : construire un web qui soit fun et
                 attrayant, mais surtout à la portée de tout le monde.
               </p>
               {/* <p>

@@ -60,10 +60,9 @@ export default function SocialScript() {
                     </div>
                 </header>
                 <section className="projectSection">
-                      <p className="projectTagline">
+                    <p className="projectTagline">
                         SocialScript est un simulateur interactif d&apos;entraînement aux situations sociales,
-                        développé dans le cadre d&apos;un workshop HTML/CSS/JavaScript de ma formation Developper Javascript
-                        Fullstack à Interface3. Le projet répond à un besoin d&apos;apprentissage explicite des codes sociaux dans un
+                        développé dans le cadre d&apos;un workshop HTML/CSS/JavaScript de ma formation FullStack JavaScript Developer à Interface3. Le projet répond à un besoin d&apos;apprentissage explicite des codes sociaux dans un
                         environnement sécurisé, particulièrement utile pour les personnes neurodivergentes.
                     </p>
                     <figure className="imagePlaceholder no-decor">
@@ -75,17 +74,6 @@ export default function SocialScript() {
                         />
                     </figure>
                 </section>
-
-                {/* <figure className="imagePlaceholder">
-                        <Image
-                            src="/img/screenshots/homepageSS.png"
-                            alt="capture d'écran de la page d'accueil du site SocialScript"
-                            width={800}
-                            height={450}
-                        />
-                        <figcaption>Capture d&apos;écran de la page d&apos;accueil du site SocialScript</figcaption>
-                    </figure> */}
-
 
                 {/* --- OBJECTIFS PROJET --- */}
                 <section className="projectSection">
@@ -116,32 +104,12 @@ export default function SocialScript() {
                         <div className="elem_design">
                             <p>
                                 Mes recherches graphiques ont abouti à un design qui reprend le logo de l&apos;autisme (un sigle
-                                infini) en l&apos;intégrant au S de Social Script. Cette fusion symbolise une boucle d&apos;apprentissage
+                                infini) en l&apos;intégrant aux S de Social Script. Cette fusion symbolise une boucle d&apos;apprentissage
                                 continue et fluide tout en respectant les normes WCAG AAA voulues sur le site.
                             </p>
                         </div>
 
                         <div className='containerHorizontal'>
-                            {/* <figure className="imagePlaceholder_Small">
-                            <Image
-                                src="/img/croquislogo2.png" alt="Croquis et recherches graphiques"
-                                width={800}
-                                height={450}
-                            />
-                            <figcaption>Croquis et recherches graphiques</figcaption> 
-                            </figure>
-                        <figure className="imagePlaceholder_Small">
-                            <Image
-                                src="/img/recherchesgraphiques.png"
-                                alt="Différentes versions du logo"
-                                style={{ marginTop: '20px' }}
-                                width={800}
-                                height={450}
-                            />
-                            <figcaption>Différentes versions du logo réalisées sur Illustrator</figcaption>
-                        </figure> */}
-
-
                             <figure
                                 className="imagePlaceholder_Small clickable"
                                 onClick={() => setZoomedImage({ src: "/img/croquislogo2.png", alt: "Croquis" })}
@@ -224,7 +192,7 @@ export default function SocialScript() {
                                 >
                                     <source src="/img/screenshots/testnavclavier.mp4" type="video/mp4" />
                                 </video>
-                                <figcaption>Navigation clavier de la FAQ</figcaption>
+                                <figcaption>Démonstration d&apos;une navigation au clavier sur les accordéons de la FAQ.</figcaption>
                             </figure>
                         </div>
 
@@ -241,8 +209,7 @@ export default function SocialScript() {
                             </div>
                             <div className="point-media">
                                 <div className="codeConcept">
-                                    <span className="codeComment">On force le focus sur le bouton suivant pour guider l&apos;utilisateur clavier</span>
-                                    <br />
+
                                     <code>
                                         <br />
                                         <span className='rose'>const </span>
@@ -267,7 +234,10 @@ export default function SocialScript() {
                                     </code>
                                 </div>
                                 <div className="benefit-box">
-                                    <p> <strong>Focus dynamique :</strong> Dès que l&apos;utilisateur valide un choix, j&apos;utilise la méthode <code>.focus()</code>. Cela garantit une navigation fluide au clavier et évite les clics inutiles.</p>
+                                    <p>: Pour éviter la perte de repères lors d&apos;interactions dynamiques, la méthode <code>.focus()</code>
+                                        est déclenchée à chaque validation. Elle force le passage à l&apos;élément suivant, optimisant ainsi l&apos;accessibilité et la fluidité de la navigation au clavier.
+                                        État visuel du bouton lorsqu&apos;il reçoit automatiquement le focus.
+                                    </p>
 
                                 </div>
                             </div>
@@ -278,7 +248,7 @@ export default function SocialScript() {
                                     height={450}
                                 />
 
-                                <figcaption>Capture d&apos;écran montrant le focus visible sur le premier bouton de réponse</figcaption>
+                                <figcaption>État visuel du bouton lorsqu&apos;il reçoit automatiquement le focus.</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -295,10 +265,10 @@ export default function SocialScript() {
 
                         <ul className="projectList">
                             <li>
-                                <strong>L&rsquo;accessibilit&eacute; comme socle technique :</strong> Ce projet m&rsquo;a permis de passer de la th&eacute;orie aux standards du W3C. J&rsquo;ai consolid&eacute; ma pratique de l&rsquo;accessibilit&eacute; native en m&rsquo;appuyant sur les principes <strong>POUR</strong> (Perceptible, Utilisable, Compr&eacute;hensible, Robuste).
+                                <strong>L&rsquo;accessibilit&eacute; comme socle technique :</strong> Ce projet m&rsquo;a permis de passer de la th&eacute;orie aux standards du W3C. J&rsquo;ai consolid&eacute; ma pratique de l&rsquo;accessibilit&eacute; native en m&rsquo;appuyant sur les principes POUR du WCAG 2.2 : Perceivable, Operable, Understandable, Robust..
                             </li>
                             <li>
-                                <strong>Ma&icirc;trise des outils de diagnostic :</strong> L&rsquo;utilisation syst&eacute;matique de <strong>Wave</strong> et des <strong>axe DevTools</strong> fait d&eacute;sormais partie int&eacute;grante de mon workflow. Le test ultime via <strong>VoiceOver</strong> a &eacute;t&eacute; l&rsquo;&eacute;tape la plus formatrice, m&rsquo;obligeant &agrave; ajuster l&rsquo;annonce des feedbacks pour qu&rsquo;ils soient aussi fluides &agrave; l&rsquo;oreille qu&rsquo;&agrave; l&rsquo;&oelig;il.
+                                <strong>Ma&icirc;trise des outils de diagnostic :</strong> L&rsquo;utilisation syst&eacute;matique des extensions <strong>Wave</strong> et <strong>axe DevTools</strong> fait d&eacute;sormais partie int&eacute;grante de mon workflow. Le test ultime via <strong>VoiceOver</strong> a &eacute;t&eacute; l&rsquo;&eacute;tape la plus formatrice, m&rsquo;obligeant &agrave; ajuster l&rsquo;annonce des feedbacks pour qu&rsquo;ils soient aussi fluides &agrave; l&rsquo;oreille qu&rsquo;&agrave; l&rsquo;&oelig;il.
                             </li>
                             <li>
                                 <strong>Optimisation de la charge cognitive :</strong> J&rsquo;ai appris &agrave; appliquer le concept du &quot;Less is More&quot; pour les interfaces neuro-inclusives, en purgeant les distractions visuelles et en stabilisant la navigation pour r&eacute;duire la fatigue attentionnelle.
@@ -308,35 +278,25 @@ export default function SocialScript() {
                             </li>
                         </ul>
 
-                        <h4>Analyse critique du workflow</h4>
+                        <h4>Analyse critique du workflow et perspectives </h4>
                         <p>
-                            Le d&eacute;veloppement de ce simulateur m&rsquo;a forc&eacute;e &agrave; structurer une logique conditionnelle avanc&eacute;e en JavaScript. J&rsquo;ai appris &agrave; g&eacute;rer des flux de donn&eacute;es asynchrones tout en maintenant un &eacute;tat d&rsquo;interface coh&eacute;rent, garantissant que chaque branche du sc&eacute;nario reste accessible et r&eacute;jouable.
+                            Le développement de ce simulateur m&apos;a forcée à structurer une logique
+                            conditionnelle avancée en JavaScript. J&apos;ai appris à gérer des flux de données
+                            asynchrones tout en maintenant un état d&apos;interface cohérent, garantissant que
+                            chaque branche du scénario reste accessible et réjouable.
+                        </p>
+                        <p>
+                            Forte de cette base, je travaille actuellement à une refonte UI (via des gestionnaires d&apos;état) pour
+                            optimiser l&apos;expérience et l&apos;accessibilité, notamment par l&apos;ajout d&apos;un mode
+                            &quot;Surcharge Sensorielle&quot;. En parallèle, je prépare l&apos;évolution du
+                            projet vers une architecture Full-Stack sécurisée (API RESTful,
+                            authentification JWT, base de données) afin de transformer ce prototype
+                            statique en une véritable plateforme communautaire et collaborative.
                         </p>
 
                     </div>
                 </section>
             </main>
-
-            {/* <div className="projectFooter">
-                <p>Prêt·e à discuter d&apos;accessibilité et de neuro-inclusion ?</p>
-                <Link href="/#contact" className="btn">Me contacter</Link>
-            </div>
-
-            <footer className="main-footer-inverted">
-                <div className="footer-container">
-                    <div className="footer-left">
-                        <Link href="/" className="footer-logo">Louise Moraldy</Link>
-                    </div>
-                    <div className="footer-right">
-                        <div className="social-icons">
-                            <a href="https://github.com/ton-profil" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
-                            <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin} /></a>
-                            <a href="https://instagram.com/ton-profil" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
-                            <a href="mailto:ton-email@exemple.com"><FontAwesomeIcon icon={faEnvelope} /></a>
-                        </div>
-                    </div>
-                </div>
-            </footer> */}
             <Footer />
         </div>
     );
