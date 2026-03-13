@@ -71,7 +71,7 @@ export default function PayGapQuest() {
                                 </a>
                             </div>
                             <div className="metaItem">
-                                <a href="#" target="_blank" rel="noopener noreferrer" className="btn">
+                                <a href="https://hackathon2025.interface3.be/paygap/Frontend/index.html" target="_blank" rel="noopener noreferrer" className="btn">
                                     <FontAwesomeIcon icon={faRocket} style={{ marginRight: '8px' }} /> Demo
                                 </a>
                             </div>
