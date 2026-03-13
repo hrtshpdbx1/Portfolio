@@ -673,7 +673,7 @@ em {
     color: var(--main-text);
     cursor: pointer;
     z-index: 999;
-    border: 1.3px solid var(--main-text);
+    border: 2.3px solid var(--main-text);
     border-radius: 50%;
     transition: all 0.3s ease;
 }
@@ -701,13 +701,15 @@ em {
     position: fixed;
     top: 20px;
     right: 20px;
-
-    &:hover {
-        /* transform: rotate(90deg); */
-    }
-
 }
 
+
+
+/* 4. Au survol du bouton complet, comme les couleurs s'inversent, 
+      on n'oublie pas d'inverser aussi le "trou" ! */
+.icon-btn-floating:hover .icon-with-hole::after {
+    background-color: var(--main-text);
+}
 
 /* Bouton Retour en haut */
 .back-to-top {
@@ -728,7 +730,7 @@ em {
 
 /* Style global des icônes Lucide */
 .lucide {
-    stroke-width: 1.5px;
+    stroke-width: 2.3px;
     width: 22px;
     height: 22px;
     transition: color 0.3s ease;

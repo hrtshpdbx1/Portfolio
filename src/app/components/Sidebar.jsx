@@ -1,7 +1,7 @@
 "use client" // Indique à Next.js que c'est un composant client 
 import React, { useState } from 'react'
 // LUCIDE
-import { Settings, X, Type, ListChevronsUpDown, RotateCcw } from 'lucide-react';
+import { Settings, Nut,Cog, X, Type, ListChevronsUpDown, RotateCcw } from 'lucide-react';
 
 //Theme
 const colors = [
@@ -110,8 +110,8 @@ function Sidebar(props) {
                 className="icon-btn-floating"
                 onClick={() => setIsOpen(true)} // Au clic, on change le state isOpen à true
                 aria-label="Ouvrir le menu">
-                {/* <FontAwesomeIcon icon={faGear} /> */}
-                <Settings />
+        <Cog size={22}/>      
+                {/* <Settings /> */}
             </button>
             {/* Sidebar  */}
             {/*  si isOpen est vrai, on ajoute la classe 'sticky' 
