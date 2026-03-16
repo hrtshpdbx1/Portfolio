@@ -83,13 +83,12 @@ export default function PayGapQuest() {
                 <section className="projectSection">
                     <p className="projectTagline">
                         PayGap Quest est un simulateur interactif conçu pour lever le voile sur les
-                        inégalités de rémunération et transformer la
-                        négociation de carrière en un exercice accessible à toutes. En traduisant des données macro-économiques
+                        données liées à l&apos;égalité salariale et transformer la
+                        négociation de carrière en un exercice accessible et structuré. En traduisant des données macro-économiques
                         complexes en une
-                        expérience utilisateur fluide et pédagogique, cet outil permet aux femmes de simuler leurs trajectoires,
+                        expérience utilisateur fluide et pédagogique, cet outil permet aux utilisatrices de simuler leurs trajectoires,
                         de calculer
-                        leur manque à gagner et de structurer leur discours pour exiger une rémunération à la hauteur de leur
-                        talent.
+                        leur évolution potentielle et d&apos;aborder les discussions salariales avec des arguments chiffrés et fiables.
                     </p>
 
                     <figure className="imagePlaceholder no-decor">
@@ -111,22 +110,27 @@ export default function PayGapQuest() {
                         <div className='objectif-section'>
                             <h2>Objectif du projet</h2>
                             <p>
-                                L&apos;inégalité salariale est trop souvent perçue comme une fatalité abstraite. L&apos;objectif de
-                                PayGap Quest était de dépasser la simple sensibilisation pour offrir un
-                                véritable levier d&apos;action. Sachant que l&apos;absence de négociation peut coûter
-                                jusqu&apos;à 1 million d&apos;euros à une femme sur l&apos;ensemble de sa carrière, nous
-                                voulions concevoir un &quot;coach de poche&quot; capable d&apos;armer les
-                                utilisatrices avec des arguments chiffrés, fiables et personnalisés pour briser
-                                le tabou de l&apos;argent en entreprise.
+                                L&apos;écart salarial est parfois perçu comme une donnée complexe ou abstraite. L&apos;objectif de
+                                PayGap Quest était de dépasser la simple consultation de données pour offrir un
+                                véritable outil d&apos;aide à la décision. Sachant que l&apos;absence de négociation peut avoir un impact significatif
+                                sur l&apos;ensemble d&apos;une carrière, nous voulions concevoir une interface
+                                capable d&apos;accompagner les utilisatrices avec des éléments tangibles et personnalisés pour faciliter
+                                les échanges liés à la rémunération en entreprise.
                             </p>
 
                             <h3> ✅ Fonctionnalités clés :</h3>
                             <ul className="projectList">
-                                <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
+                                {/* <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
                                 <li><strong>Feuille de route :</strong> Guide de négociation salarial structuré et téléchargeable en PDF.</li>
                                 <li><strong>Boîte à outils :</strong> Annuaire de ressources (livres, podcasts, lois) pour s&apos;informer.</li>
-                                <li><strong>API Sectorielle :</strong> Structuration des données réelles du rapport 2024 de l&apos;l’Institut pour l&apos;égalité des femmes et des hommes  (<a href="https://igvm-iefh.belgium.be/fr" target="_blank" rel="noopener noreferrer">IEFH</a>)</li>
-                                
+                                <li><strong>API Sectorielle :</strong> Structuration des données réelles du rapport 2024 de l&apos;l’Institut pour l&apos;égalité des femmes et des hommes  (<a href="https://igvm-iefh.belgium.be/fr" target="_blank" rel="noopener noreferrer">IEFH</a>)</li> */}
+                                <ul className="projectList">
+                                    <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
+                                    <li><strong>Feuille de route :</strong> Guide de préparation structuré et téléchargeable en PDF.</li>
+                                    <li><strong>Boîte à outils :</strong> Annuaire de ressources professionnelles pour s&apos;informer.</li>
+                                    <li><strong>API Sectorielle :</strong> Structuration des données réelles du rapport 2024 de l&apos;Institut pour l&apos;égalité des femmes et des hommes (<a href="https://igvm-iefh.belgium.be/fr" target="_blank" rel="noopener noreferrer">IEFH</a>).</li>
+                                </ul>
+
                             </ul>
 
                         </div>
@@ -144,20 +148,18 @@ export default function PayGapQuest() {
                                     <div className="section-title-line"></div>
                                     <h3> Front : Le compte à rebours dynamique</h3>
                                 </div>
-
-                                <h4>Rendre concret l&apos;éccart salarial</h4>
+                                <h4>Visualiser la donnée temporelle</h4>
                                 <p>
                                     Pour capter imm&eacute;diatement l&apos;attention des utilisateur&middot;ices,
-                                    j&apos;ai d&eacute;velopp&eacute; un compteur pour cr&eacute;er un impact d&egrave;s la page d&apos;accueil.
+                                    j&apos;ai d&eacute;velopp&eacute; un compteur pour cr&eacute;er un point d&apos;accroche d&egrave;s la page d&apos;accueil.
                                     Mon objectif &eacute;tait de traduire une statistique &quot;froide&quot; en une r&eacute;alit&eacute; tangible.
-                                    Le compte &agrave; rebours est initialis&eacute; &agrave; partir de la date du 20 octobre qui est la
-                                    Journ&eacute;e de l&rsquo;in&eacute;galit&eacute; salariale (UnEqual Pay Day), date &agrave; partir
-                                    de laquelle les femmes belges travaillent &quot;gratuitement&quot; jusqu&rsquo;&agrave; la fin de l&rsquo;ann&eacute;e.
+                                    Le compte &agrave; rebours est initialis&eacute; &agrave; partir du 20 octobre, qui correspond &agrave; la
+                                    journ&eacute;e symbolique de l&rsquo;UnEqual Pay Day (date &agrave; partir de laquelle, statistiquement, s&apos;illustre l&apos;&eacute;cart de revenus annuel).
                                     J&rsquo;ai con&ccedil;u une logique hybride qui d&eacute;tecte la date du jour.
-                                    Avant le 20 octobre, le script affiche un compte &agrave; rebours (&quot;Dans X jours...&quot;);
-                                    d&egrave;s la date pass&eacute;e, il bascule automatiquement en compteur de temps &eacute;coul&eacute;
-                                    (&quot;Depuis X jours...&quot;). Ainsi le message reste percutant toute l&rsquo;ann&eacute;e.
+                                    Avant le 20 octobre, le script affiche un compte &agrave; rebours ;
+                                    d&egrave;s la date pass&eacute;e, il bascule automatiquement en compteur de temps &eacute;coul&eacute;. Ainsi, le message reste pertinent toute l&rsquo;ann&eacute;e.
                                 </p>
+
                             </div>
                             {/* Code concept */}
                             <div className="point-media">
@@ -358,7 +360,7 @@ export default function PayGapQuest() {
                                 <strong>Git Flow et collaboration intensive :</strong> Travailler en &eacute;quipe multidisciplinaire sur un sprint aussi court a n&eacute;cessit&eacute; une gestion rigoureuse des branches. J&rsquo;ai consolid&eacute; ma ma&icirc;trise de Git pour &eacute;viter les conflits de fusion et maintenir une base de code stable malgr&eacute; l&rsquo;urgence.
                             </li>
                             <li>
-                                <strong>Design d&rsquo;impact et UX temporelle :</strong> Ce projet m&rsquo;a fait d&eacute;couvrir comment transformer une donn&eacute;e macro-&eacute;conomique abstraite en une exp&eacute;rience utilisateur percutante. Le d&eacute;veloppement du compteur hybride (rebours/temps &eacute;coul&eacute;) m&rsquo;a appris &agrave; utiliser le code comme un outil de narration pour sensibiliser &agrave; une cause sociale.
+                                <strong>Design d&rsquo;impact et UX temporelle :</strong> Ce projet m&rsquo;a fait d&eacute;couvrir comment transformer une donn&eacute;e macro-&eacute;conomique abstraite en une exp&eacute;rience utilisateur percutante. Le d&eacute;veloppement du compteur hybride (rebours/temps &eacute;coul&eacute;) m&rsquo;a appris &agrave; utiliser le code comme un outil de data visualisation au service de l&apos;exp&eacute;rience utilisateur.
                             </li>
                             <li>
                                 <strong>Vulgarisation technique et structuration :</strong> En tant que porteuse de projet, j&rsquo;ai appris &agrave; traduire des enjeux financiers complexes en fonctionnalités techniques claires, tout en veillant &agrave; ce que l&rsquo;interface reste p&eacute;dagogique et accessible &agrave; toutes.
@@ -390,7 +392,7 @@ export default function PayGapQuest() {
                         </ul>
                     </div>
                 </section>
-                 <CtaProject />
+                <CtaProject />
             </main>
             <Footer />
         </div>

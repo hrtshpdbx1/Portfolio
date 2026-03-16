@@ -20,8 +20,8 @@ config.autoAddCss = false; // pour eviter le css auto de FA
   // Valeurs par défauts
   const DEFAULTS = ({
     fontFamily: "--font-bbb-readme",
-    fontSize: 14,
-    lineHeight: 1.8,
+    fontSize: 16,
+    lineHeight: 2,
     bgColor: 'rgb(84.699% 96.254% 83.914%)',
     textColor: 'rgb(13.81% 13.179% 9.5057%)',
   }) 

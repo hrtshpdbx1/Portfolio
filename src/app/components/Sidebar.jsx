@@ -73,13 +73,13 @@ function Sidebar(props) {
         const currentSize = Number(fontSize);
         // Math.min(15, ...) empêche de dépasser x
         // Math.max(8, ...) empêche de descendre sous x
-        const nextSize = Math.min(18, Math.max(9, currentSize + newSize));
+        const nextSize = Math.min(22, Math.max(9, currentSize + newSize));
         onChangeSize(nextSize);// On "appelle" le parent pour lui donner la nouvelle valeur
     }
 
     function handleHeightClick(newHeight) {
         const currentHeight = Number(lineHeight);
-        const nextHeight = Math.min(3, Math.max(1, currentHeight + newHeight));
+        const nextHeight = Math.min(4, Math.max(1, currentHeight + newHeight));
         onChangeLineHeight(nextHeight.toFixed(1));
     }
 

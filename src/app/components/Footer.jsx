@@ -44,9 +44,9 @@ export default function Footer() {
                         <a href="https://www.instagram.com/bxl_petitchien" target="_blank" rel="noopener noreferrer" aria-label="Profil Instagram">
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
-                        <a href="mailto:louisemoraldy@proton.me" aria-label="M'envoyer un email">
+                       <Link href="/#contact" aria-label="M'envoyer un email">
                             <FontAwesomeIcon icon={faEnvelope} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
 

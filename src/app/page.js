@@ -55,11 +55,11 @@ export default function Home() {
                 des univers aussi riches. Quelques semaines plus tard, j&apos;avais refait le layout
                 des profils de tout mon entourage.
               </p>
-              <p>
+             <p>
                 <em>Fast forward de quelques années </em> : après mes études d&apos;Arts Numériques aux Beaux-Arts,
-                je passe 4 ans dans l&apos;associatif à gérer un projet de lutte contre les
-                violences sexistes et sexuelles. L&apos;envie de créer est restée ainsi que le
-                besoin de <em>mettre mon énergie au service de causes qui comptent.</em>
+                je passe 4 ans dans le secteur associatif à coordonner des projets complexes à fort impact social. 
+                Cette expérience m&apos;a appris la gestion de projet, la communication et la résolution de problèmes, 
+                tout en nourrissant mon besoin de <em>mettre mon énergie au service de solutions concrètes.</em>
               </p>
               <p>
                 Quand j&apos;ai intégré la formation Full Stack JavaScript Developer chez Interface3, la
@@ -87,7 +87,7 @@ export default function Home() {
             <p className="competences-intro">
               Forte d&apos;une solide expérience en gestion de projet et en plaidoyer
               je combine aujourd&apos;hui mes compétences transversales avec une expertise technique en développement web.
-              Éligible aux mesures d&apos;embauche <strong>activa.brussels</strong> (aptitude réduite), je recherche des
+              Éligible aux mesures d&apos;embauche <strong>activa.brussels</strong>, je recherche des
               opportunités
               où l&apos;impact social rencontre l&apos;innovation technologique.
             </p>
