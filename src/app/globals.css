@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 /* global.css */
 
 /* =========================================
@@ -22,7 +20,7 @@ body.opendyslexic {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 
@@ -186,7 +184,6 @@ body {
 
     outline: 3px solid #50fa7b !important;
     outline-offset: 4px;
-    /* Crée un espace entre l'élément et le contour */
     box-shadow: 0 0 10px rgba(80, 250, 123, 0.4);
     border-radius: inherit;
 }
@@ -197,13 +194,11 @@ body {
 
 #main-content p {
     font-size: inherit;
-    /* lien Sidebar */
     line-height: var(--dynamic-line-height, 1.2);
-    max-width: 80ch;
+    /* max-width: 80ch; */
     margin-bottom: var(--space-4);
     opacity: 0.9;
     text-align: left;
-    /* Un noir pur sur fond blanc peut être agressif, 0.9 adoucit le contraste */
 }
 
 
@@ -374,7 +369,6 @@ em {
         min-height: 0;
         width: 100%;
         flex: 1;
-        /* S'assure qu'il prend tout l'espace sous le header */
         overflow-y: auto;
 
         .sidebar__section {
@@ -444,15 +438,6 @@ em {
                 outline-offset: 2px;
             }
 
-            /* Dropdown Polices (Style spécifique aux options)
-            .sidebar_dropdown {
-                width: 100%;
-                padding: 8px;
-                border-radius: var(--radius-lg);
-                background: var(--main-background);
-                color: var(--main-text);
-                border: 1px solid var(--main-text);
-                font-family: inherit; */
             .opt-bbbreadme {
                 font-family: 'BBB ReadMe';
             }
@@ -625,20 +610,6 @@ em {
     height: 20px;
 }
 
-/* .sidebar__reset-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
-    width: 100%;
-    padding: 10px 15px;
-    background: var(--main-background);
-    color: var(--main-text);
-    border: 1px solid var(--main-text);
-    border-radius: var(--radius-lg);
-} */
-
-
 /* Cibler les icônes SVG dans la sidebar */
 .sidebar__pill-group .pill-value {
     /* 1. On définit la taille */
@@ -652,11 +623,6 @@ em {
     -webkit-mask-position: center;
     mask-position: center;
 }
-
-
-/* =========================================
-   4. INTERFACE UI (TRIGGERS)
-   ========================================= */
 
 /* =========================================
    BOUTONS FLOTTANTS (Ronds)
@@ -688,7 +654,6 @@ em {
 
 }
 
-
 /* Bouton Menu gauche */
 #nav-trigger {
     position: fixed;
@@ -703,10 +668,6 @@ em {
     right: 20px;
 }
 
-
-
-/* 4. Au survol du bouton complet, comme les couleurs s'inversent, 
-      on n'oublie pas d'inverser aussi le "trou" ! */
 .icon-btn-floating:hover .icon-with-hole::after {
     background-color: var(--main-text);
 }
@@ -716,16 +677,13 @@ em {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    /* Gestion de l'apparition au scroll */
     opacity: 0;
     visibility: hidden;
-    /* transform: translateY(20px); */
 }
 
 .back-to-top.visible {
     opacity: 1;
     visibility: visible;
-    /* transform: translateY(0); */
 }
 
 /* Style global des icônes Lucide */
@@ -735,17 +693,14 @@ em {
     height: 22px;
     transition: color 0.3s ease;
 
-   
-}
 
+}
 
 /* =========================================
    5. SECTIONS & MAIN CONTENT
    ========================================= */
 
-
 /* Section global layout */
-
 .page-section {
     height: 100vh;
     width: 80vw;
@@ -755,7 +710,6 @@ em {
     display: flex;
     align-items: center;
     scroll-snap-align: start;
-    /* Point accroche scroll */
     scroll-snap-stop: always;
 
     /* empeche le scroll de sauter */
@@ -835,10 +789,7 @@ em {
                 .skills-list {
                     display: flex;
                     flex-direction: column;
-                    /* Pour les garder en colonne */
                     gap: 0.4rem;
-                    /* Ajuste la valeur selon tes besoins */
-
                     padding: 0;
                     width: 100%;
                     list-style: none;
@@ -960,7 +911,6 @@ em {
 
     }
 
-
     /* --- Icônes de la liste Mastery --- */
     .skills-list.mastery li {
         display: flex;
@@ -1060,8 +1010,6 @@ em {
 
 /* SECTION 4 : PROJETS */
 .section4 {
-    /* width: 100%; */
-
     .title-wrapper {
         display: flex;
         align-items: center;
@@ -1072,7 +1020,6 @@ em {
         .section-title-line {
             width: 50px;
             height: 1px;
-            /* Épaisseur */
             background-color: var(--main-text);
         }
 
@@ -1100,7 +1047,7 @@ em {
 
             img {
                 width: 100%;
-                /* margin: 5% 0; */
+                height: auto;
                 transition: transform 0.6s ease;
             }
 
@@ -1128,7 +1075,6 @@ em {
                 /* état initial à gauche */
                 transform: translateX(-100%);
                 opacity: 1;
-                /* Transition fluide pour le mouvement */
                 transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
                 z-index: 10;
             }
@@ -1187,113 +1133,107 @@ em {
     }
 }
 
-/* Formulaire Contact */
-/* .section4 {
-    .contactform_container {
+/* =========================================
+   RESPONSIVE (MOBILE) - PAGE D'ACCUEIL
+   ========================================= */
+@media (max-width: 768px) {
 
-        #contactForm {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 500px;
-            border: solid 1px saddlebrown;
-
-            input,
-            textarea {
-                padding: 12px;
-                border: 1px solid var(--main-text);
-                background: transparent;
-                color: inherit;
-                font-family: inherit;
-            }
-
-            button {
-                padding: 15px;
-                background: var(--main-text);
-                color: var(--main-background);
-                border: none;
-                cursor: pointer;
-                font-weight: bold;
-
-                &:hover {
-                    opacity: 0.9;
-                }
-            }
-        }
+    /* 1. TYPO*/
+    body h1 {
+        font-size: calc(var(--user-size) * 2.2);
     }
-} */
 
-/* Formulaire Contact - Design Amélioré */
-/* .section5 {
-    .contactform_container {
-        margin-top: var(--space-4);
-
-        #contact {
-
-            padding: var(--space-4);
-            border-radius: var(--radius-lg);
-            border: 1px solid rgb(from var(--main-text) r g b / 10%);
-            max-width: 600px;
-        }
-
-        #contactForm {
-            display: flex;
-            flex-direction: column;
-
-            gap: var(--space-2);
-            margin-top: var(--space-2);
-
-            div {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                gap: var(--space-2);
-            }
-
-            label {
-                font-size: var(--font-size-small);
-                font-weight: var(--weight-medium);
-                 letter-spacing: var(--letter-wide);
-                opacity: 0.8;
-                margin-top: 2%;
-            }
-
-            input,
-            textarea {
-                padding: var(--space-4);
-                border: 1.5px solid rgb(from var(--main-text) r g b / 20%);
-                background: var(--main-background);
-                color: var(--main-text);
-                font-family: inherit;
-                border-radius: var(--radius-sm);
-                transition: all 0.2s ease;
-
-                &:focus {
-                    outline: none;
-                    border-color: var(--main-text);
-                    box-shadow: 0 0 0 3px rgb(from var(--main-text) r g b / 5%);
-                }
-
-                &::placeholder {
-                    opacity: 0.4;
-                    font-style: italic;
-                }
-            }
-
-            textarea {
-                min-height: 40%;
-                resize: vertical;
-            }
-
-            button#submitBtn {
-                margin-top: var(--space-2);
-                padding: var(--space-2);
-                align-self: flex-start;
-                width: fit-content;
-                padding: 12px 30px;
-            }
-
-
-        }
+    body h2 {
+        font-size: calc(var(--user-size) * 1.8);
+       
     }
-} */
+
+    /* Masquer la ligne des titres de section  */
+    .title-wrapper .section-title-line {
+        display: none;
+
+       
+    }
+    
+    .section4 .title-wrapper h2 {
+         text-align: left;
+    }
+  
+    /* 2. LAYOUT */
+    .page-section {
+        width: 100%;
+        padding-left: var(--space-6);
+        padding-right: var(--space-6);
+        box-sizing: border-box;
+        display: block;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+
+
+    #main-content p {
+        max-width: 100%;
+    }
+
+    /* 3. SECTION COMPÉTENCES */
+    .section3 .div_skills .skills-columns {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .skills-category {
+        width: 100%;
+    }
+
+    .skills-list li svg,
+    .icon-logo {
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    /*Alignement icônes texte */
+    .section3 .div_skills .skills-columns .skills-category .skills-list li {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+    }
+
+        .section3 .div_skills .skills-columns .skills-category .skills-list li svg,
+    .section3 .div_skills .skills-columns .skills-category .skills-list li i,
+    .icon-logo {
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    /* 4. SECTION PROJETS */
+    .section4 .projects_container {
+        flex-direction: column;
+        gap: 3rem;
+        width: 100%;
+    }
+
+    .section4 .projects_container .projet_elem {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Empêche étirement des images  */
+    .section4 .projects_container .projet_elem img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+
+    .section4 .projects_container .projet_elem .media-container {
+        height: auto !important;
+        display: block;
+    }
+
+    /* 5. SIDEBAR R*/
+    #sidebar {
+        width: 85vw;
+        right: -85vw;
+    }
+}

@@ -18,15 +18,17 @@
         @media (max-width: 480px) {
             .nameRow {
                 flex-direction: column;
-                  gap: var(--space-2);
+                gap: var(--space-2);
             }
         }
 
         .inputGroup {
             display: flex;
             flex-direction: column;
-               gap: var(--space-1);/* Espace entre le label et l'input */
-            flex: 1;/* les colonnes Prénom et Nom font 50% chacune */
+            gap: var(--space-1);
+            /* Espace entre le label et l'input */
+            flex: 1;
+            /* les colonnes Prénom et Nom font 50% chacune */
         }
 
         label {
@@ -83,5 +85,26 @@
         margin-top: 15px;
         font-weight: 600;
         font-style: italic;
+    }
+}
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .contactFormContainer .contactForm {
+        max-width: 100%;
+    }
+
+    .contactFormContainer .contactForm .nameRow {
+        flex-direction: column;
+        /* Prénom et Nom l'un sous l'autre */
+        gap: var(--space-4);
+    }
+
+    .contactFormContainer .contactForm button {
+        width: 100%;
+        /* Bouton plus facile à cliquer au pouce */
+        justify-content: center;
     }
 }

@@ -120,10 +120,6 @@ export default function PayGapQuest() {
 
                             <h3> ✅ Fonctionnalités clés :</h3>
                             <ul className="projectList">
-                                {/* <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
-                                <li><strong>Feuille de route :</strong> Guide de négociation salarial structuré et téléchargeable en PDF.</li>
-                                <li><strong>Boîte à outils :</strong> Annuaire de ressources (livres, podcasts, lois) pour s&apos;informer.</li>
-                                <li><strong>API Sectorielle :</strong> Structuration des données réelles du rapport 2024 de l&apos;l’Institut pour l&apos;égalité des femmes et des hommes  (<a href="https://igvm-iefh.belgium.be/fr" target="_blank" rel="noopener noreferrer">IEFH</a>)</li> */}
                                 <ul className="projectList">
                                     <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
                                     <li><strong>Feuille de route :</strong> Guide de préparation structuré et téléchargeable en PDF.</li>
@@ -161,6 +157,31 @@ export default function PayGapQuest() {
                                 </p>
 
                             </div>
+
+                            {/* Vidéo du compte à rebours */}
+                            <div className="project-homepage_screen">
+                                <figure className="imagePlaceholder">
+                                    <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        controls
+                                        width="100%"
+                                        style={{
+                                            borderRadius: '8px',
+                                        }}
+                                        preload="metadata"
+                                    >
+                                        <source src={CounterSrc} type="video/mp4" />
+                                        Votre navigateur ne supporte pas la lecture de vidéos.
+                                    </video>
+                                    <figcaption>
+                                        Démonstration du compte à rebours dynamique hybride.
+                                    </figcaption>
+                                </figure>
+                            </div>
+
                             {/* Code concept */}
                             <div className="point-media">
                                 <div className="codeConcept">

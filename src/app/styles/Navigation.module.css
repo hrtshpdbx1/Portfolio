@@ -35,7 +35,7 @@
     margin: 0 !important;
      font-size: calc(var(--user-size) * 1.5);
     letter-spacing: 2px;
-    line-height: 1; /* C'est ça qui centre optiquement le texte ! */
+    line-height: 1; /* centre optiquement le texte ! */
 }
 
 
@@ -90,14 +90,32 @@
     border-top: 1px solid rgb(from var(--main-text) r g b / 10%);
 }
 
-/* Le bouton CV prend toute la largeur disponible */
+/* Le bouton CV = toute la largeur  */
 .cvBtn {
     flex: 1 1 100%;
 }
 
-/* Les boutons sociaux se partagent équitablement la ligne du dessous */
+/* 50/50 */
 .socialBtn {
     flex: 1;
-    /* On ajuste légèrement le padding car ce sont juste des icônes */
     padding: 6px 0 !important; 
+}
+
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80vw; /* Prend 80% de l'écran sur mobile */
+        left: -80vw;
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+
+    .links {
+        gap: var(--space-4); /* On resserre un peu les liens */
+    }
 }
