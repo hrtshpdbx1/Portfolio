@@ -1,7 +1,7 @@
 "use client" // Indique à Next.js que c'est un composant client 
 import React, { useState } from 'react'
 // LUCIDE
-import { Settings, Nut,Cog, X, Type, ListChevronsUpDown, RotateCcw } from 'lucide-react';
+import { Cog, X, Type, ListChevronsUpDown, RotateCcw, Plus, Minus } from 'lucide-react';
 
 //Theme
 const colors = [
@@ -111,7 +111,7 @@ function Sidebar(props) {
                 className="icon-btn-floating"
                 onClick={() => setIsOpen(true)} // Au clic, on change le state isOpen à true
                 aria-label="Ouvrir le menu">
-        <Cog size={22}/>      
+                <Cog size={22} />
                 {/* <Settings /> */}
             </button>
             {/* Sidebar  */}
@@ -151,7 +151,7 @@ function Sidebar(props) {
                                 <option value="--font-eido"
                                     className="opt-eido">Eido</option>
                                 <option value="--font-accessibledfa" className="opt-accessibledfa">Accessible DFA</option>
-                                <option value="--font-open-dyslexic" className="opt-opendyslexic">OpenDyslexic</option>
+                                <option value="--font-open-dyslexic" className="opt-opendyslexic">Dyslexique</option>
                                 <option value="Arial, sans-serif" className="opt-arial">Arial</option>
                                 <option value="Times New Roman, serif" className="opt-times">Times</option>
                             </select>
@@ -163,10 +163,16 @@ function Sidebar(props) {
                             <span className="sidebar__label">Taille</span>
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
-                                <button className="pill-btn" onClick={() => handleSizeClick(-0.1)}>-</button>
-                                <Type />
+                                <button className="pill-btn" onClick={() => handleSizeClick(-0.1)} aria-label="Diminuer la taille">
+                                    <Minus size={16} strokeWidth={2.5} />
+                                </button>
 
-                                <button className="pill-btn" onClick={() => handleSizeClick(0.1)}>+</button>
+
+                                <Type size={18} style={{ margin: '0 4px' }} />
+
+                                <button className="pill-btn" onClick={() => handleSizeClick(0.1)} aria-label="Agrandir la taille">
+                                    <Plus size={16} strokeWidth={2.5} />
+                                </button>
                             </div>
                         </div>
 
@@ -176,10 +182,15 @@ function Sidebar(props) {
                             <span className="sidebar__label">Interligne</span>
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
-                                <button className="pill-btn" onClick={() => handleHeightClick(-0.1)}>-</button>
+                                <button className="pill-btn" onClick={() => handleHeightClick(-0.1)} aria-label="Diminuer l'interligne">
+                                    <Minus size={16} strokeWidth={2.5} />
+                                </button>
 
-                                <ListChevronsUpDown />
-                                <button className="pill-btn" onClick={() => handleHeightClick(0.1)}>+</button>
+                                <ListChevronsUpDown size={18} style={{ margin: '0 4px' }} />
+
+                                <button className="pill-btn" onClick={() => handleHeightClick(0.1)} aria-label="Agrandir l'interligne">
+                                    <Plus size={16} strokeWidth={2.5} />
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -188,18 +199,26 @@ function Sidebar(props) {
                     <div className="sidebar__section">
                         <h3 className="sidebar__section-title">Thèmes</h3>
                         <div className="contrast-group">
-                            {colors.map(color => (
-                                <button
-                                    key={color.id}
-                                    className="contrast-circle"
-                                    style={{
-                                        "--btn-bg": color.bgColor,
-                                        "--btn-text": color.textColor,
-                                    }}
-                                    onClick={() => handleColorSelect(color.bgColor, color.textColor)}
-                                    title={color.name} />
-                            ))}
+                            {colors.map(color => {
+                                // On vérifie si les couleurs correspondent (sens normal OU inversé)
+                                const isActive = (bgColor === color.bgColor && textColor === color.textColor) || 
+                                                 (bgColor === color.textColor && textColor === color.bgColor);
+
+                                return (
+                                    <button
+                                        key={color.id}
+                                        className={`contrast-circle ${isActive ? 'active' : ''}`}
+                                        style={{
+                                            "--btn-bg": color.bgColor,
+                                            "--btn-text": color.textColor,
+                                        }}
+                                        onClick={() => handleColorSelect(color.bgColor, color.textColor)}
+                                        title={color.name} 
+                                    />
+                                );
+                            })}
                         </div>
+                        
 
                         <div className="sidebar__control-row">
                             <label htmlFor="invert-toggle" className="sidebar__label">Inverser</label>

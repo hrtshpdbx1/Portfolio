@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
 
   /* ---  STATES --- */
   const [custom, setCustom] = useState(DEFAULTS);
-
+const [isInverted, setIsInverted] = useState(false);
   /* ---  FONCTIONS --- */
   const updateFontSize = (newSize) => {
     setCustom({
@@ -83,7 +83,8 @@ export default function RootLayout({ children }) {
       ...custom,
       bgColor: newBgColor,
     textColor: newTextColor,
-    })
+    });
+    setIsInverted(false);
   }
 
   const reverseColors = (bgColor,textColor) => {
@@ -91,11 +92,13 @@ export default function RootLayout({ children }) {
       ...custom,
       bgColor: textColor,
     textColor: bgColor,
-    })
+    });
+    setIsInverted(!isInverted);
   }
 
   const resetSettings = () => {
-  setCustom(DEFAULTS)
+  setCustom(DEFAULTS);
+  setIsInverted(false)
     }
   
 
@@ -107,7 +110,11 @@ export default function RootLayout({ children }) {
       <meta name="description" content="Portfolio de Louise Moraldy, spécialisée en JavaScript et interfaces accessibles." />
       
       {/* appliquation du style sur les variable du CSS (au lieu du body)*/}
-      <body style={{ 
+      {/* classe 'is-inverted' si le state est true */}
+      <body 
+      
+      className={isInverted ? 'is-inverted' : ''} 
+        style={{ 
         "--main-background" : custom.bgColor,
         "--main-text" : custom.textColor,
         "--dynamic-line-height": custom.lineHeight,

@@ -6,8 +6,8 @@
         display: flex;
         flex-direction: column;
         gap: var(--space-2);
-        width: 100%; /* test */
-        max-width: 600px;
+        width: 100%;
+        max-width: 37.5rem;
 
         .nameRow {
             display: flex;
@@ -17,24 +17,23 @@
             width: 100%;
         }
 
-       .inputGroup {
+        .inputGroup {
             display: flex;
             flex-direction: row;
             align-items: flex-start;
-            gap: var(--space-4); 
+            gap: var(--space-4);
             flex: 1;
         }
 
         label {
-          font-size: calc(var(--user-size) * 0.85);
+            font-size: calc(var(--user-size) * 0.85);
             font-weight: 600;
             opacity: 0.9;
-            
-            width: 85px; 
-            flex-shrink: 0; 
+            width: 5.5rem;
+            flex-shrink: 0;
             text-align: right;
             white-space: nowrap;
-            margin-top: 2px; 
+            margin-top: 2px;
         }
 
         .nameRow .inputGroup:nth-child(2) label {
@@ -42,17 +41,17 @@
             margin-left: var(--space-2);
         }
 
-        
+
 
         /* Les champs de saisie */
         input,
         textarea {
-            padding: 5px 6px;
+            padding: 0.3rem 0.4rem;
             border: 1.5px solid rgba(0, 0, 0, 0.15);
             background-color: rgba(255, 255, 255, 0.3);
             color: var(--main-text);
             font-family: inherit;
-            font-size: calc(var(--user-size) * 0.85 );
+            font-size: calc(var(--user-size) * 0.85);
             width: 100%;
             box-sizing: border-box;
             border-radius: 8px;
@@ -82,7 +81,6 @@
 
         button {
             align-self: flex-end
-
         }
 
     }
@@ -94,18 +92,19 @@
         font-style: italic;
     }
 }
+
 /* =========================================
    RESPONSIVE (LAPTOPS & ZOOM 125/150%)
    ========================================= */
 @media (max-width: 1366px) {
     .contactFormContainer .contactForm {
         /* limitation largeur sur les écrans zoomés */
-        max-width: 85%; 
+        max-width: 85%;
     }
 
     .contactFormContainer .contactForm textarea {
         /* min-height: 80px;  */
-}
+    }
 
 }
 
