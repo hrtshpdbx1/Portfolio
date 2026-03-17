@@ -20,8 +20,8 @@ config.autoAddCss = false; // pour eviter le css auto de FA
   // Valeurs par défauts
   const DEFAULTS = ({
     fontFamily: "--font-bbb-readme",
-    fontSize: 16,
-    lineHeight: 2,
+    fontSize: 1,
+    lineHeight: 1.8,
     bgColor: 'rgb(84.699% 96.254% 83.914%)',
     textColor: 'rgb(13.81% 13.179% 9.5057%)',
   }) 
@@ -111,8 +111,8 @@ export default function RootLayout({ children }) {
         "--main-background" : custom.bgColor,
         "--main-text" : custom.textColor,
         "--dynamic-line-height": custom.lineHeight,
-        "--user-size": `${custom.fontSize}px`, // variable qu'on utilise dans le css
-        fontSize: `${custom.fontSize}px`,
+        "--user-size": `${custom.fontSize}rem`, // variable qu'on utilise dans le css
+        fontSize: `${custom.fontSize}rem`,
         fontFamily :custom.fontFamily.startsWith('--') 
     ? `var(${custom.fontFamily})` 
     : custom.fontFamily

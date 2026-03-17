@@ -71,10 +71,11 @@ function Sidebar(props) {
     /* --- 2. LES FONCTIONS --- */
     function handleSizeClick(newSize) {
         const currentSize = Number(fontSize);
-        // Math.min(15, ...) empêche de dépasser x
-        // Math.max(8, ...) empêche de descendre sous x
-        const nextSize = Math.min(22, Math.max(9, currentSize + newSize));
-        onChangeSize(nextSize);// On "appelle" le parent pour lui donner la nouvelle valeur
+        // Math.min(2) max 2rem. Math.max(0.7) min 0.7rem.
+        const nextSize = Math.min(2, Math.max(0.7, currentSize + newSize));
+        // .toFixed(2) évite les bugs de calcul JavaScript et parseFloat le remet en nombre
+        onChangeSize(parseFloat(nextSize.toFixed(2)));
+
     }
 
     function handleHeightClick(newHeight) {
@@ -162,10 +163,10 @@ function Sidebar(props) {
                             <span className="sidebar__label">Taille</span>
                             <div className="sidebar__pill-group">
                                 {/* Au clic, on appelle la fonction locale qui communique avec layout */}
-                                <button className="pill-btn" onClick={() => handleSizeClick(-1)}>-</button>
+                                <button className="pill-btn" onClick={() => handleSizeClick(-0.1)}>-</button>
                                 <Type />
 
-                                <button className="pill-btn" onClick={() => handleSizeClick(1)}>+</button>
+                                <button className="pill-btn" onClick={() => handleSizeClick(0.1)}>+</button>
                             </div>
                         </div>
 
