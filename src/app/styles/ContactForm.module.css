@@ -1,143 +1,104 @@
 .contactFormContainer {
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
 
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+    max-width: 50em;
 
-    .contactForm {
+   
+    .nameRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+        width: 100%;
+    }
+
+    .inputGroup {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         gap: var(--space-2);
         width: 100%;
-        max-width: 37.5rem;
+    }
 
-        .nameRow {
-            display: flex;
-            flex-direction: row;
-           gap: var(--space-2);
-            /* L'espace entre Prénom et Nom */
-            width: 100%;
-        }
+    label {
+        font-size: var(--text-sm);
+        font-weight: var(--weight-semi-bold);
+        color: var(--main-text);
+        opacity: 0.9;
+        margin: 0;
+    }
 
-        .inputGroup {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: var(--space-4);
-            flex: 1;
-        }
-
-        label {
-            font-size: var(--text-sm);
-           font-weight: var(--weight-semi-bold);
-            opacity: 0.9;
-            width: 5.5rem;
-            flex-shrink: 0;
-            text-align: right;
-            white-space: nowrap;
-            margin-top: var(--space-0-5);
-        }
-
-        .nameRow .inputGroup:nth-child(2) label {
-            width: auto;
-            margin-left: var(--space-2);
-        }
+    input,
+    textarea {
+        padding: var(--space-2) var(--space-3) !important;
+        background-color: rgb(from var(--main-background) r g b / 50%);
+        border: var(--border-thin) solid rgb(from var(--main-text) r g b / 30%);
+        color: var(--main-text);
+        font-family: inherit;
+        font-size: var(--text-sm);
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: var(--radius-md);
+        transition: all var(--duration-fast) var(--ease-out-quart);
+    }
 
 
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--main-text);
+        background-color: var(--main-background);
+        box-shadow: 0 0 0 1px var(--main-text), var(--shadow-sm);
+    }
 
-        /* Les champs de saisie */
-        input,
-        textarea {
-           padding: var(--space-1) var(--space-2);
-            border: 1.5px solid rgba(0, 0, 0, 0.15);
-            background-color: rgba(255, 255, 255, 0.3);
-            color: var(--main-text);
-            font-family: inherit;
-            font-size: var(--text-sm);
-            width: 100%;
-            box-sizing: border-box;
-            border-radius: var(--radius-sm);
-            transition: all var(--duration-fast) var(--ease-out-quart);
-        }
+    input::placeholder,
+    textarea::placeholder {
+        opacity: 0.5;
+        font-style: italic;
+        font-size: var(--text-sm);
 
-        /* Focus sur un champ */
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--main-text);
-            background-color: rgba(255, 255, 255, 0.6);
-            box-shadow: var(--shadow-md);
-        }
+    }
 
-        input::placeholder,
-        textarea::placeholder {
-            opacity: 0.5;
-            font-style: italic;
-        }
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
 
-        textarea {
-            /* resize: vertical; */
-            min-height: 100px;
-        }
-
-
-        button {
-            align-self: flex-end
-        }
-
+    button {
+        align-self: flex-end;
     }
 
     /* Le message de succès/erreur */
     .sendStatus {
-        margin-top: var(--space-4);
+        margin-top: var(--space-2);
         font-weight: var(--weight-semi-bold);
         font-style: italic;
     }
 }
 
 /* =========================================
-   RESPONSIVE (LAPTOPS & ZOOM 125/150%)
-   ========================================= */
-@media (max-width: 1366px) {
-    .contactFormContainer .contactForm {
-        /* limitation largeur sur les écrans zoomés */
-        max-width: 85%;
-    }
-
-    .contactFormContainer .contactForm textarea {
-        /* min-height: 80px;  */
-    }
-
-}
-
-
-
-/* =========================================
-   RESPONSIVE (MOBILE)
+   RESPONSIVE (MOBILE & PETITS ÉCRANS)
    ========================================= */
 @media (max-width: 768px) {
-    .contactFormContainer .contactForm {
-        max-width: 100%;
-    }
-
-    .contactFormContainer .contactForm .nameRow {
-        flex-direction: column;
-        /* Prénom et Nom l'un sous l'autre */
+    .contactForm {
         gap: var(--space-4);
     }
 
-    .contactFormContainer .contactForm button {
+    .contactForm .nameRow {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .contactForm button {
         width: 100%;
-        /* Bouton plus facile à cliquer au pouce */
         justify-content: center;
-    }
 
-    .contactFormContainer .contactForm .inputGroup {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-1);
     }
-
-    .contactFormContainer .contactForm label {
-        text-align: left;
-    }
-
 }

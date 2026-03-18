@@ -28,23 +28,33 @@ a {
    2. VARIABLES & DESIGN SYSTEM
    ========================================= */
 :root {
-    /* COLORS */
-    --main-background: var(--main-background);
-    --main-text: var(--main-text);
+
 
     /* SPACING */
-    --space-0-5: 0.125rem;  /* 2px */
-    --space-1: 0.25rem;     /* 4px */
-    --space-2: 0.5rem       /* 8px */
-    --space-3: 0.75rem;     /* 12px */
-    --space-4: 1rem;        /* 16px */
-    --space-6: 1.5rem;      /* 24px */
-    --space-8: 2rem;        /* 32px */
-    --space-10: 2.5rem;     /* 40px */
-    --space-12: 3rem;       /* 48px */
-    --space-16: 4rem;       /* 64px */
-    --space-20: 5rem;       /* 80px (Formulaires) */
-    --space-24: 6rem;       /* 96px (Sections) */
+    --space-0-5: 0.125rem;
+    /* 2px */
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-20: 5rem;
+    /* 80px (Formulaires) */
+    --space-24: 6rem;
+    /* 96px (Sections) */
 
     /* RADIUS */
     --radius-xs: 0.25rem;
@@ -53,17 +63,13 @@ a {
     --radius-lg: 1rem;
     --radius-full: 9999px;
 
-    /* LAYERED SHADOW  */
-    --shadow-color: var(--main-text);
-    --shadow-sm: 0 1px 2px rgb(from var(--shadow-color) r g b / 10%);  /* Ombre subtile (pastilles) */
-    --shadow-md: 0 4px 6px rgb(from var(--shadow-color) r g b / 10%),   /* Ombre moyenne (images projets, boutons standard) */
-        0 2px 4px rgb(from var(--shadow-color) r g b / 8%); 
-    --shadow-lg: 0 10px 15px rgb(from var(--shadow-color) r g b / 12%),    /* Ombre large (hovers d'images, cartes surélevées) */
-        0 4px 6px rgb(from var(--shadow-color) r g b / 8%);
-    --shadow-glow-color: var(--main-background);   /* Ombres INVERSÉES (btn outline) */
-    --shadow-btn-hover: 0 4px 12px rgb(from var(--shadow-glow-color) r g b / 15%),
-        0 2px 4px rgb(from var(--shadow-glow-color) r g b / 10%);
-    --shadow-btn-active: 0 1px 2px rgb(from var(--shadow-glow-color) r g b / 20%);
+    /* BORDERS */
+    --border-thin: 1px;
+    /* Lignes séparatrices, boutons standards */
+    --border-md: 1.5px;
+    /* Formulaires, états actifs/focus */
+    --border-lg: 2px;
+    /* Boutons flottants, éléments très mis en avant */
 
     /* FONTS */
     --weight-extra-light: 200;
@@ -86,11 +92,15 @@ a {
 
     /* TRANSITIONS */
     /* ---  Courbes  */
-    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);    /* Décélération */
-    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* Léger rebond  */
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    /* Décélération */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Léger rebond  */
     /* --- Durées asymétriques */
-    --duration-fast: 150ms; /* vif, pour réagir au survol */
-    --duration-slow: 400ms; /* Plus lent, pour le retour au repos */
+    --duration-fast: 150ms;
+    /* vif, pour réagir au survol */
+    --duration-slow: 400ms;
+    /* Plus lent, pour le retour au repos */
 }
 
 
@@ -121,16 +131,47 @@ body {
 
 body {
 
-      /* TYPOGRAPHIE */
-    --text-xs: calc(var(--user-size) * 0.75);   /* Titres de sections sidebar, petits labels */
-    --text-sm: calc(var(--user-size) * 0.85);   /* Inputs, labels, petits textes, petits boutons */
-    --text-base: var(--user-size);              /* Paragraphes normaux, liens standard */
-    --text-lg: calc(var(--user-size) * 1.2);    /* Titres H4, Footer Logo, boutons larges */
-    --text-xl: calc(var(--user-size) * 1.5);    /* Titres H3, Titre Sidebar */
-    --text-2xl: calc(var(--user-size) * 2);     /* Titres H2 */
-    --text-3xl: calc(var(--user-size) * 3);     /* Titres H1 Hero */
+    /* *! Mettre ici les variable injectée par React */
 
-    
+
+    --main-background: var(--main-background);
+    --main-text: var(--main-text);
+
+
+    /* TYPOGRAPHIE */
+    --text-xs: calc(var(--user-size) * 0.75);
+    /* Titres de sections sidebar, petits labels */
+    --text-sm: calc(var(--user-size) * 0.85);
+    /* Inputs, labels, petits textes, petits boutons */
+    --text-base: var(--user-size);
+    /* Paragraphes normaux, liens standard */
+    --text-lg: calc(var(--user-size) * 1.2);
+    /* Titres H4, Footer Logo, boutons larges */
+    --text-xl: calc(var(--user-size) * 1.5);
+    /* Titres H3, Titre Sidebar */
+    --text-2xl: calc(var(--user-size) * 2);
+    /* Titres H2 */
+    --text-3xl: calc(var(--user-size) * 3);
+    /* Titres H1 Hero */
+
+
+    /* LAYERED SHADOW  */
+    --shadow-color: var(--main-text);
+    --shadow-sm: 0 1px 2px rgb(from var(--shadow-color) r g b / 10%);
+    /* Ombre subtile (pastilles) */
+    --shadow-md: 0 4px 6px rgb(from var(--shadow-color) r g b / 10%),
+        /* Ombre moyenne (images projets, boutons standard) */
+        0 2px 4px rgb(from var(--shadow-color) r g b / 8%);
+    --shadow-lg: 0 10px 15px rgb(from var(--shadow-color) r g b / 12%),
+        /* Ombre large (hovers d'images, cartes surélevées) */
+        0 4px 6px rgb(from var(--shadow-color) r g b / 8%);
+    --shadow-glow-color: var(--main-background);
+    /* Ombres INVERSÉES (btn outline) */
+    --shadow-btn-hover: 0 4px 12px rgb(from var(--shadow-glow-color) r g b / 15%),
+        0 2px 4px rgb(from var(--shadow-glow-color) r g b / 10%);
+    --shadow-btn-active: 0 1px 2px rgb(from var(--shadow-glow-color) r g b / 20%);
+
+
     background-color: var(--main-background);
     transition: background-color 0.5s ease, color 0.5s ease;
     color: var(--main-text);
@@ -168,7 +209,7 @@ body {
     }
 
     h1 {
-       font-size: var(--text-3xl);
+        font-size: var(--text-3xl);
         font-weight: var(--weight-black);
         margin-bottom: var(--space-4);
     }
@@ -269,7 +310,7 @@ em {
     font-size: var(--text-base);
     letter-spacing: var(--letter-wide);
     border-radius: var(--radius-full);
-    border: 1px solid var(--main-text);
+    border: var(--border-thin) solid var(--main-text);
     background: var(--main-text);
     color: var(--main-background);
     white-space: nowrap;
@@ -277,7 +318,7 @@ em {
     text-decoration: none;
     cursor: pointer;
 
-    transition: 
+    transition:
         transform var(--duration-slow) var(--ease-out-quart),
         box-shadow var(--duration-slow) var(--ease-out-quart),
         background-color var(--duration-slow) var(--ease-out-quart),
@@ -294,8 +335,6 @@ em {
 
 .btn:hover {
     transform: translateY(-2px);
-    /* shadow-md remplacée par une layered shadow) qui utilise la couleur du btn (--main-background) avec un peu de transparence 
-    */
     background: var(--main-background);
     color: var(--main-text);
     box-shadow: var(--shadow-btn-hover);
@@ -318,13 +357,13 @@ em {
 .btn.btn-outline:hover {
     background: var(--main-text);
     color: var(--main-background);
-   box-shadow: var(--shadow-btn-hover);
+    box-shadow: var(--shadow-btn-hover);
 }
 
 /* Variante Petit Bouton */
 .btn.btn-small {
     padding: 0.4rem 1rem;
-   font-size: var(--text-sm);
+    font-size: var(--text-sm);
 }
 
 /* pour CTA */
@@ -333,366 +372,6 @@ em {
     font-size: var(--text-lg);
 }
 
-/* =========================================
-   3. SIDEBAR & CUSTOM TOOLS
-   ========================================= */
-#sidebar {
-    position: fixed;
-    right: -25rem;
-    top: 0;
-    width: 17.5rem;
-    height: 100vh;
-    background: var(--main-background);
-    box-shadow: -4px 0 15px rgb(from var(--shadow-color) r g b / 10%);
-    padding: var(--space-6);
-    box-sizing: border-box;
-    transition: right 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* a supprimer ? */
-
-
-    &.sticky {
-        right: 0;
-    }
-
-    .sidebar__header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10%;
-
-        .sidebar__title {
-            margin: 0 !important;
-            font-size: var(--text-xl);
-            letter-spacing: 2px;
-            line-height: 1;
-        }
-
-    }
-
-
-    #closeCustomBlock {
-        font-size: 1.8rem;
-        background: none;
-        color: var(--main-text);
-        border: none;
-        cursor: pointer;
-
-
-        /* Centrage de l'icône */
-        padding: 0;
-        line-height: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.2s ease;
-
-        &:hover {
-            transform: rotate(90deg);
-        }
-
-    }
-
-    .sidebar__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: var(--space-8);
-        min-height: 0;
-        width: 100%;
-        flex: 1;
-        overflow-y: auto;
-
-        .sidebar__section {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-4);
-            padding-bottom: var(--space-6);
-
-        }
-
-        .sidebar__section:last-of-type {
-            border-bottom: none;
-        }
-
-
-        .sidebar__section-title {
-           font-size: var(--text-xs);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: var(--weight-light);
-            opacity: 0.8;
-            margin-bottom: 0;
-        }
-
-        .sidebar__control-row {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            gap: var(--space-4);
-        }
-
-        /* Variante pour les éléments qui s'empilent */
-        .sidebar__control-column {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-2);
-            width: 100%;
-        }
-
-        .sidebar__label {
-            font-size: var(--text-sm);
-            flex-shrink: 0;
-            margin: 0 !important;
-            line-height: 1;
-            /* Aligne la hauteur de la boîte sur le texte lui-même */
-        }
-
-        /* Dropdown Polices */
-        .sidebar_dropdown {
-            width: 100%;
-            /* max-width: 8.75rem; */
-            padding: 0.4rem 1.8rem 0.4rem 0.6rem;
-            margin-right: 5px;
-            border-radius: var(--radius-lg);
-            background: var(--main-background);
-            color: var(--main-text);
-            border: 1px solid rgb(from var(--main-text) r g b / 30%);
-            font-family: inherit;
-            font-size: var(--text-sm);
-            cursor: pointer;
-            /* fleche  */
-            appearance: none;
-            /* Efface la flèche par défaut du système */
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 0.5rem center;
-            background-size: 1rem;
-
-            &:focus {
-                outline: 2px solid var(--main-text);
-                outline-offset: 2px;
-            }
-
-            .opt-bbbreadme {
-                font-family: 'BBB ReadMe';
-            }
-
-            .opt-eido {
-                font-family: 'Eido';
-            }
-
-            .opt-accessibledfa {
-                font-family: 'Accessible DFA';
-            }
-
-            .opt-opendyslexic {
-                font-family: 'OpenDyslexic';
-                letter-spacing: -0.05rem;
-            }
-
-            .opt-arial {
-                font-family: Arial;
-            }
-
-            .opt-times {
-                font-family: 'Times New Roman';
-            }
-        }
-
-        /* Pill Buttons Group (+ / -) */
-        .sidebar__pill-group {
-            display: flex;
-            align-items: center;
-            border-radius: var(--radius-lg);
-            background: var(--main-background);
-            color: var(--main-text);
-            border: 1px solid rgb(from var(--main-text) r g b / 30%);
-            padding: 2px;
-            width: fit-content;
-
-            .pill-btn {
-                background: none;
-                border: none;
-                color: var(--main-text);
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                cursor: pointer;
-                font-weight: bold;
-                font-size: 1.2em;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.2s ease;
-
-                &:hover {
-
-                    background-color: rgb(from var(--main-text) r g b / 10%);
-                }
-
-                &:active {
-                    /* Effet tactile */
-                    transform: scale(0.9);
-                }
-            }
-
-            .pill-value {
-                padding: 0 0.6rem;
-                max-width: 2.8rem;
-                color: var(--main-text);
-                background-color: var(--main-text);
-                -webkit-mask-repeat: no-repeat;
-                mask-repeat: no-repeat;
-                -webkit-mask-size: contain;
-                mask-size: contain;
-            }
-        }
-
-        /* Grille des cercles de contraste  */
-        .contrast-group {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: var(--space-3);
-            margin-top: var(--space-2);
-
-            .contrast-circle {
-                width: 2.5rem;
-                height: 2.5rem;
-                border-radius: 50%;
-                margin: 1%;
-                border: 2px solid var(--main-background);
-                box-shadow: var(--shadow-sm);
-                cursor: pointer;
-                background: linear-gradient(135deg, var(--btn-bg, #fff) 50%, var(--btn-text, #000) 50%);
-                transition: transform 0.2s ease;
-
-
-
-
-            }
-
-            /* L'état actif du thème choisi */
-            .contrast-circle.active {
-                outline: 1.5px solid var(--main-text);
-                outline-offset: 1px;
-
-            }
-
-
-        }
-
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 2.5rem;
-            height: 1.4rem;
-
-            input {
-                opacity: 0;
-                /* input invisible */
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 2;
-                cursor: pointer;
-                margin: 0;
-            }
-
-            .slider {
-                /* dessin du switch */
-                position: absolute;
-                cursor: pointer;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: var(--main-text);
-                transition: .4s;
-                border-radius: 2rem;
-                z-index: 1;
-
-                &:before {
-                    position: absolute;
-                    content: "";
-                    height: 1rem;
-                    width: 1rem;
-                    left: 0.2rem;
-                    bottom: 0.2rem;
-                    background-color: var(--main-background);
-                    transition: .4s;
-                    border-radius: 50%;
-                }
-            }
-
-            /* état coché */
-            input:checked+.slider {
-                background-color: var(--main-text);
-
-                &:before {
-                    transform: translateX(1.1rem);
-                }
-            }
-        }
-    }
-}
-
-/* À mettre à la racine du fichier, hors de tout autre bloc */
-body.is-inverted .contrast-circle {
-    border-color: var(--main-text);
-}
-
-/* Taille réelle à l'input pour qu'il soit "trouvable" en nav clavier */
-.switch input {
-    position: absolute;
-    opacity: 0;
-    width: 2.5rem;
-    height: 1.4rem;
-    cursor: pointer;
-    z-index: 2;
-    /* Doit être au-dessus du slider pour capter le clic/focus */
-    margin: 0;
-}
-
-/* L'indication visuelle du focus */
-.switch input:focus-visible+.slider {
-    outline: 2px solid #50fa7b;
-    outline-offset: 3px;
-    box-shadow: 0 0 8px rgba(80, 250, 123, 0.5);
-}
-
-
-/* .switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-} */
-
-/*  icônes SVG dans la sidebar */
-.sidebar__pill-group .pill-value {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: var(--main-text);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-position: center;
-    mask-position: center;
-}
 
 /* =========================================
    BOUTONS FLOTTANTS (Ronds)
@@ -709,7 +388,7 @@ body.is-inverted .contrast-circle {
     color: var(--main-text);
     cursor: pointer;
     z-index: 999;
-    border: 2.3px solid var(--main-text);
+    border: var(--border-thin) solid var(--main-text);
     border-radius: 50%;
     transition: all 0.3s ease;
 }
@@ -757,7 +436,7 @@ body.is-inverted .contrast-circle {
 }
 
 .lucide {
-    stroke-width: 2.3px;
+    stroke-width: var(--border-md);
     width: 1.4rem;
     height: 1.4rem;
     transition: color 0.3s ease;
@@ -773,11 +452,11 @@ body.is-inverted .contrast-circle {
 .page-section {
     /* before test = height: 100vh; */
     min-height: 100vh;
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 10vw;
+    padding-left: 7vw;
     box-sizing: border-box;
 
     /* before test = align-items: center; */
@@ -1048,8 +727,8 @@ body.is-inverted .contrast-circle {
 
 
     .btn-skill {
-       font-size: var(--text-base);
-        border-width: 1px;
+        font-size: var(--text-base);
+        border-width: var(--border-thin);
 
     }
 
@@ -1155,7 +834,7 @@ body.is-inverted .contrast-circle {
 
             .overlay-text {
                 color: var(--main-background);
-                border: 1px solid var(--main-background);
+                border: var(--border-thin) solid var(--main-background);
                 border-radius: var(--radius-full);
                 padding: 0.6rem 1.25rem;
                 opacity: 0;
@@ -1204,6 +883,17 @@ body.is-inverted .contrast-circle {
         transform: translate3d(0, 0, 0);
         /* Arrive à sa place */
     }
+}
+
+
+/* SECTION 4 : CONTACT */
+
+.section5 {
+
+    .contactform_container {
+        margin-top: var(--space-10);
+    }
+
 }
 
 /* =========================================
@@ -1258,8 +948,13 @@ body.is-inverted .contrast-circle {
 @media (max-width: 768px) {
 
     /* 1. TYPO*/
-    body h1 { font-size: var(--text-2xl); }
-    body h2 { font-size: var(--text-xl); }
+    body h1 {
+        font-size: var(--text-2xl);
+    }
+
+    body h2 {
+        font-size: var(--text-xl);
+    }
 
     /* Masquer la ligne des titres de section  */
     /* todo: à supprimer  */

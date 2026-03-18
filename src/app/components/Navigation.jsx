@@ -60,7 +60,7 @@ export default function Navigation() {
 
                     {/* Bouton LinkedIn (Moitié) */}
                     <a href="https://www.linkedin.com/in/louise-moraldy/" target="_blank" rel="noopener noreferrer" aria-label="Mon profil LinkedIn" className={`btn btn-small btn-outline ${style.socialBtn}`} onClick={closeMenu}>
-                     <FontAwesomeIcon icon={faLinkedin} />
+                     <FontAwesomeIcon icon={faLinkedin} className={style.iconLinkedin} />
                     </a>
 
                     {/* Bouton Mail (Moitié) */}

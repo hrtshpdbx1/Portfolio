@@ -145,13 +145,7 @@ export default function Home() {
         <section id="section4" className="page-section section4">
 
           <div className="section-intro">
-            <div className="title-wrapper"> 
-              <div className="section-title-line"></div>
                 <h2>Projets sélectionnés</h2>
-              </div>
-           
-            
-
             <div className="projects_container">
               <div className="projet_elem">
                 <Link href="/social-script">

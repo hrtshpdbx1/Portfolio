@@ -27,7 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgb(from var(--main-text) r g b / 15%);
+    border-bottom: var(--border-thin) solid rgb(from var(--main-text) r g b / 15%);
     padding-bottom: var(--space-4);
 }
 
@@ -87,7 +87,7 @@
     display: flex;
     flex-wrap: wrap; /* passage à la ligne si manque de place */
     gap: var(--space-3); 
-    border-top: 1px solid rgb(from var(--main-text) r g b / 10%);
+    border-top: var(--border-thin) solid rgb(from var(--main-text) r g b / 10%);
 }
 
 /* Le bouton CV = toute la largeur  */
@@ -99,6 +99,10 @@
 .socialBtn {
     flex: 1;
     padding: var(--space-2) 0 !important;
+}
+
+.iconLinkedin {
+    font-size: 1.5rem; /* Permet d'ajuster sa taille */
 }
 
 

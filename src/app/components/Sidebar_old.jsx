@@ -17,6 +17,7 @@ const colors = [
         name: "Bleu & jaune",
         bgColor: "rgb(26.999% 9.8793% 74.757%)",
         textColor: "rgb(93.699% 99.691% 79.441%)"
+
     },
     {
         id: 3,
@@ -24,6 +25,7 @@ const colors = [
         bgColor: "#b91c1c",
         textColor: "#fef2f2"
     },
+
     {
         id: 4,
         name: "Kaki & blanc",
@@ -54,14 +56,18 @@ const colors = [
         bgColor: "rgb(96.702% 87.161% 90.199%)",
         textColor: "rgb(0.81603% 5.1251% 0%)"
     }
+
 ];
 
 function Sidebar(props) {
     const { settings, onChangeSize, onChangeLineHeight, onUpdateFontFamily, onResetSettings, onChangeColors, onReverseColors } = props;
     const { fontFamily, fontSize, lineHeight, bgColor, textColor } = settings
 
+
     /* --- 1. LES ÉTATS (STATES) --- */
     const [isOpen, setIsOpen] = useState(false); // State visibilité sidebar, fermé par défaut
+
+
 
     /* --- 2. LES FONCTIONS --- */
     function handleSizeClick(newSize) {
@@ -70,6 +76,7 @@ function Sidebar(props) {
         const nextSize = Math.min(2, Math.max(0.7, currentSize + newSize));
         // .toFixed(2) évite les bugs de calcul JavaScript et parseFloat le remet en nombre
         onChangeSize(parseFloat(nextSize.toFixed(2)));
+
     }
 
     function handleHeightClick(newHeight) {
@@ -95,81 +102,99 @@ function Sidebar(props) {
         onReverseColors(bgColor, textColor)
     }
 
+
     return (
         <>
-            {/* Le bouton ⚙️ (Garde la classe globale car il vit dans le body) */}
+            {/* Le bouton ⚙️ */}
             <button
+                // id="logo_trigger_menu"
                 id="sidebar-trigger"
                 className="icon-btn-floating"
                 onClick={() => setIsOpen(true)} // Au clic, on change le state isOpen à true
                 aria-label="Ouvrir le menu">
                 <Cog size={22} />
+                {/* <Settings /> */}
             </button>
-            
-            {/* Sidebar : Utilisation des classes Module CSS */}
-            <aside id="sidebar" className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
-                <div className={styles.header}>
-                    <h2 className={styles.title}>Réglages</h2>
+            {/* Sidebar  */}
+            {/*  si isOpen est vrai, on ajoute la classe 'sticky' 
+                sinon on ne met rien. */}
+            {/* todo: vérifier si class sticky s'applique, cf Nesting mess */}
+            <aside id="sidebar" className={
+                isOpen ?
+                    'sticky' :
+                    ''}>
+                <div className="sidebar__header">
+                    <h2 className="sidebar__title">Réglages</h2>
                     <button
                         id="closeCustomBlock"
-                        className={styles.closeBtn} 
-                        onClick={() => setIsOpen(false)} // Au clic, on change le state isOpen à false
+                        onClick={() => setIsOpen(false)}// Au clic, on change le state isOpen à false
                         aria-label="Fermer le menu">
                         <X />
                     </button>
                 </div>
 
-                <div className={styles.content}>
+                <div className="sidebar__content">
 
                     {/* ---  TYPOGRAPHIE --- */}
-                    <div className={styles.section}>
-                        <h3 className={styles.sectionTitle}>Typographie</h3>
+                    <div className="sidebar__section">
+                        <h3 className="sidebar__section-title">Typographie</h3>
 
                         {/* --- FONT SELECT DROPDOWN ---  */}
-                        <div className={styles.controlRow}>
-                            <label htmlFor="font-select" className={styles.label}>Police</label>
-                            
-                            {/* LE FAMEUX WRAPPER */}
-                            <div className={styles.selectWrapper}> 
-                                <select
-                                    onChange={(event) => handleFontSelect(event.target.value)}
-                                    value={settings.fontFamily}
-                                    id="font-select"
-                                    className={styles.dropdown}>
-                                    <option value="--font-bbb-readme" className={styles.optBbbreadme}>BBB ReadMe</option>
-                                    <option value="--font-eido" className={styles.optEido}>Eido</option>
-                                    <option value="--font-accessibledfa" className={styles.optAccessibledfa}>Accessible DFA</option>
-                                    <option value="--font-open-dyslexic" className={styles.optOpendyslexic}>Dyslexique</option>
-                                    <option value="Arial, sans-serif" className={styles.optArial}>Arial</option>
-                                    <option value="Times New Roman, serif" className={styles.optTimes}>Times</option>
-                                </select>
-                                <ChevronDown className={styles.selectArrow} size={16} />
+                        <div className="sidebar__control-row">
+
+                            <label htmlFor="font-select" className="sidebar__label">Police</label>
+                            <div className="sidebar__select-wrapper"> 
+                            <select
+                                // onChange = {(event) => fonctionMAJ (event.target.value) }
+                                onChange={(event) => handleFontSelect(event.target.value)}
+                                value={settings.fontFamily}
+                                id="font-select"
+                                className="sidebar_dropdown">
+                                <option value="--font-bbb-readme" className="opt-bbbreadme">BBB ReadMe</option>
+                                <option value="--font-eido"
+                                    className="opt-eido">Eido</option>
+                                <option value="--font-accessibledfa" className="opt-accessibledfa">Accessible DFA</option>
+                                <option value="--font-open-dyslexic" className="opt-opendyslexic">Dyslexique</option>
+                                <option value="Arial, sans-serif" className="opt-arial">Arial</option>
+                                <option value="Times New Roman, serif" className="opt-times">Times</option>
+                            </select>
+
+                            <ChevronDown className="sidebar__select-arrow" size={16} />
                             </div>
                         </div>
 
                         {/* --- FONT SIZE BTN ---  */}
-                        <div className={styles.controlRow}>
-                            <span className={styles.label}>Taille</span>
-                            <div className={styles.pillGroup}>
-                                <button className={styles.pillBtn} onClick={() => handleSizeClick(-0.1)} aria-label="Diminuer la taille">
+                        <div className="sidebar__control-row">
+                            {/* avec valeur :  <h3 className="sidebar__label">Taille : {fontSize}px</h3> */}
+                            <span className="sidebar__label">Taille</span>
+                            <div className="sidebar__pill-group">
+                                {/* Au clic, on appelle la fonction locale qui communique avec layout */}
+                                <button className="pill-btn" onClick={() => handleSizeClick(-0.1)} aria-label="Diminuer la taille">
                                     <Minus size={16} strokeWidth={2.5} />
                                 </button>
+
+
                                 <Type size={18} style={{ margin: '0 4px' }} />
-                                <button className={styles.pillBtn} onClick={() => handleSizeClick(0.1)} aria-label="Agrandir la taille">
+
+                                <button className="pill-btn" onClick={() => handleSizeClick(0.1)} aria-label="Agrandir la taille">
                                     <Plus size={16} strokeWidth={2.5} />
                                 </button>
                             </div>
                         </div>
 
                         {/* --- LINE HEIGHT BTN ---  */}
-                        <div className={styles.controlRow}>
-                            <span className={styles.label}>Interligne</span>
-                            <div className={styles.pillGroup}>
-                                <button className={styles.pillBtn} onClick={() => handleHeightClick(-0.1)} aria-label="Diminuer l'interligne">
+                        <div className="sidebar__control-row">
+                            {/* <h3 className="sidebar__label">Interligne: {lineHeight}px</h3> */}
+                            <span className="sidebar__label">Interligne</span>
+                            <div className="sidebar__pill-group">
+                                {/* Au clic, on appelle la fonction locale qui communique avec layout */}
+                                <button className="pill-btn" onClick={() => handleHeightClick(-0.1)} aria-label="Diminuer l'interligne">
                                     <Minus size={16} strokeWidth={2.5} />
                                 </button>
+
                                 <ListChevronsUpDown size={18} style={{ margin: '0 4px' }} />
-                                <button className={styles.pillBtn} onClick={() => handleHeightClick(0.1)} aria-label="Agrandir l'interligne">
+
+                                <button className="pill-btn" onClick={() => handleHeightClick(0.1)} aria-label="Agrandir l'interligne">
                                     <Plus size={16} strokeWidth={2.5} />
                                 </button>
                             </div>
@@ -177,9 +202,9 @@ function Sidebar(props) {
                     </div>
 
                     {/* --- THEME CHOICE ---  */}
-                    <div className={styles.section}>
-                        <h3 className={styles.sectionTitle}>Thèmes</h3>
-                        <div className={styles.contrastGroup}>
+                    <div className="sidebar__section">
+                        <h3 className="sidebar__section-title">Thèmes</h3>
+                        <div className="contrast-group">
                             {colors.map(color => {
                                 // On vérifie si les couleurs correspondent (sens normal OU inversé)
                                 const isActive = (bgColor === color.bgColor && textColor === color.textColor) || 
@@ -188,7 +213,7 @@ function Sidebar(props) {
                                 return (
                                     <button
                                         key={color.id}
-                                        className={`${styles.contrastCircle} ${isActive ? styles.active : ''}`}
+                                        className={`contrast-circle ${isActive ? 'active' : ''}`}
                                         style={{
                                             "--btn-bg": color.bgColor,
                                             "--btn-text": color.textColor,
@@ -200,9 +225,10 @@ function Sidebar(props) {
                             })}
                         </div>
                         
-                        <div className={styles.controlRow}>
-                            <label htmlFor="invert-toggle" className={styles.label}>Inverser</label>
-                            <div className={styles.switch}>
+
+                        <div className="sidebar__control-row">
+                            <label htmlFor="invert-toggle" className="sidebar__label">Inverser</label>
+                            <div className="switch">
                                 <input
                                     id="invert-toggle"
                                     type="checkbox"
@@ -213,26 +239,26 @@ function Sidebar(props) {
                                     }}
                                     aria-label="Inverser les couleurs"
                                 />
-                                {/* J'ai supprimé ici styles.round qui n'existait pas dans le CSS */}
-                                <span className={styles.slider}></span>
+                                <span className="slider round"></span>
                             </div>
                         </div>
 
                     </div> {/* Fin de la section Couleurs */}
                 </div>
                 {/* --- RESET---  */}
-                <div className={styles.controlRow}>
+                <div className="sidebar__control-row">
                     <button
                         onClick={handleResetSettings}
                         id="reset-theme"
                         className="btn btn-outline"
                         title="Réinitialiser le thème">
                         <RotateCcw />
-                        <span style={{ marginLeft: "8px" }}>Réinitialiser</span>
+                        <span>Réinitialiser</span>
                     </button>
                 </div>
 
             </aside >
+
         </>
     )
 }
