@@ -10,9 +10,9 @@
     width: 17.5rem;
     height: 100vh;
     background: var(--main-background);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    padding: 2em 1.5em;
-    transition: left 0.3s ease;
+    box-shadow: 4px 0 15px rgb(from var(--shadow-color) r g b / 10%);
+    padding: var(--space-8) var(--space-6);
+   transition: left var(--transition-normal);
     z-index: 1001;
     display: flex;
     flex-direction: column;
@@ -33,9 +33,9 @@
 
 .title {
     margin: 0 !important;
-     font-size: calc(var(--user-size) * 1.5);
+   font-size: var(--text-xl);
     letter-spacing: 2px;
-    line-height: 1; /* centre optiquement le texte ! */
+    line-height: 1; /* centre optiquement le texte */
 }
 
 
@@ -45,7 +45,7 @@
     font-size: 1.8rem;
     color: var(--main-text);
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-fast);
     
     /* Centrage de l'icône */
     padding: 0;
@@ -71,10 +71,10 @@
 
 .links a {
     color: var(--main-text);
-    font-size: var(--user-size);
+    font-size: var(--text-base);
     font-weight: var(--weight-medium);
     text-decoration: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+   transition: opacity var(--transition-fast), transform var(--transition-fast);
     display: block;
 }
 
@@ -85,8 +85,8 @@
     margin-top: auto;
     padding-top: var(--space-6);
     display: flex;
-    flex-wrap: wrap; /* Magie : permet de passer à la ligne si ça manque de place */
-    gap: var(--space-3); /* Un espace régulier entre tous les boutons */
+    flex-wrap: wrap; /* passage à la ligne si manque de place */
+    gap: var(--space-3); 
     border-top: 1px solid rgb(from var(--main-text) r g b / 10%);
 }
 
@@ -98,7 +98,7 @@
 /* 50/50 */
 .socialBtn {
     flex: 1;
-    padding: 6px 0 !important; 
+    padding: var(--space-2) 0 !important;
 }
 
 
@@ -116,6 +116,6 @@
     }
 
     .links {
-        gap: var(--space-4); /* On resserre un peu les liens */
+        gap: var(--space-4); /* liens resserés */
     }
 }

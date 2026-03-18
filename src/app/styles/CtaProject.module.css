@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     padding: var(--space-8) var(--space-4);
-    margin-top: 2rem;
+    margin-top: var(--space-8);
 }
 
 .ctaContainer {
@@ -20,14 +20,14 @@
 }
 
 .ctaTitle {
-    font-size: calc(var(--user-size) * 2.2);
+    font-size: var(--text-2xl);
     font-weight: var(--weight-black);
     color: var(--main-text);
     margin: 0;
 }
 
 .ctaText {
-    font-size: calc(var(--user-size) * 1.1);
+    font-size: var(--text-lg);
     line-height: var(--dynamic-line-height);
     color: var(--main-text);
     opacity: 0.7;
@@ -39,27 +39,21 @@
 
 }
 
-.ctaButton {
+/* .ctaButton {
+ 
     margin-top: var(--space-4);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background-color: var(--main-text) !important;
-    color: var(--main-background) !important;
-    padding: var(--space-3) var(--space-8) !important;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-8);
     letter-spacing: 2px;
-   
-   
+} */
 
-}
-
+/* L'animation de la flèche (Ça c'est parfait, on garde !) */
 .ctaIcon {
-    transition: transform 0.3s ease;
+    transition: transform var(--duration-slow) var(--ease-out-quart);
 }
 
 .ctaButton:hover .ctaIcon {
     transform: translateX(5px);
-   
 }
 
 /* =========================================
@@ -70,7 +64,7 @@
     .ctaSection {
         /* reduction marges extérieures  */
         padding: var(--space-6) var(--space-2);
-        margin-top: 1rem;
+        margin-top: var(--space-4);
     }
 
     .ctaContainer {
@@ -79,11 +73,11 @@
 
     .ctaTitle {
         /*reduction taille titre */
-        font-size: calc(var(--user-size) * 1.8);
+        font-size: var(--text-xl);
     }
 
     .ctaText {
-        font-size: calc(var(--user-size) * 1);
+        font-size: var(--text-base);
     }
 
     .ctaButton {

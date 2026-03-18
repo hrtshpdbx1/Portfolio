@@ -8,20 +8,19 @@
 
 
 .projectPageWrapper main {
-    /* padding-top:5rem; */
-    padding-top: 3rem;
+    padding-top: var(--space-12);
 }
 
 
 /* Conteneur principal */
 .projectPage {
     /* max-width: 850px; */
-   max-width: 55rem;
+    max-width: 55rem;
     margin: 0 auto;
     padding: var(--space-8) var(--space-4);
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--space-12);
 }
 
 
@@ -37,7 +36,7 @@
     font-weight: 400;
 
     p {
-        font-size: calc(var(--user-size) + 0.2rem);
+        font-size: var(--text-lg);
     }
 }
 
@@ -63,7 +62,7 @@
 
 .metaItem strong {
     display: block;
-    font-size: 0.8rem;
+    font-size: var(--text-sm);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: var(--space-2);
@@ -76,7 +75,7 @@
 }
 
 .metaItem li {
-    font-size: calc(var(--user-size) * 0.85) !important;
+    font-size: var(--text-sm) !important;
     opacity: 0.8;
 }
 
@@ -85,40 +84,37 @@
     display: flex;
     flex-direction: column;
     /* Espace entre les paragraphes d'une même section */
-    gap: 1.5rem;
+    gap: var(--space-6);
     margin-bottom: 0;
 
     h2 {
-        /* font-size: 1.8rem; */
-        font-size: calc(var(--user-size) * 2);
-        font-weight: var(--weight-bold
-        );
+        font-size: var(--text-2xl);
+        font-weight: var(--weight-bold);
         margin-bottom: var(--space-4);
         line-height: 1.1;
     }
 
     h3 {
-        font-size: calc(var(--user-size) * 1.5);
-        /* font-weight: var(--weight-semi-bold); */
+        font-size: var(--text-xl);
         font-weight: var(--weight-bold);
-        margin-top: 2rem !important;
-        margin-bottom: 1rem !important;
+        margin-top: var(--space-8) !important;
+        margin-bottom: var(--space-4) !important;
         opacity: 0.9;
 
     }
 
     h4 {
-        font-size: calc(var(--user-size) * 1.2);
+        font-size: var(--text-lg);
         font-weight: var(--weight-bold);
         color: var(--main-text);
-        margin-top: 2rem !important;
+        margin-top: var(--space-8) !important;
         margin-bottom: 0 !important;
     }
 }
 
 
 .article-point {
-    margin-top: 4rem;
+    margin-top: var(--space-16);
 }
 
 /* Force l'application de la marge sur le contenu textuel interne */
@@ -129,15 +125,6 @@
 }
 
 
-
-
-.objectif-section p {
-    font-size: calc(var(--user-size) * 1.05);
-    /* Le texte d'intro est très légèrement plus grand */
-    line-height: calc(var(--dynamic-line-height) + 0.1) !important;
-}
-
-/* On enlève la marge haute du titre pour qu'il s'intègre bien sous la ligne */
 .objectif-section h2 {
     margin-top: 0;
 }
@@ -146,7 +133,7 @@
 
 .imagePlaceholder,
 .imagePlaceholder_Small {
-    margin: 2rem auto !important;
+    margin: var(--space-8) auto !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,15 +175,16 @@
 .imagePlaceholder_Small figcaption {
     margin-top: var(--space-3);
     font-weight: var(--weight-light);
-    font-size: calc(var(--user-size) * 0.8);
+    font-size: var(--text-sm);
     opacity: 0.8;
     text-align: center;
     width: 100%;
 }
+
 .containerHorizontal {
     display: flex;
     flex-direction: row;
-    align-items: stretch; 
+    align-items: stretch;
     justify-content: space-between;
     gap: var(--space-8);
     width: 100%;
@@ -209,28 +197,29 @@
         max-width: none;
         display: flex;
         flex-direction: column;
-        justify-content: center; 
+        justify-content: center;
     }
 
     .point-media {
-        flex: 1; 
+        flex: 1;
         display: flex;
-        align-items: stretch; 
+        align-items: stretch;
         margin: 0;
     }
 
     .jsonConcept {
         width: 100%;
-        margin: 0 !important; 
+        margin: 0 !important;
         height: 100%;
-        max-height: none; 
+        max-height: none;
         display: block;
-        font-size: 0.65rem;
+        font-size: var(--text-xs);
         overflow-x: auto;
         overflow-y: auto;
-        box-sizing: border-box; 
+        box-sizing: border-box;
     }
 }
+
 /* --- Lightbox --- */
 .imageOverlay {
     position: fixed;
@@ -259,7 +248,7 @@
     top: 20px;
     right: 40px;
     color: white;
-    font-size: 40px;
+    font-size: var(--text-base);
     font-weight: bold;
 }
 
@@ -291,26 +280,26 @@
 /* Indication visuelle que l'image est cliquable */
 .clickable {
     cursor: zoom-in;
-    transition: transform 0.2s ease;
+   transition: transform var(--duration-fast) var(--ease-out-quart);
 }
 
 .clickable:hover {
     transform: scale(1.02);
 }
 
-/* Style pour le Mockup qui est un lien */
+/* Mockup link styling */
 .mockup-link {
     text-decoration: none;
     display: block;
 }
 
 .clickable-mockup {
-    transition: all 0.3s ease;
+    transition: all var(--duration-slow) var(--ease-out-quart);
 }
 
 .clickable-mockup:hover img {
     filter: brightness(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
 }
 
 /*  Blocs de Code  */
@@ -322,11 +311,11 @@
     padding: var(--space-4);
     border-radius: var(--radius-md);
     position: relative;
-    padding-top: 2.5rem !important;
+    padding-top: var(--space-10) !important;
     width: 80%;
     margin: var(--space-8) auto;
     font-family: 'Fira Code', monospace;
-    font-size: 0.7rem !important;
+    font-size: var(--text-xs) !important;
     overflow-x: auto;
     border: 1px solid #44475a;
     /* overflow: hidden; */
@@ -376,7 +365,7 @@
     left: 0;
     width: 100%;
     padding: 8px 16px;
-    font-size: 0.8rem;
+    font-size: var(--text-sm);
     font-family: 'Fira Code', monospace;
     letter-spacing: 1px;
     border-bottom: 1px solid #44475a;
@@ -496,6 +485,7 @@ p code,
     color: #ff79c6;
     font-family: 'Fira Code', monospace;
     font-size: 0.85em;
+    /* laisser en em ! */
     padding: 0.2em 0.4em;
     border-radius: var(--radius-xs);
     border: 1px solid #44475a;
@@ -534,15 +524,14 @@ p code,
 }
 
 .footer-logo {
-    font-size: calc(var(--user-size) * 1.2);
+    font-size: var(--text-lg);
     font-weight: bold;
     text-decoration: none;
     color: var(--main-background);
 }
 
 .footer-tagline {
-    /* font-size: 0.7rem; */
-    font-size: calc(var(--user-size) * 0.9);
+    font-size: var(--text-sm);
     opacity: 0.7;
 }
 
@@ -562,7 +551,7 @@ p code,
 
 .footer-title {
     font-weight: var(--weight-light);
-    font-size: calc(var(--user-size) * 0.85);
+    font-size: var(--text-sm);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: var(--space-2);
@@ -573,8 +562,8 @@ p code,
     text-decoration: underline;
     color: var(--main-background);
     opacity: 0.8;
-    font-size: calc(var(--user-size) * 0.95);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    font-size: var(--text-base);
+   transition: opacity var(--duration-fast) var(--ease-out-quart), transform var(--duration-fast) var(--ease-out-quart);
 }
 
 .footer-nav-col a:hover {
@@ -597,9 +586,9 @@ p code,
 
 .social-icons a {
     color: var(--main-background);
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
     opacity: 0.8;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+   transition: opacity var(--duration-fast) var(--ease-out-quart), transform var(--duration-fast) var(--ease-out-quart);
 }
 
 .social-icons a:hover {
@@ -613,44 +602,44 @@ p code,
     margin: 0 auto;
     padding-top: var(--space-6);
     text-align: center;
-    /* font-size: 0.8rem; */
-    font-size: calc(var(--user-size) * 0.8);
+    font-size: var(--text-xs);
     opacity: 0.5;
 }
+
 /* =========================================
-   RESPONSIVE (MOBILE) - PROJECT DETAIL
+   Media queries - Mobile
    ========================================= */
 @media (max-width: 768px) {
+
     /* 1. ESPACEMENT GLOBAL */
     .projectPage {
-        padding: var(--space-6) var(--space-4); 
-        gap: 2rem; 
+        padding: var(--space-6) var(--space-4);
+        gap: var(--space-8);
     }
 
-  .projectPageWrapper main {
-       
-        padding-top: 6rem; 
+    .projectPageWrapper main {
+        padding-top: var(--space-24);
     }
 
     /* 2. MÉTA-DONNÉES */
     .projectMeta {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: var(--space-6);
     }
 
     .metaContainerLeft {
         display: grid;
-        grid-template-columns: 1fr 1fr; 
-        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
         width: 100%;
     }
 
-  
-   /* La section "Type" (1er élément) prend toute la largeur au-dessus */
+
+    /* La section "Type" (1er élément) prend toute la largeur au-dessus */
     .metaContainerLeft .metaItem:nth-child(1) {
-        grid-column: 1 / -1; 
+        grid-column: 1 / -1;
     }
-    
+
 
 
     /* 3. BOUTONS PLEINE LARGEUR */
@@ -661,20 +650,21 @@ p code,
         width: 100%;
     }
 
-    .metaContainerRight .metaItem, 
+    .metaContainerRight .metaItem,
     .metaContainerRight .metaItem a.btn {
         width: 100%;
-        justify-content: center; 
+        justify-content: center;
     }
 
     /* 4. SUPPRESSION DE LA LIGNE DE TITRE */
     .title-wrapper .section-title-line {
         display: none;
     }
-    
+
     .title-wrapper {
-        justify-content: center; /* Centre parfaitement le titre */
-        margin: var(--space-4) 0 1rem 0;
+        justify-content: center;
+        /* Centre parfaitement le titre */
+       margin: var(--space-4) 0 var(--space-4) 0;
     }
 
     .title-wrapper h3 {
@@ -683,25 +673,28 @@ p code,
 
     /* 5. AJUSTEMENT DES PUCES DE LISTE */
     .projectList li {
-        padding-left: var(--space-6); /* Éloigne le texte du bord */
+        padding-left: var(--space-6);
+        /* Éloigne le texte du bord */
     }
-    
+
     .projectList li::before {
-        left: 2px; /* Assure que la puce ne touche pas le bord de l'écran */
+        left: 2px;
+        /* Assure que la puce ne touche pas le bord de l'écran */
     }
 
     /* 6. IMAGES ET VIDÉOS PLEINE LARGEUR */
-    .imagePlaceholder, 
+    .imagePlaceholder,
     .imagePlaceholder:first-child,
     .imagePlaceholder_Small {
         width: 100% !important;
-        margin: 1.5rem 0 !important;
+        margin: var(--space-6) 0 !important;
     }
-    
+
     .imagePlaceholder img,
     .imagePlaceholder_Small img {
         width: 100% !important;
-        height: auto !important; /* Empêche l'étirement vertical */
+        height: auto !important;
+        /* Empêche l'étirement vertical */
         object-fit: contain;
     }
 
@@ -714,12 +707,13 @@ p code,
     .htmlConcept,
     .codeConcept,
     .jsonConcept {
-        width: 100%; 
+        width: 100%;
         margin: var(--space-4) 0;
-        font-size: 0.65rem !important; /* Garde la lisibilité */
-        padding-top: 3rem !important; /* Empêche le faux header ("JavaScript") de mordre le code */
+        font-size: var(--text-xs);
+        padding-top: var(--space-12) !important;
+        /* Empêche le faux header ("JavaScript") de mordre le code */
     }
-    
+
     .containerHorizontal .point-media {
         width: 100%;
     }

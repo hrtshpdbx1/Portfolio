@@ -15,7 +15,7 @@ export default function CtaProject() {
                     Discutons ensemble de vos besoins en développement web et accessibilité.
                 </p>
                 
-                <Link href="/#section5" className={`btn btn-outline ${style.ctaButton}`}>
+                <Link href="/#section5" className={`btn ${style.ctaButton}`}>
                     Me contacter
                     <ArrowRight size={16} className={style.ctaIcon} />
                 </Link>

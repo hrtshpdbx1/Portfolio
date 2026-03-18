@@ -118,7 +118,7 @@ export default function PayGapQuest() {
                                 les échanges liés à la rémunération en entreprise.
                             </p>
 
-                            <h3> ✅ Fonctionnalités clés :</h3>
+                            <h3>Fonctionnalités clés :</h3>
                             <ul className="projectList">
                                 <ul className="projectList">
                                     <li><strong>Calculateur salarial :</strong> Comparatif dynamique basé sur le secteur, l&rsquo;ancienneté et le genre.</li>
@@ -225,7 +225,39 @@ export default function PayGapQuest() {
                                 </div>
                                 <h4>Comparatif bas&eacute; sur le secteur, l&rsquo;anciennet&eacute; et le genre.</h4>
                                 <p>Pour rendre les donn&eacute;es de l&rsquo;IEFH concr&egrave;tes, notre &eacute;quipe a mis en place un simulateur dynamique. Le fonctionnement repose sur une architecture d&eacute;coupl&eacute;e o&ugrave; le Front-end interroge une API REST d&eacute;velopp&eacute;e en PHP</p>
-                                {/* Diagramme et JSON */}
+
+                                    {/* Screen Homepage */}
+                            <div className="project-homepage_screen">
+                                <figure className="imagePlaceholder">
+                                    <video
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        controls
+                                        width="100%"
+                                        style={{
+                                            borderRadius: '8px',
+                                        }}
+                                        preload="metadata"
+                                    >
+                                        <source src={CalculatorScreen} type="video/mp4" />
+                                        Votre navigateur ne supporte pas la lecture de vidéos.
+                                    </video>
+                                    <figcaption>
+                                        Démonstration du simulateur : saisie des donn&eacute;es et affichage dynamique de l&rsquo;&eacute;cart salarial.</figcaption>
+                                </figure>
+                            </div>
+                           
+                                <p>Le processus technique s&rsquo;articule en trois &eacute;tapes : </p>
+                                <ul className="projectList">
+                                    <li><strong>Communication asynchrone (AJAX/Fetch) :</strong> Lorsqu&rsquo;une utilisatrice saisit son secteur, son m&eacute;tier et son salaire, le Front-end envoie une requ&ecirc;te GET param&eacute;tr&eacute;e au serveur sans recharger la page.</li>
+                                    <li><strong> Logique m&eacute;tier c&ocirc;t&eacute; Serveur :</strong> Le backend utilise la Programmation Orient&eacute;e Objet (via la classe SalaryCalculator) pour traiter la demande. Le script parse un fichier JSON source servant de base de donn&eacute;es, puis applique des algorithmes d&rsquo;ajustement selon le profil (ex: pond&eacute;ration de -10% pour un profil Junior ou +15% pour un profil Senior).</li>
+                                    <li><strong>Traitement et Formatage :</strong> Le serveur calcule l&rsquo;&eacute;cart personnel et l&rsquo;&eacute;cart de genre du secteur, puis renvoie une r&eacute;ponse structur&eacute;e en JSON. Le Front-end r&eacute;cup&egrave;re ces objets pour mettre &agrave; jour dynamiquement l&rsquo;interface utilisateur.</li>
+                                </ul>
+                            </div>
+
+                                 {/* Diagramme et JSON */}
                                 <div className='containerHorizontal'>
                                     <figure
                                         className={`imagePlaceholder_Small no-decor clickable ${zoomedImage ? 'zoomed' : ''}`}
@@ -327,36 +359,6 @@ export default function PayGapQuest() {
                                     </div>
                                 </div>
 
-                                <p>Le processus technique s&rsquo;articule en trois &eacute;tapes : </p>
-                                <ul className="projectList">
-                                    <li><strong>Communication asynchrone (AJAX/Fetch) :</strong> Lorsqu&rsquo;une utilisatrice saisit son secteur, son m&eacute;tier et son salaire, le Front-end envoie une requ&ecirc;te GET param&eacute;tr&eacute;e au serveur sans recharger la page.</li>
-                                    <li><strong> Logique m&eacute;tier c&ocirc;t&eacute; Serveur :</strong> Le backend utilise la Programmation Orient&eacute;e Objet (via la classe SalaryCalculator) pour traiter la demande. Le script parse un fichier JSON source servant de base de donn&eacute;es, puis applique des algorithmes d&rsquo;ajustement selon le profil (ex: pond&eacute;ration de -10% pour un profil Junior ou +15% pour un profil Senior).</li>
-                                    <li><strong>Traitement et Formatage :</strong> Le serveur calcule l&rsquo;&eacute;cart personnel et l&rsquo;&eacute;cart de genre du secteur, puis renvoie une r&eacute;ponse structur&eacute;e en JSON. Le Front-end r&eacute;cup&egrave;re ces objets pour mettre &agrave; jour dynamiquement l&rsquo;interface utilisateur.</li>
-                                </ul>
-                            </div>
-                            {/* Screen Homepage */}
-                            <div className="project-homepage_screen">
-                                <figure className="imagePlaceholder">
-                                    <video
-                                        autoPlay
-                                        loop
-                                        muted
-                                        playsInline
-                                        controls
-                                        width="100%"
-                                        style={{
-                                            borderRadius: '8px',
-                                        }}
-                                        preload="metadata"
-                                    >
-                                        <source src={CalculatorScreen} type="video/mp4" />
-                                        Votre navigateur ne supporte pas la lecture de vidéos.
-                                    </video>
-                                    <figcaption>
-                                        Démonstration du simulateur : saisie des donn&eacute;es et affichage dynamique de l&rsquo;&eacute;cart salarial.</figcaption>
-                                </figure>
-                            </div>
-
                             <div className="point-content">
                                 <p>Le d&eacute;fi majeur a &eacute;t&eacute; l&rsquo;harmonisation entre le traitement des donn&eacute;es en PHP et leur affichage c&ocirc;t&eacute; Front-end. Nous avons travaill&eacute; sur la gestion des CORS (Cross-Origin Resource Sharing) pour autoriser les requ&ecirc;tes entre les diff&eacute;rents environnements et assurer un flux de donn&eacute;es s&eacute;curis&eacute; et rapide.</p>
                             </div>
@@ -404,7 +406,7 @@ export default function PayGapQuest() {
                             <li><strong>Développement Frontend :</strong>
                                 <a href="https://github.com/Sara-pe" target="_blank" className="credit-link">  Sara Pena Zamorano</a>,
                                 <a href="https://github.com/Vic50595" target="_blank" className="credit-link"> Victoria Peretz </a>
-                                et Moi.
+                                et moi.
                             </li>
                             <li><strong>Développement Backend :</strong> <a href="https://github.com/sahardel92" target="_blank"
                                 className="credit-link">Sahar Dellouz</a></li>

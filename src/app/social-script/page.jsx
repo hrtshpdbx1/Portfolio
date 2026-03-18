@@ -79,15 +79,10 @@ export default function SocialScript() {
                 <section className="projectSection">
                     <div className="objectif-section">
                         <h2>Objectif du projet</h2>
-                        <p>
-                            Ce projet vient d&apos;un besoin que j&apos;ai rencontré personnellement. Étant autiste et TDAH, c&apos;est par la
-                            répétition et l&apos;analyse consciente des interactions que j&apos;ai acquis des compétences sociales qui ne me venaient pas naturellement. J&apos;ai
-                            toujours rêvé d&apos;un environnement où m&apos;entraîner sans craindre les malentendus ou les faux
-                            pas du temps réel. Ce projet est cette réalisation : un simulateur où les personnes neurodivergentes
-                            peuvent expérimenter, analyser et progresser dans un cadre structuré et bienveillant.
+                        <p>Ce projet vient d&apos;un besoin que j&apos;ai rencontré personnellement. Étant autiste et TDAH, c&apos;est par la répétition et l&apos;analyse consciente des interactions que j&apos;ai acquis des compétences sociales qui ne me venaient pas naturellement. J&apos;ai toujours rêvé d&apos;un environnement où m&apos;entraîner sans craindre les malentendus ou les faux pas du temps réel. C’est pour cela que j’ai eu envie de créer un simulateur où les personnes neurodivergentes peuvent expérimenter, analyser et progresser dans un cadre structuré et bienveillant.
                         </p>
 
-                        <h3>✅ Fonctionnalités clés :</h3>
+                        <h3>Fonctionnalités clés :</h3>
                         <ul className="projectList">
                             <li><strong>Affichage dynamique :</strong> Gestion des scénarios via JavaScript et un JSON server.</li>
                             <li><strong>Génération d&apos;avatars :</strong> Utilisation de Dicebear API pour générer des interlocuteur..ices uniques.</li>

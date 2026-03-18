@@ -12,7 +12,7 @@
         .nameRow {
             display: flex;
             flex-direction: row;
-            gap: 10px;
+           gap: var(--space-2);
             /* L'espace entre Prénom et Nom */
             width: 100%;
         }
@@ -26,14 +26,14 @@
         }
 
         label {
-            font-size: calc(var(--user-size) * 0.85);
-            font-weight: 600;
+            font-size: var(--text-sm);
+           font-weight: var(--weight-semi-bold);
             opacity: 0.9;
             width: 5.5rem;
             flex-shrink: 0;
             text-align: right;
             white-space: nowrap;
-            margin-top: 2px;
+            margin-top: var(--space-0-5);
         }
 
         .nameRow .inputGroup:nth-child(2) label {
@@ -46,16 +46,16 @@
         /* Les champs de saisie */
         input,
         textarea {
-            padding: 0.3rem 0.4rem;
+           padding: var(--space-1) var(--space-2);
             border: 1.5px solid rgba(0, 0, 0, 0.15);
             background-color: rgba(255, 255, 255, 0.3);
             color: var(--main-text);
             font-family: inherit;
-            font-size: calc(var(--user-size) * 0.85);
+            font-size: var(--text-sm);
             width: 100%;
             box-sizing: border-box;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            border-radius: var(--radius-sm);
+            transition: all var(--duration-fast) var(--ease-out-quart);
         }
 
         /* Focus sur un champ */
@@ -64,7 +64,7 @@
             outline: none;
             border-color: var(--main-text);
             background-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-md);
         }
 
         input::placeholder,
@@ -87,8 +87,8 @@
 
     /* Le message de succès/erreur */
     .sendStatus {
-        margin-top: 15px;
-        font-weight: 600;
+        margin-top: var(--space-4);
+        font-weight: var(--weight-semi-bold);
         font-style: italic;
     }
 }

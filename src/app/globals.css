@@ -25,21 +25,26 @@ a {
 
 
 /* =========================================
-   2. VARIABLES & RESET
+   2. VARIABLES & DESIGN SYSTEM
    ========================================= */
 :root {
+    /* COLORS */
     --main-background: var(--main-background);
     --main-text: var(--main-text);
 
     /* SPACING */
-    --space-0-5: 0.15rem;
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-12: 3rem;
+    --space-0-5: 0.125rem;  /* 2px */
+    --space-1: 0.25rem;     /* 4px */
+    --space-2: 0.5rem       /* 8px */
+    --space-3: 0.75rem;     /* 12px */
+    --space-4: 1rem;        /* 16px */
+    --space-6: 1.5rem;      /* 24px */
+    --space-8: 2rem;        /* 32px */
+    --space-10: 2.5rem;     /* 40px */
+    --space-12: 3rem;       /* 48px */
+    --space-16: 4rem;       /* 64px */
+    --space-20: 5rem;       /* 80px (Formulaires) */
+    --space-24: 6rem;       /* 96px (Sections) */
 
     /* RADIUS */
     --radius-xs: 0.25rem;
@@ -48,11 +53,17 @@ a {
     --radius-lg: 1rem;
     --radius-full: 9999px;
 
-    /* SHADOWS */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.20);
+    /* LAYERED SHADOW  */
+    --shadow-color: var(--main-text);
+    --shadow-sm: 0 1px 2px rgb(from var(--shadow-color) r g b / 10%);  /* Ombre subtile (pastilles) */
+    --shadow-md: 0 4px 6px rgb(from var(--shadow-color) r g b / 10%),   /* Ombre moyenne (images projets, boutons standard) */
+        0 2px 4px rgb(from var(--shadow-color) r g b / 8%); 
+    --shadow-lg: 0 10px 15px rgb(from var(--shadow-color) r g b / 12%),    /* Ombre large (hovers d'images, cartes surélevées) */
+        0 4px 6px rgb(from var(--shadow-color) r g b / 8%);
+    --shadow-glow-color: var(--main-background);   /* Ombres INVERSÉES (btn outline) */
+    --shadow-btn-hover: 0 4px 12px rgb(from var(--shadow-glow-color) r g b / 15%),
+        0 2px 4px rgb(from var(--shadow-glow-color) r g b / 10%);
+    --shadow-btn-active: 0 1px 2px rgb(from var(--shadow-glow-color) r g b / 20%);
 
     /* FONTS */
     --weight-extra-light: 200;
@@ -72,7 +83,21 @@ a {
     --letter-tight: -0.02em;
     --letter-normal: 0;
     --letter-wide: 0.05em;
+
+    /* TRANSITIONS */
+    /* ---  Courbes  */
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);    /* Décélération */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* Léger rebond  */
+    /* --- Durées asymétriques */
+    --duration-fast: 150ms; /* vif, pour réagir au survol */
+    --duration-slow: 400ms; /* Plus lent, pour le retour au repos */
 }
+
+
+/* =========================================
+   3. 
+   ========================================= */
+
 
 * {
     margin: 0;
@@ -95,6 +120,17 @@ body {
 }
 
 body {
+
+      /* TYPOGRAPHIE */
+    --text-xs: calc(var(--user-size) * 0.75);   /* Titres de sections sidebar, petits labels */
+    --text-sm: calc(var(--user-size) * 0.85);   /* Inputs, labels, petits textes, petits boutons */
+    --text-base: var(--user-size);              /* Paragraphes normaux, liens standard */
+    --text-lg: calc(var(--user-size) * 1.2);    /* Titres H4, Footer Logo, boutons larges */
+    --text-xl: calc(var(--user-size) * 1.5);    /* Titres H3, Titre Sidebar */
+    --text-2xl: calc(var(--user-size) * 2);     /* Titres H2 */
+    --text-3xl: calc(var(--user-size) * 3);     /* Titres H1 Hero */
+
+    
     background-color: var(--main-background);
     transition: background-color 0.5s ease, color 0.5s ease;
     color: var(--main-text);
@@ -132,29 +168,26 @@ body {
     }
 
     h1 {
-        /* font-size: var(--font-size-hero); */
-        font-size: calc(var(--user-size) * 3);
+       font-size: var(--text-3xl);
         font-weight: var(--weight-black);
         margin-bottom: var(--space-4);
     }
 
     h2 {
-        /* font-size: var(--font-size-title); */
-        font-size: calc(var(--user-size) * 2);
+        font-size: var(--text-2xl);
         font-weight: var(--weight-bold);
         margin-bottom: var(--space-6);
     }
 
     h3 {
-        /* font-size: var(--font-size-medium); */
-        font-size: calc(var(--user-size) * 1.5);
+        font-size: var(--text-xl);
         font-weight: var(--weight-bold);
         margin-bottom: var(--space-4);
         letter-spacing: var(--letter-wide);
     }
 
     h4 {
-        font-size: calc(var(--user-size) * 1.2);
+        font-size: var(--text-lg);
         font-weight: var(--weight-regular);
         margin-bottom: 1rem;
 
@@ -176,8 +209,8 @@ body {
 }
 
 /* =========================================
-/* --- STYLE DE FOCUS 
-   ========================================= */
+ STYLE DE FOCUS 
+========================================= */
 
 :focus-visible {
     outline: none;
@@ -233,8 +266,7 @@ em {
 
     /* Taille par défaut (Moyenne) */
     padding: 0.6rem 1.5rem;
-    font-size: var(--user-size);
-
+    font-size: var(--text-base);
     letter-spacing: var(--letter-wide);
     border-radius: var(--radius-full);
     border: 1px solid var(--main-text);
@@ -245,26 +277,37 @@ em {
     text-decoration: none;
     cursor: pointer;
 
-    /* Animation fluide */
-    transition: all 0.3s ease;
+    transition: 
+        transform var(--duration-slow) var(--ease-out-quart),
+        box-shadow var(--duration-slow) var(--ease-out-quart),
+        background-color var(--duration-slow) var(--ease-out-quart),
+        color var(--duration-slow) var(--ease-out-quart);
 }
 
 /* icônes FontAwesome */
-.btn i,
+/* .btn i,
 .btn svg {
     font-size: 1.1em;
-}
+} */
+
+
 
 .btn:hover {
-    transform: translateY(-1.5px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    /* shadow-md remplacée par une layered shadow) qui utilise la couleur du btn (--main-background) avec un peu de transparence 
+    */
+    background: var(--main-background);
+    color: var(--main-text);
+    box-shadow: var(--shadow-btn-hover);
+    transition-duration: var(--duration-fast);
+    transition-timing-function: var(--ease-spring);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: none;
+    box-shadow: var(--shadow-btn-active);
+    transition-duration: 50ms;
 }
-
 
 /* Variante Outline */
 .btn.btn-outline {
@@ -275,24 +318,19 @@ em {
 .btn.btn-outline:hover {
     background: var(--main-text);
     color: var(--main-background);
+   box-shadow: var(--shadow-btn-hover);
 }
-
 
 /* Variante Petit Bouton */
 .btn.btn-small {
     padding: 0.4rem 1rem;
-    font-size: calc(var(--user-size) * 0.85);
-}
-
-.btn.btn-small i,
-.btn.btn-small svg {
-    font-size: 1rem;
+   font-size: var(--text-sm);
 }
 
 /* pour CTA */
 .btn.btn-large {
     padding: 0.9rem 2rem;
-    font-size: calc(var(--user-size) * 1.2);
+    font-size: var(--text-lg);
 }
 
 /* =========================================
@@ -305,7 +343,7 @@ em {
     width: 17.5rem;
     height: 100vh;
     background: var(--main-background);
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 0 15px rgb(from var(--shadow-color) r g b / 10%);
     padding: var(--space-6);
     box-sizing: border-box;
     transition: right 0.3s ease;
@@ -331,7 +369,7 @@ em {
 
         .sidebar__title {
             margin: 0 !important;
-            font-size: calc(var(--user-size) * 1.5);
+            font-size: var(--text-xl);
             letter-spacing: 2px;
             line-height: 1;
         }
@@ -385,7 +423,7 @@ em {
 
 
         .sidebar__section-title {
-            font-size: calc(var(--user-size) * 0.70);
+           font-size: var(--text-xs);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: var(--weight-light);
@@ -411,8 +449,7 @@ em {
         }
 
         .sidebar__label {
-            font-size: 0.9rem;
-            font-size: calc(var(--user-size) * 0.85);
+            font-size: var(--text-sm);
             flex-shrink: 0;
             margin: 0 !important;
             line-height: 1;
@@ -430,7 +467,7 @@ em {
             color: var(--main-text);
             border: 1px solid rgb(from var(--main-text) r g b / 30%);
             font-family: inherit;
-            font-size: calc(var(--user-size) * 0.80);
+            font-size: var(--text-sm);
             cursor: pointer;
             /* fleche  */
             appearance: none;
@@ -554,10 +591,6 @@ em {
 
         }
 
-        /* Si tu veux que la BORDURE interne de la pastille change */
-        body.is-inverted .contrast-circle {
-            border-color: var(--main-text);
-        }
 
         .switch {
             position: relative;
@@ -614,6 +647,11 @@ em {
             }
         }
     }
+}
+
+/* À mettre à la racine du fichier, hors de tout autre bloc */
+body.is-inverted .contrast-circle {
+    border-color: var(--main-text);
 }
 
 /* Taille réelle à l'input pour qu'il soit "trouvable" en nav clavier */
@@ -756,7 +794,7 @@ em {
 .section1 {
     .content-container {
         .undertitle {
-            font-size: calc(var(--user-size) * 1.8);
+            font-size: var(--text-2xl);
         }
     }
 }
@@ -839,7 +877,7 @@ em {
 
                         i {
                             margin-right: 1.1rem;
-                           margin-top: 0.25rem;
+                            margin-top: 0.25rem;
                             min-width: 1.25rem;
                             text-align: center;
                             font-size: larger;
@@ -866,7 +904,7 @@ em {
 
     .icon-logo {
         display: inline-block;
-        width: 1.25rem; 
+        width: 1.25rem;
         height: 1.25rem;
         margin-right: 1.1rem;
         background-color: var(--main-text);
@@ -953,8 +991,8 @@ em {
     }
 
     .skills-list.mastery li svg {
-       margin-right: 1.1rem; 
-       min-width: 1.25rem;
+        margin-right: 1.1rem;
+        min-width: 1.25rem;
         transition: all 0.3s ease;
         color: var(--main-text);
     }
@@ -1010,7 +1048,7 @@ em {
 
 
     .btn-skill {
-        font-size: var(--user-size);
+       font-size: var(--text-base);
         border-width: 1px;
 
     }
@@ -1028,7 +1066,7 @@ em {
 
     }
 
-    /* Responsive : boutons pleine largeur sur mobile */
+    /* Boutons pleine largeur sur mobile */
     @media (max-width: 480px) {
         .skills-links-container {
             flex-direction: column;
@@ -1053,7 +1091,7 @@ em {
         width: 100%;
 
         .section-title-line {
-             width: 3rem;
+            width: 3rem;
             height: 1px;
             background-color: var(--main-text);
         }
@@ -1119,7 +1157,7 @@ em {
                 color: var(--main-background);
                 border: 1px solid var(--main-background);
                 border-radius: var(--radius-full);
-              padding: 0.6rem 1.25rem;
+                padding: 0.6rem 1.25rem;
                 opacity: 0;
                 /*  effet de retard  */
                 transform: translateX(-1.25rem);
@@ -1215,25 +1253,18 @@ em {
 } */
 
 /* =========================================
-   RESPONSIVE (MOBILE) 
+ * Media Queries Mobile *
    ========================================= */
 @media (max-width: 768px) {
 
     /* 1. TYPO*/
-    body h1 {
-        font-size: calc(var(--user-size) * 2.2);
-    }
-
-    body h2 {
-        font-size: calc(var(--user-size) * 1.8);
-
-    }
+    body h1 { font-size: var(--text-2xl); }
+    body h2 { font-size: var(--text-xl); }
 
     /* Masquer la ligne des titres de section  */
+    /* todo: à supprimer  */
     .title-wrapper .section-title-line {
         display: none;
-
-
     }
 
     .section4 .title-wrapper h2 {
@@ -1249,8 +1280,8 @@ em {
         display: block;
         height: auto;
         min-height: 100vh;
-        padding-top: 6rem;
-        padding-bottom: 4rem;
+        padding-top: var(--space-24);
+        padding-bottom: var(--space-16);
     }
 
 
