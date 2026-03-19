@@ -50,9 +50,11 @@ export default function Home() {
              <p>
                 Dans le courant des années 2000, j&apos;ai découvert que je pouvais personnaliser le layout
                 de mon Myspace et j&apos;ai passé des heures à bidouiller du CSS sur le PC fixe
-                familial. C&apos;était ma première expérience de code, aussi déroutante que
+                familial. 
+                {/* C&apos;était ma première expérience de code, aussi déroutante que
                 grisante. J&apos;étais fascinée par ces caractères obscurs capables de créer
-                des univers aussi riches. Quelques semaines plus tard, j&apos;avais refait le layout
+                des univers aussi riches.  */}
+                Quelques semaines plus tard, j&apos;avais refait le layout
                 des profils de tout mon entourage.
               </p>
              <p>
