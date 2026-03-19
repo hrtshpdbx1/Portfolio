@@ -1,4 +1,5 @@
 // SettingContext.jsx
+
 // stocke les réglages pour les distribuer à toutes les pages
 // injecte le CSS et fait passer les infos à la Sidebar
 "use client"
@@ -7,12 +8,12 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 const SettingsContext = createContext();
 
 const DEFAULTS = {
-    fontFamily: "var(--font-bbb-readme)",
+    fontFamily: "--font-bbb-readme",
     fontSize: 1,
-    lineHeight: 1.8,
+    lineHeight: 1.5,
     bgColor: 'rgb(84.699% 96.254% 83.914%)',
     textColor: 'rgb(13.81% 13.179% 9.5057%)',
-    isInverted: false // Ajout de ton state isInverted !
+    isInverted: false 
 };
 
 export function SettingsProvider({ children }) {
@@ -20,11 +21,15 @@ export function SettingsProvider({ children }) {
     const [isMounted, setIsMounted] = useState(false);
 
     // Au chargement, récupère les réglages de la page précédente
-    useEffect(() => {
+   useEffect(() => {
         setIsMounted(true);
-        const savedSettings = localStorage.getItem('louiseSettings');
-        if (savedSettings) {
-            setSettings(JSON.parse(savedSettings));
+        try {
+            const savedSettings = localStorage.getItem('louiseSettings');
+            if (savedSettings) {
+                setSettings(JSON.parse(savedSettings));
+            }
+        } catch (e) {
+            console.error("Erreur localStorage", e);
         }
     }, []);
 

@@ -225,22 +225,26 @@ function Sidebar() {
                                     }}
                                     aria-label="Inverser les couleurs"
                                 />
-                                {/* J'ai supprimé ici styles.round qui n'existait pas dans le CSS */}
                                 <span className={styles.slider}></span>
                             </div>
                         </div>
 
                     </div> {/* Fin de la section Couleurs */}
                 </div>
-                {/* --- RESET---  */}
+                {/* --- RESET ---  */}
                 <div className={styles.controlRow}>
                     <button
                         onClick={handleResetSettings}
                         id="reset-theme"
-                        className="btn btn-outline"
-                        title="Réinitialiser le thème">
-                        <RotateCcw />
-                        <span style={{ marginLeft: "8px" }}>Réinitialiser</span>
+                        className="btn btn-small btn-outline"
+                        title="Réinitialiser le thème"
+                        style={{ margin: "0 auto" }} /* Centre le bouton élégamment */
+                    >
+                        {/* On utilise "style" pour forcer le CSS à obéir et rétrécir l'icône */}
+                        <RotateCcw style={{ width: "1.1rem", height: "1.1rem" }} strokeWidth={2.5} />
+                        
+                        {/* J'ai supprimé le marginLeft ici, la classe .btn s'occupe déjà de l'espacement ! */}
+                        <span>Réinitialiser</span>
                     </button>
                 </div>
 
