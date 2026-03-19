@@ -4,7 +4,7 @@
 import { useState } from 'react'
 import React from 'react'
 import { sendEmail } from '@/lib/sendEmail' // Importation du server action
-import style from '../styles/ContactForm.module.css'
+import style from '@/app/styles/ContactForm.module.css'
 
 function ContactForm() {
     const [status, setStatus] = useState("") // pour afficher un message de retour à l'utilisateur (succès ou erreur)

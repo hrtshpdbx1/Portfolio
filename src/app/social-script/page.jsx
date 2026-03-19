@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket} from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../styles/project-detail.css';
-import Footer from '@/app/components/Footer';
-import CtaProject from '@/app/components/CtaProject';
+import Footer from '@/components/Footer';
+import CtaProject from '@/components/CtaProject';
 
 export default function SocialScript() {
 

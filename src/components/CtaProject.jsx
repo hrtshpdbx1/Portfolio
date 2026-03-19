@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react'; 
-import style from '../styles/CtaProject.module.css'; // 
+import style from '@/app/styles/CtaProject.module.css'; // 
 
 export default function CtaProject() {
     return (

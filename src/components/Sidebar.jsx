@@ -1,8 +1,9 @@
 "use client" // Indique à Next.js que c'est un composant client 
 import React, { useState } from 'react'
+import { useSettings } from '@/SettingsContext';
 // LUCIDE
 import { Cog, X, Type, ListChevronsUpDown, ChevronDown, RotateCcw, Plus, Minus } from 'lucide-react';
-import styles from '../styles/Sidebar.module.css';
+import styles from '@/app/styles/Sidebar.module.css';
 
 //Theme
 const colors = [
@@ -56,9 +57,20 @@ const colors = [
     }
 ];
 
-function Sidebar(props) {
-    const { settings, onChangeSize, onChangeLineHeight, onUpdateFontFamily, onResetSettings, onChangeColors, onReverseColors } = props;
-    const { fontFamily, fontSize, lineHeight, bgColor, textColor } = settings
+function Sidebar() {
+    // Récupère les données du contexte
+    //  renomme 
+   const { 
+        settings, 
+        updateSize: onChangeSize, 
+        updateLineHeight: onChangeLineHeight, 
+        updateFontFamily: onUpdateFontFamily, 
+        resetSettings: onResetSettings, 
+        updateColors: onChangeColors, 
+        reverseColors: onReverseColors 
+    } = useSettings();
+
+    const { fontFamily, fontSize, lineHeight, bgColor, textColor } = settings;
 
     /* --- 1. LES ÉTATS (STATES) --- */
     const [isOpen, setIsOpen] = useState(false); // State visibilité sidebar, fermé par défaut

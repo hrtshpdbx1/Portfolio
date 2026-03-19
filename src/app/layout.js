@@ -12,135 +12,40 @@ import "./globals.css";
 import localFont from 'next/font/local'
 import { config, text } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import Sidebar from "./components/Sidebar";
-import Navigation from "./components/Navigation";
-import BackToTop from './components/BackToTop';
+import Sidebar from "@/components/Sidebar";
+import Navigation from "@/components/Navigation";
+import BackToTop from "@/components/BackToTop";
 config.autoAddCss = false; // pour eviter le css auto de FA
+import { SettingsProvider } from '@/SettingsContext';
 
-  // Valeurs par défauts
-  const DEFAULTS = ({
-    fontFamily: "--font-bbb-readme",
-    fontSize: 1,
-    lineHeight: 1.8,
-    bgColor: 'rgb(84.699% 96.254% 83.914%)',
-    textColor: 'rgb(13.81% 13.179% 9.5057%)',
-  }) 
-
-
-// Déclaration de tes polices locales
-const bbbReadMe = localFont({
-  src: '../../public/fonts/BBBReadMe-Regular.woff2', 
-  variable: '--font-bbb-readme', 
-})
-const openDyslexic = localFont({
-  src: '../../public/fonts/OpenDyslexic-Regular.otf',
-  variable: '--font-open-dyslexic',
-})
-const eido = localFont({
-  src: '../../public/fonts/eido.otf',
-  variable: '--font-eido',
-})
-const accessibleDFA = localFont({
-  src: '../../public/fonts/accessibledfa.woff',
-  variable: '--font-accessibledfa',
-})
-
-// src/app/layout.js
-
-
+// Déclaration des polices
+const bbbReadMe = localFont({ src: '../../public/fonts/BBBReadMe-Regular.woff2', variable: '--font-bbb-readme' });
+const openDyslexic = localFont({ src: '../../public/fonts/OpenDyslexic-Regular.otf', variable: '--font-open-dyslexic' });
+const eido = localFont({ src: '../../public/fonts/eido.otf', variable: '--font-eido' });
+const accessibleDFA = localFont({ src: '../../public/fonts/accessibledfa.woff', variable: '--font-accessibledfa' });
 
 export default function RootLayout({ children }) {
 
 
-  /* ---  STATES --- */
-  const [custom, setCustom] = useState(DEFAULTS);
-const [isInverted, setIsInverted] = useState(false);
-  /* ---  FONCTIONS --- */
-  const updateFontSize = (newSize) => {
-    setCustom({
-      ...custom, // copie l'objet actuel
-      fontSize: newSize  // remplace avec nvlle valeur
-    });
-  };
-
-  const updateLineHeight = (newHeight) => {
-    setCustom({
-      ...custom,
-      lineHeight : newHeight
-    })
-  }
-
-  const updateFontFamily = (selectedFont) => {
-    //recoit une chaine de caractère
-  setCustom ({
-    ... custom,
-    fontFamily : selectedFont
-  })
-  }
-
-  const changeColors = (newBgColor, newTextColor) => {
-    setCustom ({
-      ...custom,
-      bgColor: newBgColor,
-    textColor: newTextColor,
-    });
-    setIsInverted(false);
-  }
-
-  const reverseColors = (bgColor,textColor) => {
-     setCustom ({
-      ...custom,
-      bgColor: textColor,
-    textColor: bgColor,
-    });
-    setIsInverted(!isInverted);
-  }
-
-  const resetSettings = () => {
-  setCustom(DEFAULTS);
-  setIsInverted(false)
-    }
-  
-
-
   return (
-    <html lang="fr" className={`${bbbReadMe.variable} ${openDyslexic.variable} ${eido.variable} ${accessibleDFA.variable} `}>
-
-      <title>Louise Moraldy | Développeuse Fullstack & Accessibilité</title>
-      <meta name="description" content="Portfolio de Louise Moraldy, spécialisée en JavaScript et interfaces accessibles." />
+   <html lang="fr" className={`${bbbReadMe.variable} ${openDyslexic.variable} ${eido.variable} ${accessibleDFA.variable}`}>
+      <head>
+        <title>Louise Moraldy | Développeuse Fullstack & Accessibilité</title>
+        <meta name="description" content="Portfolio de Louise Moraldy, spécialisée en JavaScript et interfaces accessibles." />
+      </head>
       
-      {/* appliquation du style sur les variable du CSS (au lieu du body)*/}
-      {/* classe 'is-inverted' si le state est true */}
-      <body 
-      
-      className={isInverted ? 'is-inverted' : ''} 
-        style={{ 
-        "--main-background" : custom.bgColor,
-        "--main-text" : custom.textColor,
-        "--dynamic-line-height": custom.lineHeight,
-        "--user-size": `${custom.fontSize}rem`, // variable qu'on utilise dans le css
-        fontSize: `${custom.fontSize}rem`,
-        fontFamily :custom.fontFamily.startsWith('--') 
-    ? `var(${custom.fontFamily})` 
-    : custom.fontFamily
-        }}>
-        <main >
-          {/* Communication enfant */}
-          <Sidebar
-            settings={custom}
-            onChangeSize={updateFontSize}
-            onChangeLineHeight={updateLineHeight}
-            onResetSettings={resetSettings}
-            onUpdateFontFamily={updateFontFamily}
-            onChangeColors={changeColors}
-            onReverseColors={reverseColors}
-          />
-          <BackToTop/>
-          <Navigation/>
-          {children}
-        </main>
+      {/* Plus de style en ligne sur le body, elles sont dans le Context*/}
+      <body>
+        <SettingsProvider>
+          <main>
+            {/* La Sidebar n'a plus besoin de props, elle se connecte directement au Context */}
+            <Sidebar /> 
+            <BackToTop />
+            <Navigation />
+            {children}
+          </main>
+        </SettingsProvider>
       </body>
     </html>
   );
 }
-

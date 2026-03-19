@@ -132,10 +132,10 @@ body {
 body {
 
     /* *! Mettre ici les variable injectée par React */
+background-color: var(--main-background);
+    color: var(--main-text);
 
-
-    --main-background: var(--main-background);
-    --main-text: var(--main-text);
+  
 
 
     /* TYPOGRAPHIE */

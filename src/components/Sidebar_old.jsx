@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 // LUCIDE
 import { Cog, X, Type, ListChevronsUpDown, ChevronDown, RotateCcw, Plus, Minus } from 'lucide-react';
-import styles from '../styles/Sidebar.module.css';
+import styles from '@/app/styles/Sidebar.module.css';
 
 //Theme
 const colors = [

@@ -6,8 +6,8 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../styles/project-detail.css';
 import Image from 'next/image';
 import { useState } from 'react';
-import CtaProject from '@/app/components/CtaProject';
-import Footer from '@/app/components/Footer';
+import CtaProject from '@/components/CtaProject';
+import Footer from '@/components/Footer';
 
 
 const CounterSrc = '/img/screenshots/CompteRebourok3.mp4';
