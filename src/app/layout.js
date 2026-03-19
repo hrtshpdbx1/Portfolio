@@ -20,9 +20,9 @@ import { SettingsProvider } from '@/SettingsContext';
 
 // Déclaration des polices
 const bbbReadMe = localFont({ src: '../../public/fonts/BBBReadMe-Regular.woff2', variable: '--font-bbb-readme' });
-const openDyslexic = localFont({ src: '../../public/fonts/OpenDyslexic-Regular.otf', variable: '--font-open-dyslexic' });
-const eido = localFont({ src: '../../public/fonts/eido.otf', variable: '--font-eido' });
-const accessibleDFA = localFont({ src: '../../public/fonts/accessibledfa.woff', variable: '--font-accessibledfa' });
+const openDyslexic = localFont({ src: '../../public/fonts/OpenDyslexic-Regular.otf', variable: '--font-open-dyslexic', preload: false });
+const eido = localFont({ src: '../../public/fonts/eido.otf', variable: '--font-eido' , preload: false });
+const accessibleDFA = localFont({ src: '../../public/fonts/accessibledfa.woff', variable: '--font-accessibledfa', preload: false });
 
 export default function RootLayout({ children }) {
 

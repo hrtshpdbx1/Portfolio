@@ -17,7 +17,7 @@ export default function Footer() {
                     <p className="footer-tagline">Développeuse Fullstack</p>
                 </div>
 
-                {/* Colonne 2 : Navigation (Nouvelle partie) */}
+                {/* Colonne 2 : Navigation */}
                 <nav className="footer-nav">
                     <div className="footer-nav-col">
                         <span className="footer-title">Plan du site</span>

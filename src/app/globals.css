@@ -28,8 +28,6 @@ a {
    2. VARIABLES & DESIGN SYSTEM
    ========================================= */
 :root {
-
-
     /* SPACING */
     --space-0-5: 0.125rem;
     /* 2px */
@@ -330,8 +328,6 @@ em {
 .btn svg {
     font-size: 1.1em;
 } */
-
-
 
 .btn:hover {
     transform: translateY(-2px);

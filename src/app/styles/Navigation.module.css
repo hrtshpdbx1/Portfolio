@@ -2,7 +2,6 @@
    NAVIGATION 
    ========================================= */
 
-
 .sidebar {
     position: fixed;
     left: -25rem;
@@ -12,7 +11,7 @@
     background: var(--main-background);
     box-shadow: 4px 0 15px rgb(from var(--shadow-color) r g b / 10%);
     padding: var(--space-8) var(--space-6);
-   transition: left var(--transition-normal);
+    transition: left var(--transition-normal);
     z-index: 1001;
     display: flex;
     flex-direction: column;
@@ -33,9 +32,10 @@
 
 .title {
     margin: 0 !important;
-   font-size: var(--text-xl);
+    font-size: var(--text-xl);
     letter-spacing: 2px;
-    line-height: 1; /* centre optiquement le texte */
+    line-height: 1;
+    /* centre optiquement le texte */
 }
 
 
@@ -46,7 +46,7 @@
     color: var(--main-text);
     cursor: pointer;
     transition: transform var(--transition-fast);
-    
+
     /* Centrage de l'icône */
     padding: 0;
     line-height: 1;
@@ -74,19 +74,21 @@
     font-size: var(--text-base);
     font-weight: var(--weight-medium);
     text-decoration: none;
-   transition: opacity var(--transition-fast), transform var(--transition-fast);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
     display: block;
 }
 
 .links a:hover {
     transform: translateX(4px);
 }
+
 .footerIcons {
     margin-top: auto;
     padding-top: var(--space-6);
     display: flex;
-    flex-wrap: wrap; /* passage à la ligne si manque de place */
-    gap: var(--space-3); 
+    flex-wrap: wrap;
+    /* passage à la ligne si manque de place */
+    gap: var(--space-3);
     border-top: var(--border-thin) solid rgb(from var(--main-text) r g b / 10%);
 }
 
@@ -102,7 +104,8 @@
 }
 
 .iconLinkedin {
-    font-size: 1.5rem; /* Permet d'ajuster sa taille */
+    font-size: 1.5rem;
+    /* Permet d'ajuster sa taille */
 }
 
 
@@ -111,15 +114,16 @@
    ========================================= */
 @media (max-width: 768px) {
     .sidebar {
-        width: 80vw; /* Prend 80% de l'écran sur mobile */
+        width: 80vw;
         left: -80vw;
     }
-    
+
     .sidebar.open {
         left: 0;
     }
 
     .links {
-        gap: var(--space-4); /* liens resserés */
+        gap: var(--space-4);
+        /* liens resserés */
     }
 }

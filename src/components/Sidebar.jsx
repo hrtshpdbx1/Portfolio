@@ -109,7 +109,7 @@ function Sidebar() {
 
     return (
         <>
-            {/* Le bouton ⚙️ (Garde la classe globale car il vit dans le body) */}
+            {/* Le bouton ⚙️ */}
             <button
                 id="sidebar-trigger"
                 className="icon-btn-floating"
@@ -193,7 +193,6 @@ function Sidebar() {
                         <h3 className={styles.sectionTitle}>Thèmes</h3>
                         <div className={styles.contrastGroup}>
                             {colors.map(color => {
-                                // On vérifie si les couleurs correspondent (sens normal OU inversé)
                                 const isActive = (bgColor === color.bgColor && textColor === color.textColor) || 
                                                  (bgColor === color.textColor && textColor === color.bgColor);
 
@@ -219,7 +218,6 @@ function Sidebar() {
                                     id="invert-toggle"
                                     type="checkbox"
                                     onChange={() => handleReverseColors(bgColor, textColor)}
-                                    // Permet d'activer avec "Entrée" en plus d'"Espace"
                                     onKeyDown={(e) => {
                                         if (e.key === 'Enter') handleReverseColors(bgColor, textColor);
                                     }}
@@ -238,12 +236,12 @@ function Sidebar() {
                         id="reset-theme"
                         className="btn btn-small btn-outline"
                         title="Réinitialiser le thème"
-                        style={{ margin: "0 auto" }} /* Centre le bouton élégamment */
+                        style={{ margin: "0 auto" }} 
                     >
-                        {/* On utilise "style" pour forcer le CSS à obéir et rétrécir l'icône */}
+                
                         <RotateCcw style={{ width: "1.1rem", height: "1.1rem" }} strokeWidth={2.5} />
                         
-                        {/* J'ai supprimé le marginLeft ici, la classe .btn s'occupe déjà de l'espacement ! */}
+                    
                         <span>Réinitialiser</span>
                     </button>
                 </div>

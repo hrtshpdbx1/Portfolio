@@ -1,5 +1,3 @@
-// SettingContext.jsx
-
 // stocke les réglages pour les distribuer à toutes les pages
 // injecte le CSS et fait passer les infos à la Sidebar
 "use client"
@@ -20,9 +18,22 @@ export function SettingsProvider({ children }) {
     const [settings, setSettings] = useState(DEFAULTS);
     const [isMounted, setIsMounted] = useState(false);
 
-    // Au chargement, récupère les réglages de la page précédente
-   useEffect(() => {
+    // récupère les réglages de la page précédente au chargement
+    useEffect(() => {
         setIsMounted(true);
+
+        // --- 🕵️‍♀️ EASTER EGG CONSOLE ---
+        console.log(
+            "%c👀 Hi there ! ", 
+            "color: #50fa7b; font-size: 24px; font-weight: bold; background: #2D2D2D; padding: 10px; border-radius: 8px;"
+        );
+
+        console.log(
+            "%cIf you're poking around in my console, we're probably meant to get along. \nFeel free to click the little gear icon (⚙️) to play with the accessibility settings of this portfolio (fonts, themes, line height).\n\nIf my profile catches your eye, the contact section is waiting for you! 🚀",
+            "font-size: 14px; line-height: 1.5; padding-top: 8px;"
+        );
+        // ------------------------------
+
         try {
             const savedSettings = localStorage.getItem('louiseSettings');
             if (savedSettings) {
@@ -33,32 +44,10 @@ export function SettingsProvider({ children }) {
         }
     }, []);
 
-    // À chaque changement, sauvegarde et applique le CSS
+    // sauvegarde à chaque changement 
     useEffect(() => {
         if (!isMounted) return;
-
-        // Sauvegarde dans le navigateur
         localStorage.setItem('louiseSettings', JSON.stringify(settings));
-
-        // Injection des variables CSS sur tout le site
-        const root = document.documentElement;
-        root.style.setProperty('--main-background', settings.bgColor);
-        root.style.setProperty('--main-text', settings.textColor);
-        root.style.setProperty('--dynamic-line-height', settings.lineHeight);
-        root.style.setProperty('--user-size', `${settings.fontSize}rem`);
-        
-        // Gestion de la police
-        document.body.style.fontFamily = settings.fontFamily.startsWith('--') 
-            ? `var(${settings.fontFamily})` 
-            : settings.fontFamily;
-            
-        // Gestion de l'inversion des couleurs
-        if (settings.isInverted) {
-            document.body.classList.add('is-inverted');
-        } else {
-            document.body.classList.remove('is-inverted');
-        }
-        
     }, [settings, isMounted]);
 
     // --- Les Fonctions ---
@@ -86,7 +75,26 @@ export function SettingsProvider({ children }) {
             reverseColors,
             resetSettings
         }}>
-            {children}
+            {/* injection dynamique du CSS ! */}
+            <style dangerouslySetInnerHTML={{__html: `
+                :root {
+                    --main-background: ${settings.bgColor};
+                    --main-text: ${settings.textColor};
+                    --dynamic-line-height: ${settings.lineHeight};
+                    --user-size: ${settings.fontSize}rem;
+                }
+                body {
+                    font-family: ${settings.fontFamily.startsWith('--') ? `var(${settings.fontFamily})` : settings.fontFamily};
+                    background-color: var(--main-background);
+                    color: var(--main-text);
+                    /* C'est cette ligne qui permet aux paragraphes de grandir ! */
+                    font-size: var(--user-size); 
+                }
+            `}} />
+            
+            <div className={settings.isInverted ? 'is-inverted' : ''}>
+                {children}
+            </div>
         </SettingsContext.Provider>
     );
 }

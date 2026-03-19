@@ -39,15 +39,6 @@
 
 }
 
-/* .ctaButton {
- 
-    margin-top: var(--space-4);
-    gap: var(--space-3);
-    padding: var(--space-3) var(--space-8);
-    letter-spacing: 2px;
-} */
-
-/* L'animation de la flèche (Ça c'est parfait, on garde !) */
 .ctaIcon {
     transition: transform var(--duration-slow) var(--ease-out-quart);
 }
@@ -83,8 +74,6 @@
     .ctaButton {
 
         padding: var(--space-2) var(--space-6) !important;
-        
-        /* OPTIONNEL : boutons "pleine largeur" */
         width: 100%;
         justify-content: center; 
     }
