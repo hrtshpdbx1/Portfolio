@@ -19,7 +19,7 @@
 }
 
 .open {
-    right: 0;
+    right: 0 !important;
 }
 
 .header {
@@ -285,6 +285,6 @@
     }
     
     .open {
-        right: 0;
+    right: 0 !important;
     }
 }
