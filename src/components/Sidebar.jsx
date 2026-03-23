@@ -113,7 +113,15 @@ function Sidebar() {
             <button
                 id="sidebar-trigger"
                 className="icon-btn-floating"
-                onClick={() => setIsOpen(true)} // Au clic, on change le state isOpen à true
+                style={{
+                    zIndex: 9999,
+                    /*  Si c'est ouvert, on le cache. Sinon, on l'affiche. */
+                    display: isOpen ? 'none' : 'flex'
+                }}
+                onClick={() => {
+                    console.log("CLIC REÇU SUR MOBILE !");
+                    setIsOpen(true);
+                }}
                 aria-label="Ouvrir le menu">
                 <Cog size={22} />
             </button>
