@@ -130,10 +130,10 @@ body {
 body {
 
     /* *! Mettre ici les variable injectée par React */
-background-color: var(--main-background);
+    background-color: var(--main-background);
     color: var(--main-text);
 
-  
+
 
 
     /* TYPOGRAPHIE */
@@ -895,53 +895,46 @@ em {
 /* =========================================
    RESPONSIVE (LAPTOPS & ZOOM WINDOWS 125% / 150%)
    ========================================= */
+@media (max-width: 1366px) {
 
-/* @media (max-width: 1366px) { */
-
-/*  Aimantation du scroll desactivée */
-/* html, body {
+    /* Aimantation du scroll desactivée */
+    html,
+    body {
         scroll-snap-type: none !important;
-        height: auto !important; 
-    } */
+        height: auto !important;
+    }
 
-/* .page-section {
+    .page-section {
         scroll-snap-align: none !important;
-        width: 100vw; 
+        scroll-snap-stop: normal !important;
+        width: 100vw;
         padding-left: 5rem;
         padding-right: 5rem;
         box-sizing: border-box;
-    } */
-
-/* Taille titre réduits */
-/* body h1 {
-        font-size: calc(var(--user-size) * 2.4);
     }
-    body h2 {
-        font-size: calc(var(--user-size) * 1.7);
-    }
-    body h3 {
-        font-size: calc(var(--user-size) * 1.3);
-    } */
 
-/* Taille texte réduit */
-/* #main-content p,
-    #main-content li {
-        font-size: calc(var(--user-size) * 0.85);
-    } */
 
-/* 3. padding en rem pour bouton flotant */
-/* .page-section {
-        width: 100vw; 
-        padding-left: 5rem; 
-        padding-right: 5rem;
-        box-sizing: border-box;
-    }
-} */
+}
+
 
 /* =========================================
  * Media Queries Mobile *
    ========================================= */
 @media (max-width: 768px) {
+
+
+    /* Scroll desactivé */
+    html,
+    body {
+        scroll-snap-type: none !important;
+    }
+
+    .page-section {
+        scroll-snap-align: none !important;
+        scroll-snap-stop: normal !important;
+    }
+
+
 
     /* 1. TYPO*/
     body h1 {
