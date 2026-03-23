@@ -31,7 +31,7 @@ export default function Home() {
           <div className="content-container">
             <div className="text">
               <h1>Bonjour !</h1>
-              <p> <span className="undertitle">Je suis Louise, une développeuse javascript fullstack en formation. Je souhaite créer et coder un web
+              <p> <span className="undertitle">Je suis Louise, une développeuse javascript fullstack en formation. <br /> Je souhaite créer et coder un web
                 accessible
                 à tous et toutes.</span></p>
 
