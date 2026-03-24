@@ -22,6 +22,7 @@ export default function Footer() {
                     <div className="footer-nav-col">
                         <span className="footer-title">Plan du site</span>
                         <Link href="/">Accueil</Link>
+                        <Link href="/demarche">Accessibilité</Link>
                         <Link href="/#contact">Me contacter</Link>
                     </div>
                     <div className="footer-nav-col">

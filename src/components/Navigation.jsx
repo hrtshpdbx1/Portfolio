@@ -38,6 +38,7 @@ export default function Navigation() {
                 <ul className={style.links}>
                     <li><Link href="/#section1" onClick={closeMenu}>Accueil</Link></li>
                     <li><Link href="/#section2" onClick={closeMenu}>À propos</Link></li>
+                    <li><Link href="/demarche" onClick={closeMenu}>Accessibilité</Link></li>
                     <li><Link href="/#section3" onClick={closeMenu}>Compétences</Link></li>
                     <li><Link href="/#section4" onClick={closeMenu}>Projets</Link></li>
                     <li><Link href="/#section5" onClick={closeMenu}>Me contacter</Link></li>

@@ -18,6 +18,7 @@ export default function SocialScript() {
         <div className="projectPageWrapper bbbreadme">
 
             <main id="main-content" className="projectPage">
+                 {/* --- HEADER --- */}
                 <header className="projectHero">
                     <h1>Social Script</h1>
 

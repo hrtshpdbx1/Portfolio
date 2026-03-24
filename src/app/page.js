@@ -15,7 +15,8 @@ import {
   Users2, 
   Megaphone, 
   BarChart3, 
-  Handshake 
+  Handshake,
+  Settings 
 } from 'lucide-react';
 
 
@@ -141,6 +142,8 @@ export default function Home() {
           </div>
         </section>
 
+        
+
         {/* --- SECTION 4 --- */}
         {/* --- Projets --- */}
 
@@ -209,6 +212,35 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+    
+  
+        {/* <section id="section6" className="page-section section4">
+          <div className="content-container">
+            <div className="text_intro">
+              <h2>Mon approche (A11y)</h2>
+              <p>
+                Le web est la porte d&apos;entrée vers l&apos;emploi, la santé et l&apos;éducation ; 
+                en tant que développeuse, j&apos;ai la responsabilité de n&apos;en fermer la porte à personne 
+                (handicap visuel, moteur ou cognitif). 
+              </p>
+              <p>
+                J&apos;ai donc conçu ce portfolio avec une contrainte technique stricte : 
+                créer un <strong>design fluide et 100% modulable</strong>. En cliquant sur l&apos;icône <Settings size={20} style={{ display: 'inline', verticalAlign: 'text-bottom', strokeWidth: 2.5, color: 'var(--main-text)' }} aria-hidden="true" /> en haut à droite, 
+                vous pouvez adapter la typographie, les contrastes et l&apos;interlignage à vos propres besoins, 
+                sans jamais briser l&apos;interface.
+              </p>
+          
+              <div style={{ marginTop: 'var(--space-6)' }}>
+                <Link href="/demarche" className="btn">
+                   Découvrir les détails techniques de cette démarche
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section> */}
+
+    
 
 
 
