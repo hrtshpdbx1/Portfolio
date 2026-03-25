@@ -1,5 +1,6 @@
 # 🎨 Louise Moraldy - Portfolio
 
+<img width="1641" height="624" alt="BannerHomepage2@2x" src="https://github.com/user-attachments/assets/d5c167da-73ce-44d2-9454-a15ed931b92f" />
 
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org/)
