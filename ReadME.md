@@ -1,4 +1,4 @@
-# 🎨 Louise Moraldy - Portfolio
+# Louise Moraldy - Portfolio
 
 <img width="1641" height="624" alt="BannerHomepage2@2x" src="https://github.com/user-attachments/assets/d5c167da-73ce-44d2-9454-a15ed931b92f" />
 
@@ -12,7 +12,7 @@ Ce portfolio n'est pas qu'une simple vitrine de mes projets ; c'est un laboratoi
 
 ---
 
-<img width="1640" height="626" alt="ThemesAdaptables_tiny" src="https://github.com/user-attachments/assets/003f5571-34df-4e11-87f6-aa3e584cb0cb" />
+
 
 ## 🚀 Points Forts Techniques
 
@@ -24,6 +24,7 @@ Plutôt que des valeurs fixes, le site repose sur une logique de **calcul en cas
 ### 🌓 Gestion Intelligente du Thème
 * **Zéro "Flash Blanc" (FOUC) :** Injection dynamique du CSS dès la première milliseconde via le `localStorage` pour respecter les préférences de l'utilisateur avant même l'affichage.
 * **Dualité Chromatique :** Tout le système visuel est généré à partir de deux variables seulement (`--main-text` et `--main-background`), garantissant une inversion parfaite des couleurs pour réduire la fatigue visuelle.
+<img width="1640" height="626" alt="ThemesAdaptables_tiny" src="https://github.com/user-attachments/assets/003f5571-34df-4e11-87f6-aa3e584cb0cb" />
 
 ### ♿ Focus Accessibilité (WCAG compliant)
 * **Typographies Inclusives :** Intégration de polices spécifiques (OpenDyslexic, Accessible-DfA, Eido) sélectionnées pour répondre aux besoins cognitifs et visuels.
@@ -37,8 +38,20 @@ Plutôt que des valeurs fixes, le site repose sur une logique de **calcul en cas
 * **Framework :** [Next.js 15](https://nextjs.org/) (App Router)
 * **Logique :** React (Hooks personnalisés pour la gestion de l'accessibilité)
 * **Styles :** CSS moderne avec variables CSS natives
-* **Icons :** FontAwesome (SVG Core)
+* **Icons :** FontAwesome (SVG Core) & Lucile
 * **Optimisation :** Composants `next/image` et `next/link` pour une navigation fluide
+* 
+## 🖋️ Ressources & Crédits 
+
+Le caractère inclusif de ce projet repose sur des typographies pensées pour divers besoins cognitifs :
+
+| Ressource | Type | Rôle dans l'Accessibilité |
+| :--- | :--- | :--- |
+| **[OpenDyslexic](https://opendyslexic.org/)** | Police | Augmente la lisibilité pour les lecteurs dyslexiques. |
+| **[Accessible-DfA](https://www.orange.com/fr/accessibilite-numerique)** | Police | Maximise la lisibilité en contexte de déficience visuelle. |
+| **[Eido](http://itinerant.org/eido/)** | Police | Évite la confusion entre les caractères similaires (ex: `i`, `l`, `1`). |
+| **[BBBReadMe](https://github.com/RosaWagner/BBBReadMe)** | Police | Optimisée pour le confort visuel sur écran. |
+| **[RandomA11y](https://randoma11y.com/)** | Outil | Génération de contrastes conformes aux exigences WCAG. |
 
 ## 📁 Structure du Projet
 
@@ -49,3 +62,5 @@ src/
 │   └── page.js       # Accueil et sections principales
 ├── components/       # Briques UI réutilisables (ProjectCard, ContactForm, etc.)
 └── public/           # Assets et polices inclusives
+
+
