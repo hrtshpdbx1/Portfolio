@@ -7,8 +7,10 @@
 [![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)](https://reactjs.org/)
 [![A11y](https://img.shields.io/badge/Accessibility-WCAG%20AAA-green?style=flat-square)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 
+🔗 **[Voir le projet en ligne](https://louisemoraldy.vercel.app/)**
 
 Ce portfolio n'est pas qu'une simple vitrine de mes projets ; c'est un laboratoire d'**accessibilité numérique (a11y)**. L'objectif était de concevoir une interface 100% modulable sans jamais rompre la cohérence visuelle ni la mise en page.
+
 
 ---
 
